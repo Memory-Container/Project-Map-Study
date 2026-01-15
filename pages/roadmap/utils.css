@@ -3,7 +3,7 @@
     --blue-dark3: #14181f;
     --blue-dark2: #1b202b;
     --blue-dark1: #1b2e53;
-    --blue: #4781f5;
+    --blue: #3385ff;
     --blue-icon: #20499aa6;
     --blue-light1: #80cfff;
     --blue-gray: #262c37;
@@ -19,7 +19,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-inter);
+    font-family: "Quicksand", sans-serif;
     color: white;
 }
 .container {

@@ -108,14 +108,17 @@ main {
             height: auto;
             border-radius: 10px;
             background-color: var(--blue-dark2);
-            padding: 12px 16px 12px 16px;
+            padding: 18px 20px 18px 20px;
             #learn {
                 display: none;
             }
             .j-right {
                 .backgroundGreen {
-                    background-color: rgb(5, 193, 5);
+                    background-color: rgba(11, 150, 11, 0.836);
                     border: 0;
+                }
+                .colorGreen {
+                    color: rgb(5, 193, 5);
                 }
             }
         }
