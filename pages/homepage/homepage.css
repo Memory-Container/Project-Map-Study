@@ -1,0 +1,162 @@
+.herosection {
+    position: relative;
+    height: 791px;
+    padding: 60px 10px 0px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("/assets/png/pictureHerosection.png");
+}
+.herosection .background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.26);
+    z-index: 0;
+}
+.section1{
+    margin-bottom: 60px;
+}
+.herosection .container {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.herosection .container .flex-c .title {
+    font-size: clamp(22px, 5vw, 65px);
+    font-weight: 700;
+}
+.herosection .container .flex-c .highlinght {
+    font-size: clamp(20px, 5vw, 48px);
+    font-weight: 700;
+}
+.herosection .container .primary .arrow {
+    transform: rotate(180deg);
+}
+.section1{
+    background-color: #1A1E26;
+    width: 100%;
+}
+.section1 .title{
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 700;
+}
+.section1 .container{
+    position: relative;
+}
+.section1 .container .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 267px;
+    height: 351px;
+    background-color: #555f6924;
+    border: 1px solid #534F4F;
+    border-radius: 8px;
+}
+.section1 .container .slideshow-controls{
+    display: none;
+}
+@media only screen and (max-width: 880px) {
+    .section1 .container {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 351px; 
+        overflow: visible;
+    }
+    .section1 .container .card {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%); 
+        width: 250px; 
+        transition: opacity 0.5s ease, visibility 0.5s ease;  
+        opacity: 0; 
+        visibility: hidden;
+        z-index: 0;
+    }
+    .section1 .container .slideshow-controls {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        z-index: 10;
+        pointer-events: none; 
+    }
+    .section1 .container .slideshow-controls button {
+        pointer-events: auto; 
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background-color: rgba(121, 121, 121, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0 10px; 
+    }
+    .section1 .container .slideshow-controls .arrow {
+        width: 20px;
+        height: 20px;
+    }
+    .section1 .container .slideshow-controls .arrow.right {
+        transform: rotate(180deg);
+    }
+}
+.section1 .container .card .picture{
+    width: 227px;
+    height: 150px;
+    border-radius: 4px;
+}
+.section1 .container .card .wrapContent{
+    width: 60%;
+}
+.section1 .container .card .primary .arrow{
+    transform: rotate(180deg);
+}
+.section2{
+    padding: 0;
+    margin-bottom: 60px;
+}
+.section2 .container .sectionPicture{
+    width: 502px;
+    height: 334px;   
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+.section2 .container .sectionBox .title{
+    font-size: clamp(20px, 5vw, 32px);
+    font-weight: 700;
+}
+.section2 .container .sectionBox .primary .arrow{
+    transform: rotate(180deg);
+}
+.section3{
+    background-color: #1A1E26;
+    width: 100%;
+}
+.section3 .container .section3Title{
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 700;
+}
+.section3 .container .section3Content{
+    font-size: clamp(16px, 5vh, 24px);
+}
+.section3 .container .primary .arrow{
+    transform: rotate(180deg);
+}
+@media only screen and (max-width: 660px) {
+    .section2 .container .sectionPicture{
+        width: 100%;
+        height: 260px;
+    }
+}

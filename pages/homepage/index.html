@@ -1,17 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../shared/utils.css">
-   <link rel="stylesheet" href="./homepage.css">
-</head>
-<body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="./homepage.css" />
+        <link rel="stylesheet" href="utils.css" />
+    </head>
+    <body>
+        <header></header>
+        <main class="flex-c">
+            <section class="herosection">
+                <div class="background"></div>
+                <div class="container flex-c g30 a-center">
+                    <div class="flex-c g5 a-center">
+                        <div class="title">Con đường đến với thành công!</div>
+                        <div class="f32 t-f24 c-w65 m-f16 text-center">
+                            Chọn mục tiêu nghề nghiệp của mình và nhận lộ trình
+                            học từ cơ bạn đến nâng cao
+                        </div>
+                        <div class="f32 t-f24 c-w65 m-f16 text-center">
+                            Còn chần chờ gì nữa mà không bắt đầu hành trình
+                        </div>
+                        <div class="highlinght c-blue-light text-center">
+                            Trở thành lập trình viên chuyên nghiệp hôm nay!
+                        </div>
+                    </div>
+                    <button class="primary">
+                        <span>Chọn lộ trình</span>
+                        <img src="/assets/svg/arrow.svg" class="arrow" />
+                    </button>
+                </div>
+            </section>
+            <section class="section1 flex-c g40">
+                <div class="title text-center">Chọn Mục Tiêu Học Tập</div>
+                <div class="container j-around">
+                    <div class="card flex-c g26 a-center j-center">
+                        <img src="/assets/png/Web.png" class="picture" />
+                        <div class="wrapContent text-center flex-c g10">
+                            <div class="f22 w7">Lập trình Web</div>
+                            <div class="f14 c-w75">
+                                Xây dựng những trang web hiện đại
+                            </div>
+                        </div>
+                        <button class="primary">
+                            <span>Xem lộ trình</span>
+                            <img src="/assets/svg/arrow.svg" class="arrow" />
+                        </button>
+                    </div>
+                    <div class="card flex-c g26 a-center j-center">
+                        <img src="/assets/png/App.png" class="picture" />
+                        <div class="wrapContent text-center flex-c g10">
+                            <div class="f22 w7">Lập trình App</div>
+                            <div class="f14 c-w75">
+                                Xây dựng những ứng dụng hữu ích
+                            </div>
+                        </div>
+                        <button class="primary">
+                            <span>Xem lộ trình</span>
+                            <img src="/assets/svg/arrow.svg" class="arrow" />
+                        </button>
+                    </div>
+                    <div class="card flex-c g26 a-center j-center">
+                        <img src="/assets/png/Design.png" class="picture" />
+                        <div class="wrapContent text-center flex-c g10">
+                            <div class="f22 w7">Design (UI/UX)</div>
+                            <div class="f14 c-w75">
+                                Thiết kế những giao diện tuyệt vời
+                            </div>
+                        </div>
+                        <button class="primary">
+                            <span>Xem lộ trình</span>
+                            <img src="/assets/svg/arrow.svg" class="arrow" />
+                        </button>
+                    </div>
+                    <div class="slideshow-controls">
+                        <button id="prevBtn">
+                            <img src="/assets/svg/arrow.svg" class="arrow" />
+                        </button>
+                        <button id="nextBtn">
+                            <img
+                                src="/assets/svg/arrow.svg"
+                                class="arrow right"
+                            />
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="section2">
+                <div class="container flex-r g30 t-flex-c">
+                    <div class="t-j-center">
+                        <img
+                            src="/assets/png/road.jpg"
+                            class="sectionPicture"
+                        />
+                    </div>
+                    <div
+                        class="sectionBox flex-c j-between a-start t-g30 t-a-center t-text-center"
+                    >
+                        <div class="flex-c g20 t-g15">
+                            <div class="title">
+                                Học lập trình không khó, cái khó là không biết
+                                bắt đầu từ đâu.
+                            </div>
+                            <div class="f18 c-w75 w5">
+                                Bạn đang bơi trong biển kiến thức hỗn độn?
+                                Website này ra đời để hệ thống hóa mọi thứ cho
+                                bạn. Chúng tôi không dạy bạn tất cả, chúng tôi
+                                chỉ cho bạn con đường ngắn nhất để trở thành một
+                                kỹ sư tài năng.
+                            </div>
+                        </div>
+                        <button class="primary j-start">
+                            <span>Tìm hiểu chuyên ngành</span>
+                            <img src="/assets/svg/arrow.svg" class="arrow" />
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="section3">
+                <div class="container text-center flex-c g15 a-center">
+                    <div class="section3Title">
+                        Chưa biết chuyên ngành nào phù hợp với mình?
+                    </div>
+                    <div class="section3Content">
+                        Đừng lo! Hãy làm bài trắc nghiệm để chọn ra được ngành
+                        nghề tiềm năng cho tương lai của bạn!
+                    </div>
+                    <button class="primary" onclick="window.location.assign('/pages/quiz')">
+                        <span1>Làm trắc nghiệm</span1>
+                        <img src="/assets/svg/arrow.svg" class="arrow" />
+                    </button>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
 <script src="../../shared/layout.js"></script>
 <script src="./homepage.js"></script>
 </html>

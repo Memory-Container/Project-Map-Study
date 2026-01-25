@@ -22,6 +22,7 @@ header.innerHTML = `
                 </ul>
             </nav>
             <div class="flex-r g10 a-center">
+                <button class="primary">Đăng nhập</button>
             </div>
         </div>
 `
