@@ -86,24 +86,33 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    padding: 10px;
-    width: 550px;
+    padding: 15px;
+    width: 600px;
 }
 .chapter-info-block .chapter-options {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-.primary {
-    padding: 8px 16px;
+.misc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.misc .misc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.misc-container .misc-info-block {
+    border: 2px solid white;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    border: 2px solid rgb(255, 255, 255);
-    background-color: var(--accent);
-    cursor: pointer;
-    color: #fff;
-    background: var(--accent);
-    box-shadow: inset -8px -8px 16px #00000080, inset 6px 6px 12px #fff3, 0 8px 25px #0006, 0 0 20px rgba(0, 210, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, .1) !important;
+    background-color: rgb(0, 12, 39);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
 }

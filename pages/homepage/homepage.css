@@ -32,7 +32,6 @@
 .herosection .container .flex-c .highlinght {
     font-size: clamp(20px, 5vw, 48px);
     font-weight: 700;
-    col
 }
 .herosection .container .primary .arrow {
     transform: rotate(180deg);

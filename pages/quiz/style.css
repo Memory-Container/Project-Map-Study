@@ -1,51 +1,18 @@
 :root {
-    --blue-dark4: #070b11;
     --blue-dark3: #14181f;
     --blue-dark2: #1b202b;
     --blue-dark1: #1b2e53;
-    --blue: #3385ff;
+    --blue: #4781f5;
+    --blue-dark4: #194db5;
     --blue-icon: #20499aa6;
     --blue-light1: #80cfff;
     --blue-gray: #262c37;
-    --w50: #ffffffa8;
-    --w25: #c3c5c9eb;
+    --w50: #ffffff80;
+    --w25: #ffffff40;
     --gray: #534f4f;
-    --grayLight: #d1d5db;
-    --w65: rgba(255, 255, 255, 0.65);
-    --w75: rgba(255, 255, 255, 0.753);
     --font-viet: "Be Vietnam Pro";
     --font-inter: "Inter";
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-    color: white;
-}
-.container {
-    width: 95%;
-    max-width: 1200px;
-}
-    padding: 48px 0;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    .logo {
-        width: 75px !important;
-        height: 75px;
-    }
-    .section {
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        .type {
-            font-size: 20px;
-            font-weight: 700;
-        }
-    }
-} */
 section {
     padding: 48px 0;
     align-items: center;
@@ -64,6 +31,14 @@ button {
     flex-direction: row;
     gap: 5px;
     line-height: 100%;
+}
+button.primary {
+    --color: var(--blue);
+    padding: 10px 16px;
+    border: 2px solid var(--color);
+    background-color: var(--color);
+    border-radius: 5px;
+    transition: 0.25s;
 }
 button.secondary {
     --color: var(--blue);
@@ -89,6 +64,12 @@ button.tertiary {
         font-size: 14px;
         gap: 3px;
         line-height: 100%;
+    }
+    button.primary {
+        padding: 8px 12px;
+        border: 1px solid var(--color);
+        border-radius: 3px;
+        transition: 0.25s;
     }
     button.secondary {
         padding: 8px 12px;
@@ -132,9 +113,6 @@ button.tertiary:hover {
         "M 12.071 13.3139 L 17.021 8.36388 C 17.1133 8.26837 17.2236 8.19219 17.3456 8.13978 C 17.4676 8.08737 17.5988 8.05979 17.7316 8.05863 C 17.8644 8.05748 17.9961 8.08278 18.119 8.13306 C 18.2419 8.18334 18.3535 8.25759 18.4474 8.35149 C 18.5413 8.44538 18.6156 8.55703 18.6658 8.67993 C 18.7161 8.80282 18.7414 8.9345 18.7403 9.06728 C 18.7391 9.20006 18.7115 9.33128 18.6591 9.45329 C 18.6067 9.57529 18.5305 9.68564 18.435 9.77788 L 12.778 15.4349 C 12.5905 15.6224 12.3362 15.7277 12.071 15.7277 C 11.8059 15.7277 11.5515 15.6224 11.364 15.4349 L 5.70702 9.77788 C 5.61151 9.68564 5.53533 9.57529 5.48292 9.45329 C 5.43051 9.33128 5.40292 9.20006 5.40177 9.06728 C 5.40062 8.9345 5.42592 8.80282 5.4762 8.67993 C 5.52648 8.55703 5.60073 8.44538 5.69463 8.35149 C 5.78852 8.25759 5.90017 8.18334 6.02307 8.13306 C 6.14596 8.08278 6.27764 8.05748 6.41042 8.05863 C 6.5432 8.05979 6.67442 8.08737 6.79643 8.13978 C 6.91843 8.19219 7.02877 8.26837 7.12102 8.36388 L 12.071 13.3139 Z"
     );
 }
-.colorGray {
-    color: var(--grayLight);
-}
 .flip {
     rotate: 180deg;
 }
@@ -148,11 +126,9 @@ button.tertiary:hover {
 .PC {
     display: flex;
 }
+
 .c-w {
     color: white;
-}
-.c-w65 {
-    color: var(--w65);
 }
 .c-blue {
     color: var(--blue);
@@ -183,9 +159,6 @@ button.tertiary:hover {
 }
 .c-b {
     color: black;
-}
-.c-w75 {
-    color: var(--w75);
 }
 .c-b25 {
     color: #00000040;
@@ -261,14 +234,12 @@ button.tertiary:hover {
     justify-content: right;
 }
 .j-between {
-    display: flex;
     justify-content: space-between;
 }
 .j-evenly {
     justify-content: space-evenly;
 }
 .j-around {
-    display: flex;
     justify-content: space-around;
 }
 
@@ -1876,10 +1847,6 @@ button.tertiary:hover {
     .t-flex-wrap {
         display: flex;
         flex-wrap: wrap;
-    }
-    .t-j-center {
-        display: flex;
-        justify-content: center;
     }
 }
 @media only screen and (max-width: 660px) {
