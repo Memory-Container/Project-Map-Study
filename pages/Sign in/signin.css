@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #070b11;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 14px 26px;
+    width: 450px;
+    height: 330px;
+    border: 2px solid #60525280;
+    background-color: #555f6924;
+    border-radius: 12px;
+}
+.container .title {
+    text-align: center;
+    color: white;
+}
+.container .boxSignUp {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container .boxSignUp .box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container .boxSignUp .box .content {
+    font-size: 18px;
+    font-weight: 500;
+}
