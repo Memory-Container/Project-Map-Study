@@ -1,0 +1,56 @@
+.backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 88;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.547);
+}
+.modal-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+    max-width: 600px;
+    min-width: 400px;
+    border-radius: 5px;
+    cursor: default;
+    background-color: var(--bg-default);
+    border: 3px solid rgb(92, 92, 92);
+}
+.modal-container .modal-message {
+    line-height: 1.3rem;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.modal123 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.modal-container .modal-choices {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.modal-options {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+.modal-options button {
+    width: calc(100% / 2 - 10px / 2);
+    padding: 12px 5px;
+    text-align: left;
+    background-color: var(--bg-default);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.262);
+}

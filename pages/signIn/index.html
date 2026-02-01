@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../shared/utils.css"/>
+    <link rel="stylesheet" href="../../shared/modal.css"/>
+    <link rel="stylesheet" href="signIn.css" />
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <div class="sign-in-container">
+                <h1>Đăng nhập tài khoản</h1>
+                <div class="sign-in-information">
+                    <input
+                        type="text"
+                        placeholder="Mã số sinh viên"
+                        id="MSSV"
+                        pattern="[0-9]*"
+                        maxlength="6"
+                        inputmode="numeric"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Mật khẩu"
+                        id="password"
+                    >
+                </div>
+                <button class="primary">Đăng nhập</button>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+<script src="signIn.js"></script>
+<script src="../../shared/layout.js"></script>
+<script src="../../shared/modal.js"></script>
+</html>

@@ -1,54 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="../../shared/utils.css"/>
+        <link rel="stylesheet" href="../../shared/modal.css"/>
         <link rel="stylesheet" href="roadmap.css"/>
     </head>
     <body>
         <header></header>
         <main>
-            <div class="backdrop" style="display: none;">
-                <div class="modal-container">
-                    <h2 class="modal-header">
-                        Bỏ qua chương này?
-                    </h2>
-                    <div class="modal-message">
-                        Bạn sẽ phải làm một bài <b>Kiểm tra năng lực</b>. Chỉ khi điểm số trong bài kiểm tra này >= 80% thì bạn mới có thể bỏ qua
-                    </div>
-                    <div class="modal-choices">
-                        <button class="primary">
-                            Chấp nhận
-                        </button>
-                        <button class="primary">
-                            Hủy bỏ
-                        </button>
-                    </div>
-                </div>
-            </div>
             <section class="header-section">
                 <div class="container">
                     <h1>HTML - CSS - JS Cơ bản</h1>
                     <div class="course-description">
-                        Trở thành chuyên gia phát triển giao diện web hiện đại với HTML, CSS, JavaScript và React. Học cách xây dựng ứng dụng web responsive, tối ưu hiệu suất và trải nghiệm người dùng.
+                        Trở thành chuyên gia phát triển giao diện web hiện đại
+                        với HTML, CSS, JavaScript và React. Học cách xây dựng
+                        ứng dụng web responsive, tối ưu hiệu suất và trải nghiệm
+                        người dùng.
                     </div>
                     <div class="course-properties">
                         <div class="properties">
-                            <img src="/assets/svg/course.svg">
-                            <span>
-                                6 Bài
-                            </span>
+                            <img src="/assets/svg/course.svg" />
+                            <span> 6 Bài </span>
                         </div>
                         <div class="properties">
-                            <img src="/assets/svg/route.svg">
-                            <span>
-                                Cơ bản → Nâng cao
-                            </span>
+                            <img src="/assets/svg/route.svg" />
+                            <span> Cơ bản → Nâng cao </span>
                         </div>
                     </div>
-                    <button class="primary">
+                    <button class="primary" onclick="startCourseConfirmation()" id="start-course">
                         Học lộ trình này
                     </button>
                 </div>
@@ -56,136 +38,84 @@
             <section class="course-section">
                 <div class="container">
                     <div class="main">
-                        <h1>
-                            Lộ trình học tập
-                        </h1>
+                        <h1>Lộ trình học tập</h1>
                         <div class="course">
-                            <div class="course-chapter">
+                            <div class="course-chapter disabled">
                                 <div class="chapter-indicator">
-                                    <div class="lock">
-    
-                                    </div>
-                                    <span>
-    
-                                    </span>
+                                    <div class="lock"></div>
+                                    <span> </span>
                                 </div>
                                 <div class="chapter-info-block">
-                                    <h3>
-                                        Github, Git và Vercel
-                                    </h3>
-                                    <div>
-                                        Học cách sử dụng Github, Git và Vercel trong Lập Trình Website
-                                    </div>
-                                    <div class="properties">
-                                        <img src="/assets/svg/route.svg">
-                                        <span>
-                                            Cơ bản
-                                        </span>
-                                    </div>
-                                    <div class="chapter-options">
-                                        <button class="primary">
-                                            Bắt đầu học
-                                        </button>
-                                        <button class="primary">
+                                    <div class="chapter-title">
+                                        <h3>
+                                            Github, Git và Vercel
+                                        </h3>
+                                        <button class="tertiary hidden skip">
                                             Bỏ qua
                                         </button>
                                     </div>
-                                </div>
-                            </div> 
-                            <div class="course-chapter">
-                                <div class="chapter-indicator">
-                                    <div class="lock">
-    
-                                    </div>
-                                    <span>
-    
-                                    </span>
-                                </div>
-                                <div class="chapter-info-block">
-                                    <h3>
-                                        Github, Git và Vercel
-                                    </h3>
                                     <div>
-                                        Học cách sử dụng Github, Git và Vercel trong Lập Trình Website
+                                        Học cách sử dụng Github, Git và Vercel
+                                        trong Lập Trình Website
                                     </div>
                                     <div class="properties">
-                                        <img src="/assets/svg/route.svg">
-                                        <span>
-                                            Cơ bản
-                                        </span>
+                                        <img src="/assets/svg/route.svg" />
+                                        <span> Cơ bản </span>
                                     </div>
-    
+                                    <div class="chapter-options hidden" id="start-chapter" onclick="startChapterConfirmation()">
+                                        <button class="primary">Bắt đầu hoc</button>
+                                    </div>
+                                    <div class="chapter-status hidden">
+                                        Trạng thái: <span class="status ongoing">Đang học</span>
+                                    </div>
                                 </div>
                             </div> 
-                            <div class="course-chapter">
+                            <div class="course-chapter disabled">
                                 <div class="chapter-indicator">
-                                    <div class="lock">
-    
-                                    </div>
-                                    <span>
-    
-                                    </span>
+                                    <div class="lock"></div>
+                                    <span> </span>
                                 </div>
                                 <div class="chapter-info-block">
-                                    <h3>
-                                        Lảm quen với HTML, CSS
-                                    </h3>
+                                    <div class="chapter-title">
+                                        <h3>
+                                            Github, Git và Vercel
+                                        </h3>
+                                        <button class="tertiary hidden">
+                                            Bỏ qua
+                                        </button>
+                                    </div>
                                     <div>
-                                        Học cách sử dụng Github, Git và Vercel trong Lập Trình Website
+                                        Học cách sử dụng Github, Git và Vercel
+                                        trong Lập Trình Website
                                     </div>
                                     <div class="properties">
-                                        <img src="/assets/svg/route.svg">
-                                        <span>
-                                            Cơ bản
-                                        </span>
+                                        <img src="/assets/svg/route.svg" />
+                                        <span> Cơ bản </span>
                                     </div>
-    
+                                    <div class="chapter-options hidden" onclick="startChapterConfirmation()">
+                                        <button class="primary">Bắt đầu hoc</button>
+                                    </div>
                                 </div>
                             </div> 
-                            <div class="course-chapter">
-                                <div class="chapter-indicator">
-                                    <div class="lock">
-    
-                                    </div>
-                                </div>
-                                <div class="chapter-info-block">
-                                    <h3>
-                                        Học cách tạo layout cơ bản
-                                    </h3>
-                                    <div>
-                                        Học cách sử dụng Github, Git và Vercel trong Lập Trình Website
-                                    </div>
-                                    <div class="properties">
-                                        <img src="/assets/svg/route.svg">
-                                        <span>
-                                            Cơ bản
-                                        </span>
-                                    </div>
-    
-                                </div>
-                            </div> 
-    
                         </div>
                     </div>
-                    <!-- <div class="misc">
+                    <div class="misc">
                         <div class="misc-container">
                             <h1>Kỹ năng đạt được</h1>
                             <div class="misc-info-block">
-                                <div>
-                                    - Biết cách sử dụng HTML, CSS, JS
-                                </div>
+                                <div>- Biết cách sử dụng HTML, CSS, JS</div>
                                 <div>
                                     - Hiểu biết về thiết kế trang web đáp ứng
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </section>
         </main>
         <footer></footer>
     </body>
     <script src="../../shared/layout.js"></script>
+    <script src="../../shared/modal.js"></script>
     <script src="roadmap.js"></script>
 </html>
-

@@ -5,12 +5,19 @@
     font-family: var(--font-family);
     color: white;
 }
+.hidden {
+    display: none !important;
+}
 :root {
     --font-family: "Quicksand", sans-serif;
     --accent-code: 57, 156, 255;
     --accent: rgb(var(--accent-code));
-    --bg-default: #000e20;
+    --accent-glow: rgba(var(--accent-code), 0.5);
+    --bg-default: #000d1f;
     --bg-surface: #1e1e2e;
+    --bg-black: rgb(0, 12, 39);
+    --default-gray: rgb(59, 59, 59);
+    --tertiary-gray: rgb(59, 59, 59)
 
     --border-radius-sm: 8px;
     --border-radius: 12px;
@@ -87,6 +94,7 @@ section {
 .container {
     max-width: 1200px;
     width: 95%;
+    position: relative;
 }
 .main-nav {
     display: flex;
@@ -97,6 +105,9 @@ section {
 }
 
 .nav-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     list-style: none;
     gap: 20px
@@ -122,37 +133,21 @@ section {
     color: var(--accent);
     box-shadow: 4px 6px 4px #72727200, -2px -3px 4px #ffffff00, inset 4px 6px 8px #000, inset -2px -3px 8px #ffffff1a;
 }
-.backdrop {
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    z-index: 88;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.547);
-}
-.modal-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    padding: 20px;
-    max-width: 500px;
-    border-radius: 5px;
-    cursor: default;
-    background-color: var(--bg-default);
-    border: 3px solid rgb(92, 92, 92);
-}
 .flex-c {
     flex-direction: column;
 }
 .flex-r {
     flex-direction: row;
+}
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.flip {
+    rotate: 180deg;
 }
 .primary {
     padding: 8px 16px;
@@ -166,4 +161,33 @@ section {
     background: var(--accent);
     box-shadow: inset -8px -8px 16px #00000080, inset 6px 6px 12px #fff3, 0 8px 25px #0006, 0 0 20px rgba(0, 210, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, .1) !important;
+}
+.secondary {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: var(--accent);
+    cursor: pointer;
+    color: #fff;
+    background: var(--accent);
+    box-shadow: inset -8px -8px 16px #00000080, inset 6px 6px 12px #fff3, 0 8px 25px #0006, 0 0 20px rgba(0, 210, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, .1) !important;
+}
+.tertiary {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+.tertiary:hover {
+    color: var(--accent);
+}
+.small-info {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
 }
