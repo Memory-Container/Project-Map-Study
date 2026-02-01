@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="signin.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Đăng nhập tài khoản</h1>
+            <div class="box_input">
+                <div class="group">
+                    <input
+                        class="input"
+                        type="text"
+                        placeholder="Mã số sinh viên"
+                        id="MSSV"
+                        pattern="[0-9]*"
+                        maxlength="6"
+                        inputmode="numeric"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    />
+                </div>
+            </div>
+            <div class="box_input">
+                <div class="group">
+                    <input
+                        class="input"
+                        type="text"
+                        placeholder="Mật khẩu"
+                        id="password"
+                    />
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="signin.js"></script>
+</html>
