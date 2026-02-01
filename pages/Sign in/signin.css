@@ -1,93 +1,95 @@
-/* From Uiverse.io by alexruix */
-html {
-    font-family: "Inter";
-}
-body {
-    background-color: rgba(176, 227, 255, 0.353);
+* {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
     box-sizing: border-box;
+}
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.input-group {
-    position: relative;
+    background-color: rgb(46, 127, 127);
+    width: 100%;
+    height: 100vh;
 }
 .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     gap: 40px;
-    background-color: rgb(255, 255, 255);
-    width: 500px;
-    height: 325px;
-    border-radius: 20px;
+    background-color: white;
+    padding: 32px 48px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 90%;
 }
 h1 {
-    width: 350px;
     text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+p {
     margin: 0;
+    font-size: 14px;
 }
-.box_input {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 340px;
+.container .wrapInput {
+    position: relative;
     width: 100%;
+    height: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.521);
+    border-radius: 6px;
+    padding: 0 16px;
 }
-.group {
+.container .wrapInput .form {
+    position: absolute;
+    left: 16px;
+    top: 6px;
+    font-size: 18px;
+    opacity: 1;
+    font-weight: 600;
+    pointer-events: none;
+    transition: 0.3s;
+}
+.wrapInput.focus .form {
+    opacity: 0.4;
+    transform: translateY(-30px);
+}
+input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 16px;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+}
+.container .login {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    border-radius: 6px;
+    background-color: rgb(2, 197, 2);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.container .login:hover {
+    opacity: 0.6;
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
+.container .wrapButton {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    line-height: 30px;
-    align-items: center;
-    position: relative;
-    width: 100%;
 }
-
-.input {
-    font-size: 20px;
-    width: 100%;
-    height: 60px;
-    line-height: 30px;
-    padding: 0 5rem;
-    padding-left: 1rem;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    outline: none;
-    background-color: #f8fafc;
-    color: #0d0c22;
-    transition: 0.5s ease;
-}
-
-.input::placeholder {
-    color: #94a3b8;
-}
-
-.input:focus,
-input:hover {
-    outline: none;
-    border-color: rgba(129, 140, 248);
-    background-color: #fff;
-    box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
-}
-.power {
+.container .wrapButton #status {
     font-size: 18px;
-}
-.power_container {
-    border: 1px solid rgba(128, 128, 128, 0.296);
-    width: 100%;
-    height: 10px;
-    border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.595);
-    #power_point {
-        width: 4%;
-        height: 10px;
-        border-radius: 10px;
-        background-color: red;
-    }
+    color: rgb(212, 0, 0);
+    text-align: center;
+    font-weight: 600;
 }
