@@ -67,6 +67,12 @@ function createModal() {
             </div>
         `
         container.appendChild(backdrop)
+        let backdrop2 = document.querySelector('.backdrop')
+        backdrop2.addEventListener("click", (e) => {
+            if (e.target == backdrop2) {
+                backdrop2.style.display = 'none'
+            }
+        })
     } else [
         document.querySelector('.backdrop').style.display = 'block'
     ]

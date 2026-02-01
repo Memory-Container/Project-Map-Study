@@ -1,107 +1,72 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="../../shared/utils.css" />
-        <link rel="stylesheet" href="./homepage.css" />
-        <link rel="stylesheet" href="utils.css" />
-    </head>
-    <body>
-        <header></header>
-        <main class="flex-c">
-            <section class="herosection">
-                <div class="background"></div>
-                <div class="container flex-c g30 a-center">
-                    <div class="flex-c g5 a-center">
-                        <div class="highlinght c-blue-light text-center">
-                            Trở thành lập trình viên chuyên nghiệp hôm nay!
-                        </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../shared/modal.css"/>
+    <link rel="stylesheet" href="../../shared/utils.css"/>
+    <link rel="stylesheet" href="homepage.css"/>
+</head>
+<body>
+    <header></header>
+    <main class="flex-c">
+        <section class="hero-section">
+            <div class="background"></div>
+            <div class="container">
+                <div class="hero-container">
+                    <div class="hero-title">
+                        Chào Mừng Bạn Đến Với<br>BCN Studying
                     </div>
-                    <a href="/pages/quiz/index.html">
-                        <button class="primary">
-                            <span>Bắt đầu ngày</span>
-                            <img src="/assets/svg/arrow.svg" class="arrow" />
-                        </button>
-                    </a>
+                    <p>
+                        Khám phá những lộ trình học tập chất lượng được cung cấp bới Ban Công Nghệ<br>
+                        Còn chần chờ gì nữa mà không trờ thành lập trình viên chuyên nghiệp ngay hôm nay!
+                    </p>
+                    <button class="primary" onclick="openStartModal()">
+                        <span>Bắt đầu thôi</span>
+                        <img src="/assets/svg/arrow.svg" class="arrow flip"/>
+                    </button>
                 </div>
-            </section>
-            <section class="section1 flex-c g40">
-                <div class="title text-center">
-                    Lộ trình học tập cho từng chuyên ngành
+            </div>
+        </section>
+        <section>
+            <div class="section-title">
+                Các lộ trình hiện có
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-icon">
+
+                    </div>
+                    <div class="card-name">
+                        Lập trình Web
+                    </div>
+                    <button class="primary" onclick="window.location.assign('../../pages/roadmap/')">Xem lộ trình</button>
                 </div>
-                <div class="container j-around">
-                    <div class="card flex-c g26 a-center j-center">
-                        <img src="/assets/png/Web.png" class="picture" />
-                        <div class="wrapContent text-center flex-c g10">
-                            <div class="f22 w7">Lập trình Web</div>
-                            <div class="f14 c-w75">
-                                Xây dựng những trang web hiện đại
-                            </div>
-                        </div>
-                        <a href="/pages/roadmap/index.html">
-                            <button class="primary">
-                                <span>Xem lộ trình</span>
-                                <img
-                                    src="/assets/svg/arrow.svg"
-                                    class="arrow"
-                                />
-                            </button>
-                        </a>
+                <div class="card">
+                    <div class="card-icon">
+
                     </div>
-                    <div class="card flex-c g26 a-center j-center">
-                        <img src="/assets/png/App.png" class="picture" />
-                        <div class="wrapContent text-center flex-c g10">
-                            <div class="f22 w7">Lập trình App</div>
-                            <div class="f14 c-w75">
-                                Xây dựng những ứng dụng hữu ích
-                            </div>
-                        </div>
-                        <a href="/pages/roadmap/index.html">
-                            <button class="primary">
-                                <span>Xem lộ trình</span>
-                                <img
-                                    src="/assets/svg/arrow.svg"
-                                    class="arrow"
-                                />
-                            </button>
-                        </a>
+                    <div class="card-name">
+                        Lập trình App
                     </div>
-                    <div class="card flex-c g26 a-center j-center">
-                        <img src="/assets/png/Design.png" class="picture" />
-                        <div class="wrapContent text-center flex-c g10">
-                            <div class="f22 w7">Design (UI/UX)</div>
-                            <div class="f14 c-w75">
-                                Thiết kế những giao diện tuyệt vời
-                            </div>
-                        </div>
-                        <a href="/pages/roadmap/index.html">
-                            <button class="primary">
-                                <span>Xem lộ trình</span>
-                                <img
-                                    src="/assets/svg/arrow.svg"
-                                    class="arrow"
-                                />
-                            </button>
-                        </a>
-                    </div>
-                    <div class="slideshow-controls">
-                        <button id="prevBtn">
-                            <img src="/assets/svg/arrow.svg" class="arrow" />
-                        </button>
-                        <button id="nextBtn">
-                            <img
-                                src="/assets/svg/arrow.svg"
-                                class="arrow right"
-                            />
-                        </button>
-                    </div>
+                    <button class="primary" onclick="window.location.assign('../../pages/roadmap/')">Xem lộ trình</button>
                 </div>
-            </section>
-        </main>
-        <footer></footer>
-    </body>
-    <script src="../../shared/layout.js"></script>
-    <script src="./homepage.js"></script>
+                <div class="card">
+                    <div class="card-icon">
+
+                    </div>
+                    <div class="card-name">
+                        UI/UX
+                    </div>
+                    <button class="primary" onclick="window.location.assign('../../pages/roadmap/')">Xem lộ trình</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+<script src="../../shared/layout.js"></script>
+<script src="../../shared/modal.js"></script>
+<script src="homepage.js"></script>
 </html>

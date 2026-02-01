@@ -14,22 +14,29 @@ header.innerHTML = `
                         <a class="nav-link" href="../../pages/homepage/" id="homepage">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../pages/roadmap/" id="roadmap">Khóa học</a>
+                        <a class="nav-link" href="../../pages/roadmap/" id="roadmap">Lộ trình học</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../pages/introduction/" id="introduction">Giới thiệu</a>
                     </li>
                 </ul>
             </nav>
-            <div class="flex-r g10 a-center">
-                <button class="primary">Đăng nhập</button>
+            <div class="flex-r g10 a-center" id="signIn">
+                <button class="primary signIn">Đăng nhập</button>
             </div>
         </div>
 `
 let currentPage
 function initializeNav() {
     let link = document.querySelectorAll(".nav-link")
+    let signIn = document.querySelector(".signIn")
     currentPage = window.location.pathname.match(/[\w]+/gm)[1]
+    signIn.addEventListener('click', () => {
+        window.location.assign('../../pages/signIn/')
+    })
+    if (currentPage == 'signIn') {
+        document.querySelector('#signIn').style.display = 'none'
+    }
     for (let i = 0; i < link.length; i++) {
         if (link[i].id == currentPage) {
             link[i].classList.add("active")

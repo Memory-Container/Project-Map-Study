@@ -5,12 +5,17 @@
     font-family: var(--font-family);
     color: white;
 }
+.hidden {
+    display: none !important;
+}
 :root {
     --font-family: "Quicksand", sans-serif;
     --accent-code: 57, 156, 255;
     --accent: rgb(var(--accent-code));
+    --accent-glow: rgba(var(--accent-code), 0.5);
     --bg-default: #000d1f;
     --bg-surface: #1e1e2e;
+    --bg-black: rgb(0, 12, 39);
     --default-gray: rgb(59, 59, 59);
     --tertiary-gray: rgb(59, 59, 59)
 
@@ -135,7 +140,14 @@ section {
     flex-direction: row;
 }
 button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     cursor: pointer;
+}
+.flip {
+    rotate: 180deg;
 }
 .primary {
     padding: 8px 16px;
