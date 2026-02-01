@@ -8,22 +8,31 @@
     </head>
     <body>
         <div class="container">
-            <div class="title">Đăng ký tài khoản</div>
-            <div class="boxSignUp">
-                <div class="box">
-                    <label for="" class="content">Mã số sinh viên</label>
-                    <input type="text" id="" />
-                </div>
-                <div class="box">
-                    <label for="" class="content">Nhập mật khẩu</label>
-                    <input type="text" id="" />
-                </div>
-                <div class="box">
-                    <label for="" class="content">Nhập lại mật khẩu</label>
-                    <input type="text" id="" />
+            <h1>Đăng nhập tài khoản</h1>
+            <div class="box_input">
+                <div class="group">
+                    <input
+                        class="input"
+                        type="text"
+                        placeholder="Mã số sinh viên"
+                        id="MSSV"
+                        pattern="[0-9]*"
+                        maxlength="6"
+                        inputmode="numeric"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    />
                 </div>
             </div>
-            <button></button>
+            <div class="box_input">
+                <div class="group">
+                    <input
+                        class="input"
+                        type="text"
+                        placeholder="Mật khẩu"
+                        id="password"
+                    />
+                </div>
+            </div>
         </div>
     </body>
     <script src="signin.js"></script>

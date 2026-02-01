@@ -1,303 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="../../shared/utils.css" />
-        <link rel="stylesheet" href="./homepage.css" />
         <link rel="stylesheet" href="roadmap.css" />
-        <link rel="stylesheet" href="utils.css" />
     </head>
     <body>
-        <!-- Header -->
         <header></header>
-        <!-- Information  -->
-        <main class="flex-c">
-            <section class="section1">
-                <div class="container">
-                    <div class="flex-c a-center">
-                        <div class="containerInfor flex-c">
-                            <div class="buttonPrev a-center j-center">
-                                <img
-                                    src="/assets/svg/arrow.svg"
-                                    class="arrow"
-                                />
-                                <div class="f18 m-f16">Quay lại</div>
-                            </div>
-                            <div class="f40 w7 t-f28 m-j-center m-f26">
-                                Web Developer
-                            </div>
-                            <div
-                                class="f20 t-f14 m-text-center m-f16 colorGray w4"
-                            >
-                                Trở thành chuyên gia phát triển giao diện web
-                                hiện đại với HTML, CSS, JavaScript và React. Học
-                                cách xây dựng ứng dụng web responsive, tối ưu
-                                hiệu suất và trải nghiệm người dùng.
-                            </div>
-                            <div class="info-bar m-j-center m-flex-wrap">
-                                <div class="wrapRoute a-center j-center">
-                                    <img src="/assets/svg/route.svg" />
-                                    <div class="f16">Cơ bản đến Nâng cao</div>
-                                </div>
-                                <div class="wrapCourse a-center j-center">
-                                    <img src="/assets/svg/course.svg" />
-                                    <div class="f16">6 khóa học</div>
-                                </div>
-                            </div>
-                        </div>
+        <main>
+            <div class="backdrop" style="display: none">
+                <div class="modal-container">
+                    <h2 class="modal-header">Bỏ qua chương này?</h2>
+                    <div class="modal-message">
+                        Bạn sẽ phải làm một bài <b>Kiểm tra năng lực</b>. Chỉ
+                        khi điểm số trong bài kiểm tra này >= 80% thì bạn mới có
+                        thể bỏ qua
                     </div>
-                </div>
-            </section>
-            <!-- Learning pathway -->
-            <section class="section2">
-                <div class="container flex-c g30">
-                    <div class="f32 w7 t-f26 m-a-center m-f28 title">
-                        Lộ Trình Học Tập
-                    </div>
-                    <div class="containerRoute j-center g37 t-flex-wrap">
-                        <div class="boxBig flex-c g17">
-                            <!-- Choose Learning pathway -->
-                            <div class="flex-c g14">
-                                <!-- choose learning pathway -->
-                                <div
-                                    class="PC g11 wrapChoose a-start Tablet Mobile"
-                                    id="demo"
-                                >
-                                    <img
-                                        src="/assets/svg/lock.svg"
-                                        class="lock"
-                                    />
-                                    <div class="flex-c g8">
-                                        <div class="f28 w7 t-f24 m-f21">
-                                            Chọn lộ trình để bắt đầu
-                                        </div>
-                                        <div class="f17 t-f15 w4 colorGray">
-                                            Chọn lộ trình này để mở khóa tất cả
-                                            các khóa học và theo dõi tiến độ học
-                                            tập của bạn.
-                                        </div>
-                                        <div class="j-right">
-                                            <button
-                                                class="w5 primary"
-                                                id="primary"
-                                                onclick="openOverlay()"
-                                            >
-                                                Chọn lộ trình này
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Lesson--1 -->
-                                <div class="flex-c g10">
-                                    <div class="PC a-start Tablet Mobile">
-                                        <div class="flex-c wrapSmall a-center">
-                                            <div class="lock a-center j-center">
-                                                <img
-                                                    src="/assets/svg/lock.svg"
-                                                    id="lock"
-                                                />
-                                                <div
-                                                    id="lockChangeBackground"
-                                                    class="f24 w7 j-center a-center t-f20"
-                                                >
-                                                    <img
-                                                        src="/assets/svg/openLock.svg"
-                                                        class="openLock"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <img
-                                                src="/assets/svg/Line 3.svg"
-                                                id="line"
-                                            />
-                                        </div>
-                                        <div class="wrapBig flex-c g20">
-                                            <div class="flex-c g8">
-                                                <div class="f24 w7 t-f20">
-                                                    HTML & CSS Cơ bản
-                                                </div>
-                                                <div class="f17 w4 colorGray">
-                                                    Nền tảng xây dựng giao diện
-                                                    web với HTML và CSS
-                                                </div>
-                                            </div>
-                                            <div class="j-left" id="learn">
-                                                <button
-                                                    class="primary backgroundGreen f18 w6 m-f16"
-                                                >
-                                                    Bắt đầu học
-                                                </button>
-                                                <button
-                                                    class="tertiary colorGreen f18 w6 m-f16"
-                                                >
-                                                    Bỏ qua
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Lesson--next -->
-                                    <div class="PC a-start Tablet Mobile">
-                                        <div class="flex-c wrapSmall a-center">
-                                            <div class="lock a-center j-center">
-                                                <img
-                                                    src="/assets/svg/lock.svg"
-                                                    id="lock"
-                                                />
-                                            </div>
-                                            <img
-                                                src="/assets/svg/Line 3.svg"
-                                                id="line"
-                                            />
-                                        </div>
-                                        <div class="wrapBig flex-c g8">
-                                            <div class="f20 w7 m-f18">
-                                                HTML & CSS Cơ bản
-                                            </div>
-                                            <div class="f16 f4 colorGray">
-                                                Nền tảng xây dựng giao diện web
-                                                với HTML và CSS
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="PC a-start Tablet Mobile">
-                                        <div class="flex-c wrapSmall a-center">
-                                            <div class="lock a-center j-center">
-                                                <img
-                                                    src="/assets/svg/lock.svg"
-                                                    id="lock"
-                                                />
-                                            </div>
-                                            <img
-                                                src="/assets/svg/Line 3.svg"
-                                                id="line"
-                                            />
-                                        </div>
-                                        <div class="wrapBig flex-c g8">
-                                            <div class="f20 w7 m-f18">
-                                                HTML & CSS Cơ bản
-                                            </div>
-                                            <div class="f16 f4 colorGray">
-                                                Nền tảng xây dựng giao diện web
-                                                với HTML và CSS
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="PC a-start Tablet Mobile">
-                                        <div class="flex-c wrapSmall a-center">
-                                            <div class="lock a-center j-center">
-                                                <img
-                                                    src="/assets/svg/lock.svg"
-                                                    id="lock"
-                                                />
-                                            </div>
-                                            <img
-                                                src="/assets/svg/Line 3.svg"
-                                                id="line"
-                                            />
-                                        </div>
-                                        <div class="wrapBig flex-c g8">
-                                            <div class="f20 w7 m-f18">
-                                                HTML & CSS Cơ bản
-                                            </div>
-                                            <div class="f16 f4 colorGray">
-                                                Nền tảng xây dựng giao diện web
-                                                với HTML và CSS
-                                            </div>
-                                            <div class="f15 w3">8 giờ</div>
-                                        </div>
-                                    </div>
-                                    <div class="PC a-start Tablet Mobile">
-                                        <div class="flex-c wrapSmall a-center">
-                                            <div class="lock a-center j-center">
-                                                <img
-                                                    src="/assets/svg/lock.svg"
-                                                    id="lock"
-                                                />
-                                            </div>
-                                            <img
-                                                src="/assets/svg/Line 3.svg"
-                                                id="line"
-                                            />
-                                        </div>
-                                        <div class="wrapBig flex-c g8">
-                                            <div class="f20 w7 m-f18">
-                                                HTML & CSS Cơ bản
-                                            </div>
-                                            <div class="f16 f4 colorGray">
-                                                Nền tảng xây dựng giao diện web
-                                                với HTML và CSS
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- two things after finishing school -->
-                        <div class="boxSmall flex-c g21 t-flex-r m-flex-c">
-                            <div class="wrap flex-c g17 j-center">
-                                <div class="f28 w7 t-f24 m-f18">
-                                    Kỹ Năng Đạt Được
-                                </div>
-                                <div class="blockBadge flex-wrap g14">
-                                    <div class="j-center a-center block f13 w7">
-                                        HTML/CSS
-                                    </div>
-                                    <div class="j-center a-center block f13 w7">
-                                        HTML/CSS
-                                    </div>
-                                    <div class="j-center a-center block f13 w7">
-                                        HTML/CSS
-                                    </div>
-                                    <div class="j-center a-center block f13 w7">
-                                        HTML/CSS
-                                    </div>
-                                    <div class="j-center a-center block f13 w7">
-                                        HTML/CSS
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wrap flex-c g14 j-center">
-                                <div class="f28 w7 t-f24 m-f18">
-                                    Cơ Hội Nghề Nghiệp
-                                </div>
-                                <div class="listItem">
-                                    <ul class="f18 w5 g12 flex-c">
-                                        <li>Front-end Developer</li>
-                                        <li>Front-end Developer</li>
-                                        <li>Front-end Developer</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="overlay" id="overlay">
-                <div class="j-center a-center flex-c g12 container__overlay">
-                    <div class="f24 w7 text-center t-f20">
-                        Bạn Chắn Chắn Chọn Mục Tiêu Này?
-                    </div>
-                    <div class="f16 w4 text-center content m-f12 colorGray">
-                        Lưu ý: Nếu xác nhận bạn không thể chọn mục tiêu khác cho
-                        tới khi hoàn thành mục tiêu hiện tại.
-                    </div>
-                    <div class="PC g10 Mobile Tablet">
-                        <button class="tertiary" onclick="closeOverlay()">
-                            Hủy bỏ
-                        </button>
-                        <button class="primary" onclick="chooseOverlay()">
-                            Xác nhận
-                        </button>
+                    <div class="modal-choices">
+                        <button class="primary">Chấp nhận</button>
+                        <button class="primary">Hủy bỏ</button>
                     </div>
                 </div>
             </div>
+            <section class="header-section">
+                <div class="container">
+                    <h1>HTML - CSS - JS Cơ bản</h1>
+                    <div class="course-description">
+                        Trở thành chuyên gia phát triển giao diện web hiện đại
+                        với HTML, CSS, JavaScript và React. Học cách xây dựng
+                        ứng dụng web responsive, tối ưu hiệu suất và trải nghiệm
+                        người dùng.
+                    </div>
+                    <div class="course-properties">
+                        <div class="properties">
+                            <img src="/assets/svg/course.svg" />
+                            <span> 6 Bài </span>
+                        </div>
+                        <div class="properties">
+                            <img src="/assets/svg/route.svg" />
+                            <span> Cơ bản → Nâng cao </span>
+                        </div>
+                    </div>
+                    <button class="primary">Học lộ trình này</button>
+                </div>
+            </section>
+            <section class="course-section">
+                <div class="container">
+                    <div class="main">
+                        <h1>Lộ trình học tập</h1>
+                        <div class="course">
+                            <div class="course-chapter">
+                                <div class="chapter-indicator">
+                                    <div class="lock"></div>
+                                    <span> </span>
+                                </div>
+                                <div class="chapter-info-block">
+                                    <h3>Github, Git và Vercel</h3>
+                                    <div>
+                                        Học cách sử dụng Github, Git và Vercel
+                                        trong Lập Trình Website
+                                    </div>
+                                    <div class="properties">
+                                        <img src="/assets/svg/route.svg" />
+                                        <span> Cơ bản </span>
+                                    </div>
+                                    <div class="chapter-options">
+                                        <button class="primary">
+                                            Bắt đầu học
+                                        </button>
+                                        <button class="primary">Bỏ qua</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-chapter">
+                                <div class="chapter-indicator">
+                                    <div class="lock"></div>
+                                    <span> </span>
+                                </div>
+                                <div class="chapter-info-block">
+                                    <h3>Github, Git và Vercel</h3>
+                                    <div>
+                                        Học cách sử dụng Github, Git và Vercel
+                                        trong Lập Trình Website
+                                    </div>
+                                    <div class="properties">
+                                        <img src="/assets/svg/route.svg" />
+                                        <span> Cơ bản </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-chapter">
+                                <div class="chapter-indicator">
+                                    <div class="lock"></div>
+                                    <span> </span>
+                                </div>
+                                <div class="chapter-info-block">
+                                    <h3>Lảm quen với HTML, CSS</h3>
+                                    <div>
+                                        Học cách sử dụng Github, Git và Vercel
+                                        trong Lập Trình Website
+                                    </div>
+                                    <div class="properties">
+                                        <img src="/assets/svg/route.svg" />
+                                        <span> Cơ bản </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-chapter">
+                                <div class="chapter-indicator">
+                                    <div class="lock"></div>
+                                </div>
+                                <div class="chapter-info-block">
+                                    <h3>Học cách tạo layout cơ bản</h3>
+                                    <div>
+                                        Học cách sử dụng Github, Git và Vercel
+                                        trong Lập Trình Website
+                                    </div>
+                                    <div class="properties">
+                                        <img src="/assets/svg/route.svg" />
+                                        <span> Cơ bản </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="misc">
+                        <div class="misc-container">
+                            <h1>Kỹ năng đạt được</h1>
+                            <div class="misc-info-block">
+                                <div>- Biết cách sử dụng HTML, CSS, JS</div>
+                                <div>
+                                    - Hiểu biết về thiết kế trang web đáp ứng
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer></footer>
-        <!-- selection table -->
     </body>
     <script src="../../shared/layout.js"></script>
-    <script src="./homepage.js"></script>
     <script src="roadmap.js"></script>
 </html>
