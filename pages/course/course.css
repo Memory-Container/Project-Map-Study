@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+main {
+    max-width: 1200px;
+    width: 90%;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 60px 0;
+}
+.section .titleSection {
+    text-align: center;
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: 700;
+    color: white;
+}
+.section .boxCard {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+.section .boxCard .card {
+    width: calc((100% - 50px * 2) / 3);
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.section .boxCard .card .wrapImage {
+    border-radius: 10px;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border: 2px solid rgba(128, 128, 128, 0.362);
+}
+.section .boxCard .card .wrapImage .image {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.section .boxCard .card .wrapImage .image:hover {
+    transform: scale(1.1);
+}
+.section .boxCard .card .app {
+    --image: url("/assets/png/AppDevelopment.png");
+}
+.section .boxCard .card .design {
+    --image: url("/assets/png/Design.png");
+}
+.section .boxCard .card .content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 8px;
+}
+.section .boxCard .card .content .nameCourse {
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 700;
+}
+.section .boxCard .card .content .route {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.904);
+    height: 24px;
+}
+.section .boxCard .card .content .route .icon {
+    width: 20px;
+    height: 20px;
+}
+@media only screen and (max-width: 1024px) {
+    .section {
+        gap: 60px;
+    }
+    .section .boxCard {
+        flex-wrap: wrap;
+    }
+    .section .boxCard {
+        gap: 70px;
+    }
+    .section .boxCard .card {
+        width: calc((100% - 70px * 1) / 2);
+        height: 300px;
+    }
+    .section .boxCard .card .wrapImage {
+        height: 220px;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .section .boxCard {
+        gap: 40px;
+    }
+    .section .boxCard .card {
+        width: 100%;
+    }
+}

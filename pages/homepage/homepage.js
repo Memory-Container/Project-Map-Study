@@ -1,37 +1,30 @@
 function openStartModal() {
     openModal({
-        title: '',
+        title: "",
         message: `
             <div class="modal123">
-                <h3>Bạn có phải là tân sinh viên không?</h3>
-                <div class="modal-options">
-                    <button>Có</button>
-                    <button>Không</button>
-                </div>
-                <h3>Bạn có muốn được định hường ngành nghề?</h3>
-                <div class="modal-options">
-                    <button>Có</button>
-                    <button>Không</button>
-                </div>
-                <h3>Bạn có muốn được giới thiệu các lĩnh vực trong ban công nghệ?</h3>
-                <div class="modal-options">
-                    <button>Có</button>
-                    <button>Không</button>
-                </div>
+                <div class="title">Để hỗ trợ tốt nhất, bạn có muốn BCN giúp bạn xác định mục tiêu và lộ trình cá nhân hóa không?</div>
+                <div class="wrapButton">
+                </div> 
             </div>
-            
         `,
         options: [
-            { 
-                type: 'hidden',
-                message: '',
-                callback: closeModal,
+            {
+                type: "tertiary",
+                message: "Bỏ qua",
+                callback: function () {
+                    closeModal();
+                    window.location.href = "/pages/course/index.html";
+                },
             },
-            { 
-                type: 'hidden',
-                message: '',
-                callback: closeModal,
+            {
+                type: "primary",
+                message: "Mình cần tư vấn",
+                callback: function () {
+                    closeModal();
+                    window.location.href = "/pages/quiz/index.html";
+                },
             },
-        ]
-    })
+        ],
+    });
 }

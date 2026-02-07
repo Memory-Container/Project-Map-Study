@@ -1,72 +1,46 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../../shared/modal.css"/>
-    <link rel="stylesheet" href="../../shared/utils.css"/>
-    <link rel="stylesheet" href="homepage.css"/>
-</head>
-<body>
-    <header></header>
-    <main class="flex-c">
-        <section class="hero-section">
-            <div class="background"></div>
-            <div class="container">
-                <div class="hero-container">
-                    <div class="hero-title">
-                        Chào Mừng Bạn Đến Với<br>BCN Studying
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../../shared/modal.css" />
+        <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="homepage.css" />
+    </head>
+    <body>
+        <header></header>
+        <main class="flex-c">
+            <section class="heroSection">
+                <div class="background"></div>
+                <div class="container">
+                    <div class="heroContainer">
+                        <div class="heroTitle">
+                            Chinh phục lập trình từ con số 0 <br />
+                            Cùng BCN Studying
+                        </div>
+                        <div class="heroContent">
+                            <div class="subHeading">
+                                Bạn đang tìm kiếm lộ trình học tối ưu hay muốn
+                                bắt đầu thực chiến ngay? Hãy để chúng mình đồng
+                                hành cùng bạn trên con đường trở thành lập trình
+                                viên chuyên nghiệp.
+                            </div>
+                            <button class="primary" onclick="openStartModal()">
+                                <span>Bắt đầu thôi</span>
+                                <img
+                                    src="/assets/svg/arrow.svg"
+                                    class="arrow flip"
+                                />
+                            </button>
+                        </div>
                     </div>
-                    <p>
-                        Khám phá những lộ trình học tập chất lượng được cung cấp bới Ban Công Nghệ<br>
-                        Còn chần chờ gì nữa mà không trờ thành lập trình viên chuyên nghiệp ngay hôm nay!
-                    </p>
-                    <button class="primary" onclick="openStartModal()">
-                        <span>Bắt đầu thôi</span>
-                        <img src="/assets/svg/arrow.svg" class="arrow flip"/>
-                    </button>
                 </div>
-            </div>
-        </section>
-        <section>
-            <div class="section-title">
-                Các lộ trình hiện có
-            </div>
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-icon">
-
-                    </div>
-                    <div class="card-name">
-                        Lập trình Web
-                    </div>
-                    <button class="primary" onclick="window.location.assign('../../pages/roadmap/')">Xem lộ trình</button>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-
-                    </div>
-                    <div class="card-name">
-                        Lập trình App
-                    </div>
-                    <button class="primary" onclick="window.location.assign('../../pages/roadmap/')">Xem lộ trình</button>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-
-                    </div>
-                    <div class="card-name">
-                        UI/UX
-                    </div>
-                    <button class="primary" onclick="window.location.assign('../../pages/roadmap/')">Xem lộ trình</button>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer></footer>
-</body>
-<script src="../../shared/layout.js"></script>
-<script src="../../shared/modal.js"></script>
-<script src="homepage.js"></script>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+    <script src="../../shared/layout.js"></script>
+    <script src="../../shared/modal.js"></script>
+    <script src="homepage.js"></script>
 </html>
