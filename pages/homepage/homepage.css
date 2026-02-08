@@ -39,8 +39,30 @@
 p {
     font-size: 20px;
 }
-.hero-container .hero-title {
-    font-size: 3.5rem;
+.section1 .container .card .picture {
+    width: 227px;
+    height: 150px;
+    border-radius: 4px;
+}
+.section1 .container .card .wrapContent {
+    width: 65%;
+}
+.section1 .container .card .primary .arrow {
+    transform: rotate(180deg);
+}
+.section2 {
+    padding: 0;
+    margin-bottom: 60px;
+}
+.section2 .container .sectionPicture {
+    width: 502px;
+    height: 334px;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+.section2 .container .sectionBox .title {
+    font-size: clamp(20px, 5vw, 32px);
     font-weight: 700;
     color: var(--accent);
     line-height: 1.2;
