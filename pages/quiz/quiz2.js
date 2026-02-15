@@ -32,9 +32,9 @@ function updateProgress() {
 }
 let question = document.querySelector(".question");
 let answerCard = document.getElementsByClassName("card");
+let nextBtn = document.getElementById("next");
 let current = 0;
 function setActive(index, mode = 0) {
-    let nextBtn = document.getElementById("next");
     if (mode > 0) {
         if (answer[current] !== undefined) {
             nextBtn.classList.remove("disabled");
@@ -55,9 +55,9 @@ function setActive(index, mode = 0) {
     }
 }
 function updateQuestion(mode) {
-    if (mode == "next") {
+    if (mode == "next" && !String(nextBtn.classList).includes("disabled")) {
         if (current == questionList.length - 1) {
-            window.location.assign("/pages/roadmap/index.html");
+            openFinishModal()
             return;
         }
         current++;
@@ -86,3 +86,29 @@ document.getElementById("next").addEventListener("click", () => updateQuestion("
 document.getElementById("prev").addEventListener("click", () => updateQuestion("previous"));
 updateQuestion();
 //Progress Bar
+function openFinishModal() {
+    openModal({
+        title: "Hoàn thành trắc nghiệm",
+        message: `
+            <h3>Lập trình Web</h3>
+            Dựa theo câu trả lời trắc nghiệm của bạn thì <b>Lập Trình Web</b> sẽ là một lựa chọn không tồi. Bạn có thể chọn lại nếu muốn hoặc cũng có thể đi xem lộ trình
+        `,
+        options: [
+            {
+                type: 'secondary important',
+                message: 'Làm lại',
+                callback: () => {closeModal(); window.location.reload()},
+            },
+            {
+                type: 'primary',
+                message: 'Xem lộ trình',
+                callback: () => {window.location.assign('../../pages/roadmap/')},
+            }
+        ]
+    })
+}
+Mousetrap.bind("1",() => {setActive(1)})
+Mousetrap.bind("2",() => {setActive(2)})
+Mousetrap.bind("3",() => {setActive(3)})
+Mousetrap.bind("right",() => {updateQuestion("next")})
+Mousetrap.bind("left",() => {updateQuestion("previous")})

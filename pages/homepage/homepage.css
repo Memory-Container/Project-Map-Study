@@ -10,7 +10,7 @@
     background-size: cover;
     background-position: -20%;
     background-image: url("/assets/png/pictureHerosection.png");
-    filter: brightness(0.7) contrast(1.3) blur(3px);
+    filter: brightness(0.6) contrast(1.2) blur(5px);
     pointer-events: none;
     z-index: -1;
 }
@@ -36,51 +36,22 @@
     font-weight: 600;
     padding: 12px 16px;
 }
-.subHeading span {
-    width: 70%;
-}
-.section1 .container .card .picture {
-    width: 227px;
-    height: 150px;
-    border-radius: 4px;
-}
-.section1 .container .card .wrapContent {
-    width: 65%;
-}
-.section1 .container .card .primary .arrow {
-    transform: rotate(180deg);
-}
-.section2 {
-    padding: 0;
-    margin-bottom: 60px;
-}
-.section2 .container .sectionPicture {
-    width: 502px;
-    height: 334px;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-}
-.section2 .container .sectionBox .title {
-    font-size: clamp(20px, 5vw, 32px);
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1.2;
-    margin: 0;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    text-shadow: 0 0 15px var(--accent-glow);
-}
+
 .heroContent {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
 }
+.heroContainer .heroTitle {
+    font-size: 46px;
+    font-weight: 600;
+    color: var(--accent);
+    filter: brightness(1.1);
+}
 .heroContent .subHeading {
-    font-size: clamp(18px, 3vw, 22px);
+    font-size: 25px;
     font-weight: 500;
-    max-width: 700px;
-    width: 95%;
-    color: rgba(255, 255, 255, 0.901);
+    max-width: 1150px;
+    color: rgba(255, 255, 255, 1);
 }
