@@ -1,44 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="../../shared/modal.css" />
-    <link rel="stylesheet" href="../../shared/utils.css" />
-    <link rel="stylesheet" href="homepage.css" />
-</head>
-<body>
-    <header></header>
-    <main class="flex-c">
-        <section class="heroSection">
-            <div class="background"></div>
-            <div class="container">
-                <div class="heroContainer">
-                    <div class="heroTitle">
-                        Chinh phục lập trình cùng BCN Studying
-                    </div>
-                    <div class="heroContent">
-                        <div class="subHeading">
-                            Đang không biết mình nên học gì? Muốn học nhưng không biết bắt đầu từ đâu?<br>
-                            Đừng lo vì đã có BCN Studying. Giúp bạn khóa mục tiêu học tập của mình và<br>trờ thành lập trình viên chuyên nghiệp
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+        <link rel="stylesheet" href="../../shared/modal.css" />
+        <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="homepage.css" />
+    </head>
+    <body>
+        <header></header>
+        <main class="flex-c">
+            <section class="heroSection">
+                <div class="container">
+                    <div class="heroContainer">
+                        <div class="heroTitle">Đừng học mọi thứ.<span>Hãy học thứ bạn cần.</span></div>
+                        <div class="heroContent">
+                            <div class="subHeading">Hệ thống học tập cưỡng bức giúp thành viên BCN không bị phân tâm. Chọn một lộ trình chuyên sâu, khóa mục tiêu và trở thành chuyên gia.</div>
+                            <a href="../../pages/roadmap/">
+                                <button class="primary" id="buttonCTA">
+                                    <span>Khóa mục tiêu học</span>
+                                    <img src="/assets/svg/arrow.svg" class="arrow flip" />
+                                </button>
+                            </a>
                         </div>
-                        <button class="primary" onclick="openStartModal()">
-                            <span>Khóa mục tiêu học!</span>
-                            <img
-                                src="/assets/svg/arrow.svg"
-                                class="arrow flip"
-                            />
-                        </button>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer></footer>
-</body>
-<script src="../../shared/layout.js"></script>
-<script src="../../shared/modal.js"></script>
-<script src="homepage.js"></script>
+            </section>
+            <section class="sectionTool">
+                <div class="container">
+                    <div class="wrapTool">
+                        <div class="blockTool">
+                            <div class="backgroundLock">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <div class="contentTool">
+                                <div class="titleTool">Lộ trình khóa cứng</div>
+                                <div class="content">Một khi đã chọn, bạn không thể đổi. Điều này giúp loại bỏ tâm lý đứng núi này trông núi nọ của sinh viên.</div>
+                            </div>
+                        </div>
+                        <div class="blockTool">
+                            <div class="backgroundLock">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <div class="contentTool">
+                                <div class="titleTool">Học theo Module</div>
+                                <div class="content">Nội dung được chia nhỏ thành từng chặng. Hoàn thành chặng trước mới được mở chặng sau.</div>
+                            </div>
+                        </div>
+                        <div class="blockTool">
+                            <div class="backgroundLock">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="contentTool">
+                                <div class="titleTool">Đánh giá thực lực</div>
+                                <div class="content">BCN quản lý có thể theo dõi tiến độ thực tế thay vì nghe báo cáo suông.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sectionInforCourse" id="#sectionInforCourse">
+                <div class="container containerInforCourse">
+                    <div class="titleSection">Thông tin 3 chuyên ngành đào tạo</div>
+                    <div class="wrapInforCourse">
+                        <div class="blockInforCourse" data-id="web" onclick="openStartModal()">
+                            <i class="fa-solid fa-globe icon"></i>
+                            <div class="contentInforCourse">
+                                <div class="titleInforCourse">Web Dev</div>
+                                <div class="content">Chinh phục Frontend và Backend chuyên nghiệp.</div>
+                            </div>
+                        </div>
+                        <div class="blockInforCourse" data-id="app" onclick="openStartModal()">
+                            <i class="fa-solid fa-mobile-screen icon"></i>
+                            <div class="contentInforCourse">
+                                <div class="titleInforCourse">App Dev</div>
+                                <div class="content">Phát triển ứng dụng Android/iOS đa nền tảng.</div>
+                            </div>
+                        </div>
+                        <div class="blockInforCourse" data-id="design" onclick="openStartModal()">
+                            <i class="fa-brands fa-figma icon"></i>
+                            <div class="contentInforCourse">
+                                <div class="titleInforCourse">Design (UI/UX)</div>
+                                <div class="content">Thiết kế UI/UX và tư duy sản phẩm hiện đại.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+    <script src="../../shared/layout.js"></script>
+    <script src="../../shared/modal.js"></script>
+    <script src="homepage.js"></script>
+    <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
 </html>

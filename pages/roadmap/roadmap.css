@@ -1,155 +1,318 @@
-.header-section, .course-section {
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.container.containerTool {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.homepagePrev {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: #243b53;
+    font-size: 17px;
+    width: fit-content;
+    transition: width 0.2s ease;
+}
+.homepagePrev:hover {
+    color: #db7705;
+    width: 90px;
+    justify-content: space-between;
+}
+.homepagePrev i {
+    font-size: 15px;
+}
+.containerListCourse {
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+.containerListCourse .boxTilte {
+    max-width: 1240px;
+    width: 95%;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    border: 2px solid rgb(186, 186, 186);
+    background-color: #edf2f5;
+    width: fit-content;
+    padding: 4px 16px;
+}
+.containerListCourse .boxContent {
+    display: flex;
+    width: 100%;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+    min-height: 300px;
+    justify-content: center;
+}
+.containerListCourse .wrapListCourse,
+.containerListCourse .wrapLearningRoadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 95%;
+    max-width: 1240px;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+.containerListCourse .wrapLearningRoadmap {
+    display: none;
+    pointer-events: none;
+}
+.containerListCourse.showWrap .wrapListCourse {
+    display: none;
+    pointer-events: none;
+}
+.containerListCourse.showWrap .wrapLearningRoadmap {
+    display: flex;
+    pointer-events: auto;
+    align-items: center;
+}
+.containerListCourse .wrapListCourse .titleQuestion {
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--color-title);
+}
+.containerListCourse .wrapListCourse .titleQuestion span {
+    color: #e87f06;
+}
+.containerListCourse .wrapListCourse .blockListCourse {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+.containerListCourse .course {
+    height: auto;
+    width: 80%;
+    padding: 24px 16px;
+    background-color: #f1f6fae3;
+    border-radius: 15px;
+    border: 3px solid rgb(166, 166, 166);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    transition: transform 0.15s ease-in-out;
+}
+.containerListCourse .course .tick {
+    position: absolute;
+    right: 24px;
+    top: 18px;
+    font-size: 17px;
+    color: white;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.2s ease;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #d87400;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 0 30px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
-.header-section .container {
+.warn i {
+    color: #ffb700;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+}
+@media (hover: hover) {
+    .containerListCourse .wrapListCourse .course:hover {
+        background-color: #fff5e9;
+        border: 3px solid #ff8800;
+        box-shadow: 0 0 10px 4px #ffb561;
+        cursor: pointer;
+        transform: scale(1);
+    }
+}
+.containerListCourse .wrapListCourse .course:active {
+    background-color: #fff5e9;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 3px 4px #ffc27d;
+    transform: scale(0.99);
+}
+.containerListCourse .wrapListCourse .course.active {
+    background-color: #fff5e9;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 3px 4px #ffc27d;
+}
+.containerListCourse .course.active .tick {
+    opacity: 1;
+}
+.containerListCourse .course .backgroundIcon {
+    width: fit-content;
+    height: auto;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #ffd5a2;
+    font-size: 22px;
+}
+.containerListCourse .course .inforCourse {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.9rem;
+    gap: 8px;
 }
-.course-section .container  {
+.containerListCourse .course .inforCourse .titleCourse {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-title);
+}
+.containerListCourse .course .inforCourse .content {
+    font-size: 18px;
+    font-weight: 500;
+}
+.containerListCourse .course .noteCourse {
+    font-size: 15px;
+    color: #d17308;
+    font-weight: 600;
+}
+
+.containerListCourse .boxButton {
+    width: 80%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0.9rem;
+    justify-content: center;
+    position: relative;
 }
-.header-section .course-description {
-    font-size: 20px;
-    text-align: justify;
-}
-.header-section .course-properties {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
-.properties {
+button.buttonToRoadmap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #1a2c3f;
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 15px;
-}
-.properties img {
-    width: 25px;
-}
-.course-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    color: white;
     border: 0;
 }
-.course-section .main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.course-section .course {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-}
-.course .course-chapter {
+.containerListCourse .boxButton .tertiary {
+    border: 2px solid #243b53;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: 500;
+    pointer-events: none;
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    position: relative;
-}
-.course-chapter.disabled {
-    filter: brightness(0.5) grayscale(1);
-}
-.hidden {
-    display: none !important;
-}
-.course-chapter .chapter-indicator {
-    position: relative;
-}
-.chapter-indicator .lock.locked {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-image: url(/assets/svg/lock.svg);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 16px;
-    background-color: var(--accent);
-    filter: grayscale(1);
-}
-.chapter-indicator .lock {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: url(/assets/svg/lock.svg);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 16px;
-    background-color: var(--accent);
-    filter: grayscale(1);
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 24px;
+    gap: 5px;
+}
+.containerListCourse .boxButton .tertiary .arrow {
+    transform: rotate(0deg);
+}
+.containerListCourse .boxButton .tertiar:hover {
+    filter: none;
+    color: #243b53;
+}
+.containerListCourse .boxButton .tertiary.target {
+    border: 2px solid #ff8c08;
+    background-color: transparent;
+    color: #ff8c08;
+    filter: none;
+    pointer-events: auto;
+}
+.blockRoadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+.blockRoadmap .lessonOfCourse {
+    height: auto;
+    width: 78%;
+    padding: 16px;
+    background-color: #f8fbff;
+    border-radius: 15px;
+    border: 2px solid rgb(166, 166, 166);
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+.blockRoadmap .lessonOfCourse .lessonNumber {
+    font-size: 18px;
+    font-weight: 500;
+}
+.blockRoadmap .lessonOfCourse .lessonName {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--color-title);
+}
+p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-title);
+}
+.warn {
+    text-align: center;
+    font-size: 16px;
+    width: 75%;
+    padding: 8px 16px;
+    background-color: #fff4e8;
+    border-radius: 12px;
+    border: 3px solid #ff8c08;
+    box-shadow: 0 0 8px 2px #ffc27d;
+}
+.warn .highlight {
+    color: #d17308;
     font-weight: 600;
 }
-.lock.active {
-    filter: grayscale(0);
-    background: var(--accent);
+@media only screen and (max-width: 980px) {
+    .containerListCourse.showWrap .wrapLearningRoadmap {
+        align-items: start;
+    }
+    .containerListCourse .course {
+        width: 100%;
+    }
+    .blockRoadmap .lessonOfCourse {
+        width: 100%;
+    }
+    .warn {
+        width: 100%;
+        font-size: 14px;
+    }
+    .containerListCourse .boxButton {
+        justify-content: space-between;
+        width: 61%;
+        gap: 30px;
+    }
+    button.buttonToRoadmap {
+        position: static;
+    }
 }
-.chapter-indicator span {
-    border: 1px solid white;
-    width: 0px;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.course-chapter:last-child .chapter-indicator span {
-    border: 0;
-}
-.chapter-info-block {
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: var(--bg-surface);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px;
-    width: 600px;
-}
-.chapter-info-block .chapter-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-.chapter-info-block .chapter-options {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-.misc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-}
-.misc .misc-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.misc-container .misc-info-block {
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: var(--bg-surface);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px;
+@media only screen and (max-width: 660px) {
+    .containerListCourse .wrapListCourse .inforCourse .content {
+        font-size: 16px;
+    }
+    .containerListCourse .wrapListCourse .noteCourse {
+        font-size: 14px;
+    }
+    .containerListCourse .wrapListCourse .blockListCourse .course.active {
+        box-shadow: none;
+    }
+    .warn {
+        font-size: 15px;
+    }
+    .containerListCourse .boxButton {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding-top: 35px;
+    }
+    button.buttonToRoadmap {
+        position: absolute;
+    }
 }
