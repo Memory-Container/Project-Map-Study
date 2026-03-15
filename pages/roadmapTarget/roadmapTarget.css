@@ -291,6 +291,9 @@ main {
 .blockContent .percentTablets {
     display: none;
 }
+a {
+    text-decoration: none;
+}
 @media only screen and (max-width: 1024px) {
     .boxIndex .wrapIndex .blockCard.blockCardTablets {
         display: flex;

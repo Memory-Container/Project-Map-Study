@@ -245,6 +245,7 @@ button {
     padding: 8px 16px;
     border-radius: 12px;
     font-size: 15px;
+    width: fit-content;
 }
 .flip {
     rotate: 180deg;
