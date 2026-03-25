@@ -123,13 +123,205 @@ a {
     flex: 1;
     padding: 20px 16px;
     border-inline: 2px solid #8fabbdcb;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
 }
 .titleLesson {
     font-size: clamp(24px, 4vw, 32px);
     font-weight: 700;
     color: var(--color-title);
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.244);
+}
+.boxDetailLesson .wrapLessonContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.boxDetailLesson .wrapLessonContent .blockTarget {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #fff9f1;
+    padding: 12px 20px;
+    border-left: 3px solid #ff6600;
+    border-radius: 3px;
+}
+.boxDetailLesson .wrapLessonContent .blockTarget .titleTarget {
+    color: #f97316;
+    font-weight: 700;
+    font-size: 17px;
+}
+.boxDetailLesson .wrapLessonContent .blockTarget .contentTarget {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #92400e;
+}
+.boxDetailLesson .wrapLessonContent .blockWhy {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.boxDetailLesson .wrapLessonContent .title {
+    padding: 0 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    color: var(--color-title);
+}
+.boxDetailLesson .wrapLessonContent .title::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-30%);
+    width: 7px;
+    height: 7px;
+    background-color: #ff8800;
+    border-radius: 50%;
+}
+.boxDetailLesson .wrapLessonContent .content {
+    font-size: 15px;
+    font-weight: 500;
+}
+.boxDetailLesson .wrapLessonContent .blockTool {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.boxDetailLesson .wrapLessonContent .blockTool .blockCard {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+}
+.boxDetailLesson .wrapLessonContent .blockTool .blockCard .card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #8fabbdcb;
+    width: calc((100% - 25px * 2) / 3);
+}
+.boxDetailLesson .wrapLessonContent .blockTool .blockCard .card .cardIcon {
+    width: 38px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddeeff;
+}
+.boxDetailLesson .wrapLessonContent .blockTool .blockCard .card .cardTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-title);
+}
+.boxDetailLesson .wrapLessonContent .blockTool .blockCard .card .cardContent {
+    font-size: 14px;
+    font-weight: 500;
+    height: 70px;
+}
+.boxDetailLesson .wrapLessonContent .blockTool .blockCard .card .cardContent span {
+    font-size: 12.5px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+.boxDetailLesson .wrapLessonContent .blockTool .blockCard .card .cardTool {
+    background-color: #fff1e1;
+    width: 60px;
+    height: auto;
+    padding: 4px 0;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cb6c00;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow {
+    display: flex;
+    gap: 10px;
+    height: 100px;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow .flowNumber {
+    width: 32px;
+    height: 100%;
+    position: relative;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow .flowNumber .number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #cb6c00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffeac9;
+    font-size: 20px;
+    font-weight: 600;
+    color: #c77b02;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow .flowNumber .line {
+    width: 2px;
+    background-color: #cb6c00;
+    height: 90%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-radius: 15px;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow .flowContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow .flowContent .contentTarget {
+    font-size: 16px;
+    font-weight: 600;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow .flowContent .contentTarget i {
+    font-size: 12px;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow .flowContent .contentNote {
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 8px;
+    color: #282e35;
+}
+.boxDetailLesson .wrapLessonContent .blockWorkflow .blockFlow .flow.flowChange {
+    height: auto;
+}
+.boxDetailLesson .wrapLessonContent .blockForget {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.boxDetailLesson .wrapLessonContent .blockForget .listForget {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 8px 0 30px;
+    font-size: 17px;
 }
 .boxTool {
     padding: 10px 0;
@@ -150,6 +342,24 @@ a {
     border: 2px solid #8fabbdcb;
     border-radius: 7px;
     padding: 12px;
+    position: relative;
+}
+.noteIcon {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 14px;
+    color: #f97316;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.noteIcon:hover {
+    background-color: #fceed7;
 }
 .wrapLessons .block {
     display: flex;
@@ -179,6 +389,9 @@ a {
     border: 2px solid #8fabbdcb;
     border-radius: 7px;
     padding: 12px;
+}
+.wrapLessonSubmit #linkSend i {
+    font-size: 12px;
 }
 .wrapLessonSubmit .blockLessonSubmit {
     display: flex;
@@ -221,6 +434,7 @@ a {
     border: 2px solid #8fabbdcb;
     border-radius: 7px;
     padding: 12px;
+    position: relative;
 }
 .wrapLessonPoint .blockLessonPoint {
     display: flex;
@@ -230,7 +444,7 @@ a {
 .wrapLessonPoint .blockLessonPoint .itemButton {
     display: flex;
     gap: 15px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .wrapLessonPoint .blockLessonPoint .itemButton .deraction {
     padding: 6px 10px;
@@ -245,7 +459,6 @@ a {
 }
 .wrapLessonPoint .blockLessonPoint .itemButton .deraction:hover {
     background-color: #243b53;
-    border: 0;
     color: white;
 }
 .wrapLessonPoint .blockLessonPoint .itemButton .deraction.choosing {
@@ -356,4 +569,29 @@ a {
     border-radius: 8px;
     border: 2px solid rgb(199, 199, 199);
     background-color: white;
+}
+.wrapLessonPoint .blockLessonPoint .itemContent .primary .icon {
+    font-size: 14px;
+}
+.wrapLessonPoint .blockLessonPoint .itemContent .primary.notTarget {
+    pointer-events: none;
+}
+.modalInstruct {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: start !important;
+    gap: 15px;
+}
+.modalInstruct .titleContent {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    color: #c77b02;
+}
+.modalInstruct .content {
+    font-size: 16px;
+}
+.modalInstruct .content span {
+    font-weight: 600;
 }
