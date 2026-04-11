@@ -1,93 +1,79 @@
-const linkLesson = document.getElementById("linkLesson");
-linkLesson.textContent = "";
-const linkSend = document.getElementById("linkSend");
-linkLesson.addEventListener("input", () => {
-    const report = document.querySelector(".report");
-    const valueLink = linkLesson.value.trim();
-    if (valueLink.includes(" ")) {
-        report.textContent = "Link không hợp lệ vì chứa khoảng trắng ở giữa. Vui lòng kiểm tra lại!";
-        return;
-    } else {
-        report.textContent = "";
-    }
-});
-linkSend.addEventListener("click", () => {
-    const report = document.querySelector(".report");
-    const valueLink = linkLesson.value.trim();
-    const checkLink = /^https?:\/\/[a-zA-Z0-9-.]+\.vercel\.app(\/.*)?$/.test(valueLink);
-    if (!checkLink) {
-        report.textContent = "Vui lòng nhập đúng định dạng link Vercel (VD: https://exemple.vercel.app/)!";
-    } else {
-        report.textContent = "Link đã được gửi thành công cho Mentor!";
-        report.style.color = "green";
-        linkLesson.value = "";
-    }
-});
+import { dataLesson } from "./Data/dataLesson.js";
 const dataButton = {
-    sum: () => {
-        const constParent = document.querySelector(".contentParent");
-        constParent.innerHTML = `
-                <div class="contentChild">
-                    <div class="nameContent">Số lần làm</div>
-                    <div class="quantity">0</div>
+    theory: () => {
+        const itemContent = document.querySelector(".itemContent");
+        itemContent.innerHTML = `
+                <div class="point" id="pointTheory">0<span>%</span></div>
+                <p id="notificationTheory">Bạn đã hoàn thành lý thuyết</p>
+                <div class="contentParent">
+                    <div class="contentChild">
+                        <div class="nameContent">Số lần làm</div>
+                        <div class="quantity">0</div>
+                        <button class="primary notTarget">Bài tiếp theo <i class="fa-solid fa-arrow-right icon"></i></button>
+                    </div>
                 </div>
         `;
-        const buttonNext = document.querySelector(".itemContent .primary");
         const commentMentor = document.querySelector(".itemContent .commentMentor");
-        if (buttonNext) {
-            buttonNext.add();
-        }
         if (commentMentor) {
             commentMentor.remove();
         }
-        const itemContent = document.querySelector(".itemContent");
-        const nextLesson = document.createElement("button");
-        nextLesson.classList.add("primary");
-        nextLesson.classList.add("notTarget");
-        nextLesson.innerHTML = `
-            Bài tiếp theo <i class="fa-solid fa-arrow-right icon"></i>
-        `;
-        itemContent.appendChild(nextLesson);
+        maxTheory();
     },
     practice: () => {
-        const constParent = document.querySelector(".contentParent");
-        constParent.innerHTML = `
-                <div class="contentChild">
-                    <div class="nameContent">Số lần sửa lại</div>
-                    <div class="quantity">0</div>
-                </div>
-        `;
-        const buttonNext = document.querySelector(".itemContent .primary");
-        if (buttonNext) {
-            buttonNext.remove();
-        }
         const itemContent = document.querySelector(".itemContent");
-        const commentMentor = document.createElement("div");
-        commentMentor.classList.add("commentMentor");
-        commentMentor.innerHTML = `
-            <div class="titleMentor">Nhận xét của Mentor:</div>
-            <div class="contentComment">Bạn vui lòng chờ mentor ghi lời nhận xét!</div>
-        `;
-        itemContent.appendChild(commentMentor);
-    },
-    theory: () => {
-        const constParent = document.querySelector(".contentParent");
-        constParent.innerHTML = `
-                <div class="contentChild">
-                    <div class="nameContent">Số lần làm</div>
-                    <div class="quantity">0</div>
+        itemContent.innerHTML = `
+                <div class="point" id="pointPratice">0<span>%</span></div>
+                    <p id="notificationPractice">Bạn đã hoàn thành bài thực hành</p>
+                    <div class="contentParent">
+                        <div class="contentChild">
+                            <div class="nameContent">Số lần sửa lại</div>
+                            <div class="quantity">0</div>
+                            <div class="commentMentor">
+                            <div class="titleMentor">Nhận xét của Mentor:</div>
+                            <div class="contentComment">Bạn vui lòng chờ mentor ghi lời nhận xét!</div>
+                        </div>
+                    </div>
                 </div>
         `;
         const buttonNext = document.querySelector(".itemContent .primary");
-        const commentMentor = document.querySelector(".itemContent .commentMentor");
         if (buttonNext) {
             buttonNext.remove();
         }
-        if (commentMentor) {
-            commentMentor.remove();
+        const notificationPractice = document.getElementById("notificationPractice");
+        if (notificationPractice) {
+            notificationPractice.style.display = "none";
         }
     },
 };
+let maxResult;
+function maxTheory() {
+    const pointTheory = document.getElementById("pointTheory");
+    if (!pointTheory) return;
+
+    const currentPercent = localStorage.getItem("percent") || 0;
+    const savedMax = localStorage.getItem("maxResult") || 0;
+
+    if (currentPercent > savedMax) {
+        maxResult = currentPercent;
+        localStorage.setItem("maxResult", String(maxResult));
+    } else {
+        maxResult = savedMax;
+    }
+
+    pointTheory.innerHTML = `${maxResult} <span>%</span>`;
+    pointTheory.style.setProperty("--progress-resultQuiz", `${maxResult}%`);
+
+    const notificationTheory = document.getElementById("notificationTheory");
+
+    const buttonNext = document.querySelector(".itemContent .primary");
+    if (maxResult >= 80) {
+        buttonNext.classList.remove("notTarget");
+        notificationTheory.style.display = "flex";
+    } else {
+        buttonNext.classList.add("notTarget");
+        notificationTheory.style.display = "none";
+    }
+}
 const deractions = document.querySelectorAll(".deraction");
 deractions.forEach((deraction) => {
     deraction.addEventListener("click", () => {
@@ -101,8 +87,7 @@ deractions.forEach((deraction) => {
         }
     });
 });
-const notification = document.querySelector("#notification");
-notification.style.display = "none";
+
 const instructHomework = document.querySelector("#instructHomework");
 instructHomework.addEventListener("click", () => {
     openModal({
@@ -126,5 +111,72 @@ instructSumPoint.addEventListener("click", () => {
                 <li class="content"><span>"Lý thuyết":</span> Đây là phần thể hiện số phần trăm mà bạn đã hoàn thành ở phần "Trắc nghiệm lý thuyết". Ngoài ra ở bên dưới có phần đếm số lần bạn làm lại bài tập trắc nghiệm này.</li>
             </ul>
         `,
+    });
+});
+
+const practiceExer = document.querySelector("#practiceExer");
+practiceExer.addEventListener("click", () => {
+    openModal({
+        title: `Nộp bài tập Code`,
+        message: `
+            <div class="wrapLessonSubmit">
+                    <div class="blockLessonSubmit">
+                        <div class="noteLessonSubmit">(<span>Yêu cầu: Dán link bài làm bằng Vercel của bạn vào đây để mentor chấm.</span>)</div>
+                        <div class="inputLessonSubmit"><input type="text" placeholder="https://exemple.vercel.app/..." id="linkLesson" /></div>
+                        <p class="report"></p>
+                         <button class="primary" id="linkSend">Gửi bài tập</button>
+                    </div>
+                </div>
+            `,
+    });
+    const linkLesson = document.getElementById("linkLesson");
+    linkLesson.textContent = "";
+    const linkSend = document.getElementById("linkSend");
+    linkLesson.addEventListener("input", () => {
+        const report = document.querySelector(".report");
+        const valueLink = linkLesson.value.trim();
+        if (valueLink.includes(" ")) {
+            report.textContent = "Link không hợp lệ vì chứa khoảng trắng ở giữa. Vui lòng kiểm tra lại!";
+            return;
+        } else {
+            report.textContent = "";
+        }
+    });
+    linkSend.addEventListener("click", () => {
+        const report = document.querySelector(".report");
+        const valueLink = linkLesson.value.trim();
+        const checkLink = /^https?:\/\/[a-zA-Z0-9-.]+\.vercel\.app(\/.*)?$/.test(valueLink);
+        if (!checkLink) {
+            report.textContent = "Vui lòng nhập đúng định dạng link Vercel (VD: https://exemple.vercel.app/)!";
+        } else if (valueLink.includes(" ")) {
+            report.textContent = "Vui lòng nhập link để cho mentor chấm bài!";
+        } else {
+            report.textContent = "Link đã được gửi thành công cho Mentor!";
+            report.style.color = "green";
+            linkLesson.value = "";
+        }
+    });
+});
+const listLessons = document.querySelectorAll(".lessons li");
+window.addEventListener("load", () => {
+    const deractions = document.querySelectorAll(".itemButton .deraction");
+    deractions.forEach((deraction) => {
+        const choosing = deraction.classList.contains("choosing");
+        if (choosing) {
+            console.log(deraction.dataset.item);
+            const buttonValue = deraction.dataset.item;
+            if (dataButton[buttonValue]) {
+                dataButton[buttonValue]();
+            }
+        }
+    });
+    listLessons.forEach((listLesson) => {
+        const checkListLesson = listLesson.classList.contains("target");
+        if (checkListLesson) {
+            const listValue = listLesson.dataset.lesson;
+            if (dataLesson[listValue]) {
+                dataLesson[listValue]();
+            }
+        }
     });
 });

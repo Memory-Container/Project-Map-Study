@@ -259,37 +259,24 @@ button {
     transform: translateY(4px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-.primary:hover {
-}
 .secondary {
-    color: white;
-    background: #ffffff;
-    border: 1px solid rgb(183, 183, 183);
-    box-shadow:
-        inset -8px -8px 16px #00000080,
-        inset 6px 6px 12px #fff3,
-        0 8px 25px #0006,
-        0 0 20px rgba(0, 208, 255, 0.096);
-    transition: 0.5s;
-    background-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #e67c04;
+    color: #e67c04;
+    width: fit-content;
 }
-.secondary:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    box-shadow:
-        inset -8px -8px 16px #00000080,
-        inset 6px 6px 12px rgba(0, 208, 255, 0.174),
-        0 8px 25px #0006,
-        0 0 20px rgba(0, 208, 255, 0.174);
+.secondary:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 .tertiary {
-    padding: 4px 8px;
-    border-radius: 5px;
     font-size: 16px;
     background-color: transparent;
     cursor: pointer;
     border: 0;
-    color: #243b53;
+    color: #e67c04;
     width: fit-content;
 }
 .small-info {

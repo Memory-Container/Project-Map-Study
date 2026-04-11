@@ -1,0 +1,361 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    position: relative;
+}
+.prev {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: #243b53;
+    font-size: 17px;
+    width: fit-content;
+    transition: width 0.2s ease;
+}
+.prev:hover {
+    color: #db7705;
+    width: 90px;
+    justify-content: space-between;
+}
+.quizContainer {
+    display: flex;
+    max-width: 580px;
+    width: 95%;
+    flex-direction: column;
+    gap: 30px;
+    height: 350px;
+    border-radius: 12px;
+    background-color: white;
+    border: 2px solid #8fabbdcb;
+    position: relative;
+}
+.quizContainer .quizTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color--title);
+    width: 90%;
+    text-align: center;
+}
+.quizContainer .quizWrapTool {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.quizContainer .quizWrapTool .allQuiz {
+    display: flex;
+    align-items: end;
+    gap: 3px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #c07a0a;
+    justify-content: center;
+}
+.quizContainer .quizWrapTool .allQuiz span {
+    font-size: 1.2rem;
+    color: #282e35;
+}
+.quizContainer .quizWrapTool .optionsQuiz {
+    display: flex;
+    gap: 15px;
+}
+.quizContainer .quizWrapTool .optionsQuiz .option {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #c07a0a;
+}
+.quizContainer .quizWrapTool .optionsQuiz .option span {
+    font-size: 1.2rem;
+    color: #282e35;
+}
+.quizContainer .quizWrapTool .optionsQuiz .option.colorOption {
+    color: #282e35;
+}
+.quizContainer.quizChangeHeight {
+    height: auto;
+}
+.quizContainer .resultQuiz {
+    --progress-resultQuiz: 20%;
+    --resultQuiz: 200px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    width: var(--resultQuiz);
+    height: var(--resultQuiz);
+    transition: All 0.25s ease-in;
+}
+.quizContainer .resultQuiz::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    width: 165px;
+    height: 165px;
+    background-color: white;
+    z-index: -1;
+}
+.quizContainer .resultQuiz::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: conic-gradient(#ffac4e var(--progress-resultQuiz), rgb(235, 235, 235) 0);
+    width: var(--resultQuiz);
+    height: var(--resultQuiz);
+    z-index: -1;
+}
+.quizContainer .percent {
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+.quizContainer .wrapResult {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.quizContainer .wrapResult h2 {
+    color: var(--color--title);
+}
+.quizContainer .wrapResult .blockResult {
+    display: flex;
+    gap: 60px;
+}
+.quizContainer .wrapResult .blockResult .content {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fa8e01;
+}
+.quizContainer .wrapResult .blockResult .content span {
+    color: #243b53;
+}
+.quizContainer .wrapButton {
+    display: flex;
+    gap: 40px;
+}
+.primary {
+    font-size: 16px;
+}
+.containerQuestion {
+    display: none;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px 20px;
+}
+.containerQuestion .boxTool {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+.containerQuestion .boxTool .wrapFeedback {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+.containerQuestion .boxTool .wrapFeedback .block {
+    padding: 4px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    gap: 4px;
+    color: var(--color--title);
+    background-color: #fde9d1;
+    border: 2px solid #ff8c00;
+}
+.containerQuestion .boxTool .wrapFeedback .block .textCorrect {
+    color: rgb(22, 201, 22);
+}
+.containerQuestion .boxTool .wrapFeedback .block .textUnCorrect {
+    color: red;
+}
+.containerQuestion .boxTool .wrapFeedback .block .iconColorGreen {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: rgb(22, 201, 22);
+    display: none;
+}
+.containerQuestion .boxTool .wrapFeedback .block #correct {
+    font-size: 15px;
+}
+.containerQuestion .boxTool .wrapFeedback .block .iconColorRed {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: red;
+    display: none;
+}
+.containerQuestion .boxTool .wrapFeedback .block #unCorrect {
+    font-size: 15px;
+}
+.containerQuestion .boxTool .timelineBar {
+    width: 100%;
+    height: 12px;
+    position: relative;
+    --after-width: 100%;
+    --after-backgroundColor: #22c55e;
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+}
+.containerQuestion .boxTool .timelineBar::after {
+    content: "";
+    position: absolute;
+    width: var(--after-width);
+    height: 100%;
+    border-radius: 12px;
+    background-color: var(--after-backgroundColor);
+    transition: background-color 0.2s linear;
+}
+.containerQuestion .boxTool .timelineBar .contentNote {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.containerQuestion .boxTool .timelineBar .contentNote #coutdownTime {
+    font-weight: 600;
+    color: #e48c00;
+    font-size: 18px;
+}
+.containerQuestion .boxQuestion {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #88a1bcb4;
+    background-color: white;
+    padding: 16px;
+    font-size: 1.3rem;
+    color: var(--color--title);
+}
+.containerQuestion .boxNoteAnswer {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(195, 195, 195);
+}
+.containerQuestion .boxNoteAnswer .contentNoteAnswer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background-color: #e1e8ed;
+    top: -17px;
+    font-size: 17px;
+}
+.containerQuestion .boxAnswer {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+}
+.containerQuestion .boxAnswer .option {
+    display: flex;
+    gap: 8px;
+    width: calc((100% - 20px) / 2);
+    padding: 16px;
+    border-radius: 10px;
+    border: 2px solid #515f6d;
+    background-color: white;
+    font-size: 1.15rem;
+    align-items: end;
+    cursor: pointer;
+    font-weight: 600;
+    pointer-events: all;
+}
+.containerQuestion .boxAnswer .option:hover {
+    background-color: #feeed2;
+    border: 2px solid #c07a0a;
+}
+.containerQuestion .boxAnswer .option.optionTarget {
+    background-color: #ffeac7;
+    border: 2px solid #c07a0a;
+    position: relative;
+}
+.containerQuestion .boxAnswer .option.optionTarget ::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #e28000;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.containerQuestion .boxAnswer .option.optionCorrect {
+    background-color: rgba(181, 255, 181, 0.688) !important;
+    border: 2px solid rgb(0, 182, 0) !important;
+}
+.containerQuestion .boxAnswer .option.optionUnCorrect {
+    background-color: rgba(255, 181, 181, 0.688) !important;
+    border: 2px solid rgb(182, 0, 0) !important;
+}
+.containerQuestion .boxAnswer .option .answer {
+    color: var(--color--title);
+    font-size: 1.2rem;
+}
+.containerQuestion .boxExplain {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    background-color: #fffbf6ce;
+    color: #ab3b0f;
+    border-left: 3.5px solid #f5a623;
+    border-radius: 12px;
+    font-size: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+}
+.containerQuestion .boxExplain #explainAnswer {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #282e35;
+    line-height: 30px;
+}
+.containerQuestion .boxButton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+.containerQuestion .boxButton .button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid #5b6b7a;
+    background-color: rgb(246, 246, 246);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.containerQuestion .boxButton .button:hover {
+    background-color: rgb(10, 116, 255);
+    color: white;
+    border: 2px solid rgb(190, 203, 255);
+}
+.containerQuestion .boxButton .button .iconButton {
+    font-size: 0.85rem;
+}
+#checkAnswer {
+    pointer-events: none;
+    opacity: 0.5;
+}
