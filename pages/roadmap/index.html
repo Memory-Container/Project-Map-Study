@@ -4,119 +4,77 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-        <link rel="stylesheet" href="../../shared/utils.css"/>
-        <link rel="stylesheet" href="../../shared/modal.css"/>
-        <link rel="stylesheet" href="roadmap.css"/>
+        <link rel="stylesheet" href="roadmap.css" />
+        <link rel="stylesheet" href="../../shared/utils.css" />
     </head>
     <body>
         <header></header>
         <main>
-            <section class="header-section">
-                <div class="container">
-                    <h1>HTML - CSS - JS Cơ bản</h1>
-                    <div class="course-description">
-                        Trở thành chuyên gia phát triển giao diện web hiện đại
-                        với HTML, CSS, JavaScript và React. Học cách xây dựng
-                        ứng dụng web responsive, tối ưu hiệu suất và trải nghiệm
-                        người dùng.
-                    </div>
-                    <div class="course-properties">
-                        <div class="properties">
-                            <img src="/assets/svg/course.svg" />
-                            <span> 6 Bài </span>
-                        </div>
-                        <div class="properties">
-                            <img src="/assets/svg/route.svg" />
-                            <span> Cơ bản → Nâng cao </span>
-                        </div>
-                    </div>
-                    <button class="primary" onclick="startCourseConfirmation()" id="start-course">
-                        Học lộ trình này
-                    </button>
+            <div class="containerListCourse">
+                <div class="container containerTool">
+                    <a href="../../pages/homepage/index.html" class="homepagePrev"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+                    <div class="boxTilte">Bước: <span id="number">1</span>/2 <span id="choose">Chọn lộ trình</span></div>
                 </div>
-            </section>
-            <section class="course-section">
-                <div class="container">
-                    <div class="main">
-                        <h1>Lộ trình học tập</h1>
-                        <div class="course">
-                            <div class="course-chapter disabled">
-                                <div class="chapter-indicator">
-                                    <div class="lock"></div>
-                                    <span> </span>
+                <div class="boxContent">
+                    <div class="wrapListCourse">
+                        <div class="titleQuestion">Bạn muốn <span>chuyên sâu</span> lĩnh vực nào?</div>
+                        <div class="blockListCourse">
+                            <div class="course" data-id="basic">
+                                <div class="tick">
+                                    <i class="fa-solid fa-check"></i>
                                 </div>
-                                <div class="chapter-info-block">
-                                    <div class="chapter-title">
-                                        <h3>
-                                            Github, Git và Vercel
-                                        </h3>
-                                        <button class="tertiary hidden skip">
-                                            Bỏ qua
-                                        </button>
-                                    </div>
-                                    <div>
-                                        Học cách sử dụng Github, Git và Vercel
-                                        trong Lập Trình Website
-                                    </div>
-                                    <div class="properties">
-                                        <img src="/assets/svg/route.svg" />
-                                        <span> Cơ bản </span>
-                                    </div>
-                                    <div class="chapter-options hidden" id="start-chapter" onclick="startChapterConfirmation()">
-                                        <button class="primary">Bắt đầu hoc</button>
-                                    </div>
-                                    <div class="chapter-status hidden">
-                                        Trạng thái: <span class="status ongoing">Đang học</span>
-                                    </div>
+                                <div class="backgroundIcon"><i class="fa-solid fa-code icon"></i></div>
+                                <div class="inforCourse">
+                                    <div class="titleCourse">Cơ Bản</div>
+                                    <div class="content">Nền tảng lập trình, tư duy thuật toán và các kỹ năng thiết yếu cho mọi ngành kỹ thuật</div>
                                 </div>
-                            </div> 
-                            <div class="course-chapter disabled">
-                                <div class="chapter-indicator">
-                                    <div class="lock"></div>
-                                    <span> </span>
+                                <div class="noteCourse">Phù hợp cho người đang tìm hiểu về ngành IT</div>
+                            </div>
+                            <div class="course" data-id="web">
+                                <div class="tick">
+                                    <i class="fa-solid fa-check"></i>
                                 </div>
-                                <div class="chapter-info-block">
-                                    <div class="chapter-title">
-                                        <h3>
-                                            Github, Git và Vercel
-                                        </h3>
-                                        <button class="tertiary hidden">
-                                            Bỏ qua
-                                        </button>
-                                    </div>
-                                    <div>
-                                        Học cách sử dụng Github, Git và Vercel
-                                        trong Lập Trình Website
-                                    </div>
-                                    <div class="properties">
-                                        <img src="/assets/svg/route.svg" />
-                                        <span> Cơ bản </span>
-                                    </div>
-                                    <div class="chapter-options hidden" onclick="startChapterConfirmation()">
-                                        <button class="primary">Bắt đầu hoc</button>
-                                    </div>
+                                <div class="backgroundIcon"><i class="fa-solid fa-globe icon"></i></div>
+                                <div class="inforCourse">
+                                    <div class="titleCourse">Web Dev</div>
+                                    <div class="content">Xây dựng nền tảng lập trình và tư duy thuật toán vững chắc để phát triển các ứng dụng web hiện đại</div>
                                 </div>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="misc">
-                        <div class="misc-container">
-                            <h1>Kỹ năng đạt được</h1>
-                            <div class="misc-info-block">
-                                <div>- Biết cách sử dụng HTML, CSS, JS</div>
-                                <div>
-                                    - Hiểu biết về thiết kế trang web đáp ứng
+                                <div class="noteCourse">Phù hợp cho ai đang muốn đi theo hướng phát triển web</div>
+                            </div>
+                            <div class="course" data-id="app">
+                                <div class="tick">
+                                    <i class="fa-solid fa-check"></i>
                                 </div>
+                                <div class="backgroundIcon"><i class="fa-solid fa-mobile-screen icon"></i></div>
+                                <div class="inforCourse">
+                                    <div class="titleCourse">App Dev</div>
+                                    <div class="content">Trang bị nền tảng lập trình và tư duy hệ thống để phát triển các ứng dụng di động hiệu quả</div>
+                                </div>
+                                <div class="noteCourse">Phù hợp cho ai đang muốn đi theo hướng phát triển ứng dụng di động</div>
+                            </div>
+                            <div class="course" data-id="design">
+                                <div class="tick">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div class="backgroundIcon"><i class="fa-brands fa-figma icon"></i></div>
+                                <div class="inforCourse">
+                                    <div class="titleCourse">Desgin (UI/UX)</div>
+                                    <div class="content">Phát triển tư duy thiết kế và kỹ năng trải nghiệm người dùng để tạo nên các sản phẩm số trực quan và thân thiện</div>
+                                </div>
+                                <div class="noteCourse">Phù hợp cho ai đang muốn đi theo hướng thiết kế giao diện và trải nghiệm người dùng</div>
+                            </div>
+                            <div class="container boxButton">
+                                <button class="tertiary">Tiếp theo <i class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
+                    <div class="wrapLearningRoadmap"></div>
                 </div>
-            </section>
+            </div>
         </main>
         <footer></footer>
     </body>
+    <script type="module" src="./roadmap.js"></script>
     <script src="../../shared/layout.js"></script>
-    <script src="../../shared/modal.js"></script>
-    <script src="roadmap.js"></script>
+    <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
 </html>

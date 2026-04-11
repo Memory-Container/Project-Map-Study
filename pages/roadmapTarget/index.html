@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="roadmapTarget.css" />
+        <link rel="stylesheet" href="../../shared/utils.css" />
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <div class="container">
+                <div class="boxRoadmap">
+                    <div class="title">Lộ trình học tập</div>
+                    <div class="wrapRoadmap">
+                        <div class="blockLesson">
+                            <div class="lockLesson active">
+                                <div class="backgroundLock"><i class="fa-solid fa-lock-open"></i></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="contentLesson target">
+                                <div class="titleLesson">Git, Github và Vercel</div>
+                                <div class="letterLesson">Học cách sử dụng Git, Github và Vercel trong lập trình Website.</div>
+                                <div class="blockTool">
+                                    <div class="requestLesson"><i class="fa-solid fa-signal"></i>: <span>Cơ bản</span></div>
+                                    <div class="requestLesson"><i class="fa-regular fa-clock"></i>: <span>3 ngày</span></div>
+                                </div>
+                                <a href="../lesson/index.html"><button class="primary" id="toLessonPage">Vào học</button></a>
+                                <div class="blockLessonTotal">
+                                    <div class="lessonTotal">
+                                        <div class="letter">Tiến độ chương</div>
+                                        <div class="numberOfLessson"><span id="lessonNow">0</span> / 3 bài đã hoàn thành</div>
+                                    </div>
+                                    <div class="lessonLine"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blockLesson">
+                            <div class="lockLesson">
+                                <div class="backgroundLock"><i class="fa-solid fa-lock"></i></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="contentLesson">
+                                <div class="titleLesson">Html, Css và Responsive</div>
+                                <div class="letterLesson">Học cách sử dụng Html, Css và Responsive để tạo ra giao diện trang web tĩnh.</div>
+                                <div class="blockTool">
+                                    <div class="requestLesson"><i class="fa-solid fa-signal"></i>: <span>Cơ bản</span></div>
+                                    <div class="requestLesson"><i class="fa-regular fa-clock"></i>: <span> 2 tuần</span></div>
+                                </div>
+                                <button class="primary">Vào học</button>
+                                <div class="blockLessonTotal">
+                                    <div class="lessonTotal">
+                                        <div class="letter">Tiến độ chương</div>
+                                        <div class="numberOfLessson"><span id="lessonNow">0</span> / 3 bài đã hoàn thành</div>
+                                    </div>
+                                    <div class="lessonLine"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blockLesson">
+                            <div class="lockLesson">
+                                <div class="backgroundLock"><i class="fa-solid fa-lock"></i></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="contentLesson">
+                                <div class="titleLesson">Html, Css và Responsive</div>
+                                <div class="letterLesson">Học cách sử dụng Html, Css và Responsive để tạo ra giao diện trang web tĩnh.</div>
+                                <div class="blockTool">
+                                    <div class="requestLesson"><i class="fa-solid fa-signal"></i>: <span>Cơ bản</span></div>
+                                    <div class="requestLesson"><i class="fa-regular fa-clock"></i>: <span> 2 tuần</span></div>
+                                </div>
+                                <button class="primary">Vào học</button>
+                                <div class="blockLessonTotal">
+                                    <div class="lessonTotal">
+                                        <div class="letter">Tiến độ chương</div>
+                                        <div class="numberOfLessson"><span id="lessonNow">0</span> / 3 bài đã hoàn thành</div>
+                                    </div>
+                                    <div class="lessonLine"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxIndex">
+                    <div class="title">Tiến độ học tập</div>
+                    <div class="wrapIndex">
+                        <div class="blockCard blockCardTablets">
+                            <div class="cardIndex">
+                                <div class="titleIndex">Chuỗi <i class="fa-solid fa-fire"></i></div>
+                                <div class="blockContent">
+                                    <div class="percent" id="percentChange">0<span>Ngày</span></div>
+                                    <ul class="week">
+                                        <li class="day">T2</li>
+                                        <li class="day">T3</li>
+                                        <li class="day">T4</li>
+                                        <li class="day">T5</li>
+                                        <li class="day">T6</li>
+                                        <li class="day">T7</li>
+                                        <li class="day">CN</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="cardIndex">
+                                <div class="titleIndex">Bài đang bị chặn</div>
+                                <div class="blockContent">
+                                    <div class="percent">0<span>%</span></div>
+                                    <div class="toolPercent">
+                                        <div class="letterPercent">Bạn còn thiếu <span id="percent">0%</span> <span class="unLetterMobile">để hoàn thành</span></div>
+                                        <div class="linePercent"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardIndexFull">
+                            <div class="titleIndex">Bài đang bị chặn</div>
+                            <div class="blockContentFull">
+                                <div class="percent">0<span>%</span></div>
+                                <div class="toolPercent">
+                                    <div class="letterPercent">Bạn còn thiếu <span id="percent">0%</span> để hoàn thành</div>
+                                    <div class="linePercent"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blockCard">
+                            <div class="cardIndex">
+                                <div class="titleIndex titleIndexColumn">Điểm cao nhất <span>(bài gần nhất)</span></div>
+                                <div class="blockContent">
+                                    <div class="percent percentTablets">0<span>Điểm</span></div>
+                                    <div class="mainLetter">0</div>
+                                    <div class="extraLetter">Điểm</div>
+                                </div>
+                            </div>
+                            <div class="cardIndex">
+                                <div class="titleIndex titleIndexColumn">Số lần thử <span>(bài gần nhất)</span></div>
+                                <div class="blockContent">
+                                    <div class="percent percentTablets">0<span>Lần</span></div>
+                                    <div class="mainLetter">0</div>
+                                    <div class="extraLetter">Lần</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardIndexFull">
+                            <div class="titleIndex">Chuỗi <i class="fa-solid fa-fire"></i></div>
+                            <div class="blockContentFull">
+                                <div class="percent" id="percentChange">0<span>Ngày</span></div>
+                                <ul class="week">
+                                    <li class="day">T2</li>
+                                    <li class="day">T3</li>
+                                    <li class="day">T4</li>
+                                    <li class="day">T5</li>
+                                    <li class="day">T6</li>
+                                    <li class="day">T7</li>
+                                    <li class="day">CN</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+    <script src="../../shared/layout.js"></script>
+    <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
+</html>
