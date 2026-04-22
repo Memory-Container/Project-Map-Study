@@ -1,4 +1,5 @@
 import { dataLesson } from "./Data/dataLesson.js";
+import { lessonNames } from "./Data/listLessonName.js";
 const dataButton = {
     theory: () => {
         const itemContent = document.querySelector(".itemContent");
@@ -18,6 +19,7 @@ const dataButton = {
             commentMentor.remove();
         }
         maxTheory();
+        nextLesson();
     },
     practice: () => {
         const itemContent = document.querySelector(".itemContent");
@@ -45,7 +47,7 @@ const dataButton = {
         }
     },
 };
-let maxResult;
+let maxResult = localStorage.getItem("percent") || 0;
 function maxTheory() {
     const pointTheory = document.getElementById("pointTheory");
     if (!pointTheory) return;
@@ -157,7 +159,102 @@ practiceExer.addEventListener("click", () => {
         }
     });
 });
-const listLessons = document.querySelectorAll(".lessons li");
+
+const listLessons = document.querySelector(".lessons");
+let listname = 0;
+let lessonResults = {};
+let currentLesson = 0;
+
+const renderLesson = () => {
+    for (listname; listname <= lessonNames.length - 1; listname++) {
+        const lessonName = document.createElement("li");
+        const collectName = lessonNames[listname].name;
+        const formattedName = collectName.trim().replace(/[\s,]+/g, "_");
+        lessonName.dataset.lesson = formattedName;
+
+        const numberName = document.createElement("span");
+        numberName.classList.add("numberLesson");
+        numberName.textContent = `${listname + 1}`;
+
+        const contentLesson = document.createElement("span");
+        contentLesson.classList.add("contentLesson");
+        contentLesson.textContent = `${collectName}`;
+
+        lessonName.appendChild(numberName);
+        lessonName.appendChild(contentLesson);
+        listLessons.appendChild(lessonName);
+    }
+};
+
+const nextLesson = () => {
+    const buttonEventListion = document.querySelector(".contentChild .primary");
+    buttonEventListion.addEventListener("click", () => {
+        lessonResults[currentLesson] = maxResult;
+
+        const lessons = document.querySelectorAll(".lessons li");
+        if (currentLesson < lessons.length - 1) {
+            lessons[currentLesson].classList.remove("target");
+            currentLesson++;
+
+            localStorage.setItem("currentLesson", String(currentLesson));
+            const currentLecture = localStorage.getItem("currentLesson") || 0;
+            lessons[currentLecture].classList.add("lecture", "target");
+
+            maxResult = lessonResults[currentLesson] || 0;
+            localStorage.setItem("percent", String(maxResult));
+            localStorage.setItem("maxResult", String(maxResult));
+
+            const deractionChoosing = document.querySelector(".itemButton .deraction.choosing");
+            if (deractionChoosing && deractionChoosing.dataset.item === "theory") {
+                maxTheory();
+            }
+        }
+
+        showLesson();
+    });
+};
+
+const currentTarget = () => {
+    const listLessons = document.querySelector(".lessons");
+    listLessons.addEventListener("click", (e) => {
+        const clickedLesson = e.target.closest("li");
+        if (!clickedLesson) return;
+        if (clickedLesson.classList.contains("lecture")) {
+            const lessons = document.querySelectorAll(".lessons li");
+            const newIndex = Array.from(lessons).indexOf(clickedLesson);
+
+            if (newIndex === currentLesson) return;
+
+            lessons.forEach((l) => l.classList.remove("target"));
+
+            currentLesson = newIndex;
+            clickedLesson.classList.add("target");
+
+            maxResult = lessonResults[currentLesson] || 0;
+            localStorage.setItem("percent", String(maxResult));
+            localStorage.setItem("maxResult", String(maxResult));
+
+            const deractionChoosing = document.querySelector(".itemButton .deraction.choosing");
+            if (deractionChoosing && deractionChoosing.dataset.item === "theory") {
+                maxTheory();
+            }
+        }
+        showLesson();
+    });
+};
+
+const showLesson = () => {
+    const screenLessons = document.querySelectorAll(".lessons .lecture");
+    screenLessons.forEach((screenLesson) => {
+        const checkedTarget = screenLesson.classList.contains("target");
+        if (checkedTarget) {
+            const screenTarget = screenLesson.dataset.lesson;
+            if (dataLesson[screenTarget]) {
+                dataLesson[screenTarget]();
+            }
+        }
+    });
+};
 window.addEventListener("load", () => {
     const deractions = document.querySelectorAll(".itemButton .deraction");
     deractions.forEach((deraction) => {
@@ -170,13 +267,11 @@ window.addEventListener("load", () => {
             }
         }
     });
-    listLessons.forEach((listLesson) => {
-        const checkListLesson = listLesson.classList.contains("target");
-        if (checkListLesson) {
-            const listValue = listLesson.dataset.lesson;
-            if (dataLesson[listValue]) {
-                dataLesson[listValue]();
-            }
-        }
-    });
+    renderLesson();
+    const lessons = document.querySelectorAll(".lessons li");
+    if (lessons[currentLesson]) {
+        lessons[currentLesson].classList.add("lecture", "target");
+    }
+    currentTarget();
+    showLesson();
 });

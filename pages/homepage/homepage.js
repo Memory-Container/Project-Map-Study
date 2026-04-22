@@ -250,3 +250,37 @@ blockInforCourses.forEach((blockInforCourse) => {
         });
     });
 });
+const buttonCTA = document.querySelector("#buttonCTA");
+const isUser = localStorage.getItem("user");
+
+const textCTA = document.querySelector(".textCTA");
+
+const selectedCourse = localStorage.getItem("selectedCourse");
+window.addEventListener("load", () => {
+    if (selectedCourse === "true") {
+        textCTA.textContent = "Tiếp tục học";
+        buttonCTA.addEventListener("click", () => {
+            window.location.href = "../../pages/roadmapTarget/index.html";
+        });
+    }
+});
+
+buttonCTA.addEventListener("click", () => {
+    if (isUser === "true") {
+        window.location.href = "../../pages/roadmap/index.html";
+    } else {
+        openModal({
+            title: "Vui lòng đăng nhập để tiếp tục",
+            message: "Bạn cần đăng nhập để truy cập lộ trình học. Vui lòng nhấn nút Đăng nhập để tiếp tục.",
+            options: [
+                {
+                    type: "primary",
+                    message: "Đăng nhập",
+                    callback: () => {
+                        window.location.href = "../../pages/signin/index.html";
+                    },
+                },
+            ],
+        });
+    }
+});

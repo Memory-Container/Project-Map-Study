@@ -1,6 +1,6 @@
+const boxDetailLesson = document.querySelector(".boxDetailLesson");
 export const dataLesson = {
-    Git_Github_and_Vercel: () => {
-        const boxDetailLesson = document.querySelector(".boxDetailLesson");
+    Tìm_hiểu_Git_Github_và_Vercel: () => {
         boxDetailLesson.innerHTML = `
                 <div class="titleLesson">Git, Github và Vercel là gì?</div>
                 <div class="wrapLessonContent">
@@ -94,5 +94,8 @@ export const dataLesson = {
                     <div class="blockDownload"></div>
                 </div>
         `;
+    },
+    Sử_dụng_Git_Github_và_vercel: () => {
+        boxDetailLesson.innerHTML = ``;
     },
 };

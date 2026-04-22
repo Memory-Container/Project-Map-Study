@@ -29,6 +29,7 @@
     background-color: #ffffff;
     border: 3px solid rgb(92, 92, 92);
     border-radius: 10px;
+    z-index: 9999;
 }
 .modal-container .modal-form {
     display: flex;
@@ -47,7 +48,7 @@
     width: 98%;
 }
 .modal-container .modal-choices {
-    display: none;
+    display: flex;
     flex-direction: row;
     gap: 20px;
     width: 100%;

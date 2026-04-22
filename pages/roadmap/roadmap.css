@@ -285,12 +285,7 @@ p {
         font-size: 14px;
     }
     .containerListCourse .boxButton {
-        justify-content: space-between;
-        width: 61%;
-        gap: 30px;
-    }
-    button.buttonToRoadmap {
-        position: static;
+        width: 100%;
     }
 }
 @media only screen and (max-width: 660px) {
@@ -310,7 +305,7 @@ p {
         flex-direction: column;
         width: 100%;
         align-items: center;
-        padding-top: 35px;
+        padding-top: 50px;
     }
     button.buttonToRoadmap {
         position: absolute;

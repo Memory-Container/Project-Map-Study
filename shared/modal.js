@@ -47,16 +47,16 @@ function openModal(content) {
     if (options[0] === "hidden") {
         choices.classList.add("hidden");
     } else {
-        for (item of options) {
+        for (let item of options) {
             console.log(item);
             let button = document.createElement("button");
             button.className = item.type ?? "primary";
             if (item.type == "primary") {
-                button.setAttribute("type", "submit");
-                button.setAttribute("id", "submit");
+                button.setAttribute("type", "button");
+                // button.setAttribute("id", "submit");
             }
             button.innerHTML = item.message ?? "Sample Text";
-            button.addEventListener("click", item.callback ?? closeModal());
+            button.addEventListener("click", item.callback ?? closeModal);
             choices.appendChild(button);
         }
     }
@@ -89,7 +89,9 @@ function createModal() {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
         });
-    } else [(document.querySelector(".backdrop").style.display = "flex")];
+    } else {
+        document.querySelector(".backdrop").style.display = "flex";
+    }
 }
 function flushModal() {
     let header = document.querySelector(".modal-header");

@@ -62,8 +62,10 @@ a {
     align-items: center;
     padding: 12px;
     pointer-events: none;
+    background-color: #eaedf0;
+    border-radius: 4px;
 }
-.listLessons .lessons li span {
+.listLessons .lessons li .numberLesson {
     width: 21px;
     height: 21px;
     display: flex;
@@ -74,8 +76,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(224, 224, 224);
-    color: #1e2a4a;
+    background-color: rgb(216, 216, 216);
+    color: #141c31;
+}
+.listLessons .lessons li .contentLesson {
+    color: #141c31;
 }
 .listLessons .lessons li.finish {
     pointer-events: all;
@@ -94,16 +99,23 @@ a {
     pointer-events: all;
 }
 .listLessons .lessons li.target {
-    background-color: #f2e8d9;
-    color: #c07a0a;
+    background-color: #f2e8d9 !important;
     border-radius: 8px;
     border-left: 3.5px solid #f5a623;
     cursor: pointer;
     pointer-events: all;
 }
-.listLessons .lessons li.target span {
+.listLessons .lessons li.lecture {
+    pointer-events: all;
+    cursor: pointer;
+    background-color: transparent;
+}
+.listLessons .lessons li.target .numberLesson {
     background-color: #ffa81b;
     color: white;
+}
+.listLessons .lessons li.target .contentLesson {
+    color: #c07a0a;
 }
 a {
     text-decoration: none;
@@ -424,7 +436,7 @@ a {
     border: 0;
     outline: none;
     font-size: 1rem;
-    width: 90%;
+    width: 100%;
 }
 .wrapLessonSubmit .blockLessonSubmit .report {
     padding: 0;
@@ -581,6 +593,7 @@ a {
 }
 .wrapLessonPoint .blockLessonPoint .itemContent .primary.notTarget {
     pointer-events: none;
+    opacity: 0.4;
 }
 .modalInstruct {
     list-style: none;
