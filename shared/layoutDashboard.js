@@ -18,7 +18,7 @@ header.innerHTML = `
                             </ul>
                         </li>
                         <li>
-                            <div class="nameTarget nameTargetChange"><i class="fa-solid fa-user-group"></i> Học viên</div>
+                            <a href="../../pages/studentListOfAdmin/index.html" class="nameTarget nameTargetChange" id="studentListOfAdmin"><i class="fa-solid fa-user-group"></i> Học viên</a>
                         </li>
                     </ul>
                 </div>
@@ -66,3 +66,35 @@ logout.addEventListener("click", function () {
     localStorage.removeItem("currentUser");
     window.location.href = "../../pages/homepage/index.html";
 });
+
+const nameTarget = document.querySelectorAll(".boxMenu .nameTarget");
+nameTarget.forEach((item) => {
+    item.addEventListener("click", () => {
+        nameTarget.forEach((i) => {
+            i.classList.remove("target");
+        });
+        item.classList.add("target");
+    });
+});
+
+const pathSegments = window.location.pathname.split("/").filter(Boolean);
+const currentPages = pathSegments[1] || "defaultPage";
+const nameTargetChange = () => {
+    if (currentPages == "signIn") {
+        const signIn = document.querySelector("#signIn");
+        if (signIn) {
+            signIn.style.display = "none";
+        }
+    }
+
+    nameTarget.forEach((item) => {
+        item.classList.remove("target");
+    });
+
+    for (let i = 0; i < nameTarget.length; i++) {
+        if (nameTarget[i].id === currentPages) {
+            nameTarget[i].classList.add("target");
+        }
+    }
+};
+nameTargetChange();

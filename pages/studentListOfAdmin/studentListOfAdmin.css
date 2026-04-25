@@ -1,0 +1,275 @@
+main {
+    width: calc(100% - 270px);
+    padding: 20px 40px !important;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: absolute;
+    left: 270px;
+}
+section {
+    padding: 25px 0;
+}
+.containerTitlte {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.containerTitlte .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-title);
+}
+.containerTitlte .followOfAdmin {
+    font-size: 1rem;
+    color: #2f3e4e;
+}
+.cardParameter {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+.card {
+    display: flex;
+    gap: 12px;
+    width: calc((100% - 20px * 3) / 4);
+    padding: 12px;
+    height: 80px;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid #a6c6dacb;
+}
+.card .backgroundIcon {
+    width: 42px;
+    height: 42px;
+    background-color: #ffe9d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.card .backgroundIcon .icon {
+    font-size: 20px;
+}
+.card .backgroundIcon .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.card .backgroundIcon .circle.online {
+    background: radial-gradient(circle at 30% 30%, #d1dfda, #22c55e);
+    box-shadow:
+        0 0 6px rgba(156, 163, 175, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+.card .backgroundIcon .circle.offline {
+    background: radial-gradient(circle at 30% 30%, #d1d5db, #6b7280);
+    box-shadow:
+        0 0 6px rgba(156, 163, 175, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+.card .cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.card .cardContent .data {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-title);
+}
+.card .cardContent .dataName {
+    font-size: 13px;
+}
+.boxToolList {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+.boxToolList .searchBar {
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background-color: white;
+    gap: 12px;
+    border: 2px solid transparent;
+}
+.boxToolList .searchBar.active,
+select.active {
+    border: 2px solid #e67c04 !important;
+}
+.btnReset{
+    width: fit-content;
+    pa
+}
+.boxToolList .searchBar .backgroundIcon {
+    width: fit-content;
+    height: 100%;
+    padding: 4px;
+}
+.boxToolList .searchBar .iconSearch {
+    font-size: 16px;
+}
+.boxToolList .searchBar .bar {
+    width: 100%;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    height: 100%;
+}
+.boxToolList select {
+    width: 150px;
+    padding: 0 4px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.tableList {
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    padding: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #00000061;
+    overflow-y: auto;
+}
+.tableList .table {
+    display: flex;
+    border-top: 1px solid #00000061;
+    gap: 8px;
+}
+.tableList .table.tableHeader {
+    padding: 8px 0;
+    border-top: 2px solid transparent;
+}
+.tableList .table.tableStudent {
+    padding: 15px 0;
+}
+.tableList .table.tableHeader div {
+    font-size: 0.8rem;
+    color: #3c4c5dd3;
+    font-weight: 600;
+}
+.tableList .table div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tableList .table .targetStudent {
+    flex: 0.5;
+}
+.tableList .table.tableHeader .checkBox {
+    pointer-events: none;
+}
+.tableList .table .checkBox {
+    flex: 0.3;
+}
+.tableList .table .students {
+    flex: 1.3;
+    display: flex;
+    justify-content: start !important;
+}
+.tableList .table .zalo {
+    flex: 0.85;
+    display: flex;
+    justify-content: start !important;
+}
+.tableList .table .course {
+    flex: 0.8;
+}
+.tableList .table .state {
+    flex: 0.8;
+}
+.tableList .table .option {
+    flex: 1.1;
+}
+.tableList .table .students {
+}
+.tableList .table .students .studentInfor {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.tableList .table .students .studentInfor .avatar {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: pink;
+    color: rgb(129, 58, 70);
+    font-weight: 600;
+}
+.tableList .table .students .studentInfor {
+    font-weight: 600;
+}
+.tableList .table .zalo .zaloStudent {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.tableList .table .course .courseStudent {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+.tableList .table .course .courseStudent[value="web"] {
+    background-color: #cce0fa;
+    color: #1e40af;
+}
+.tableList .table .course .courseStudent[value="app"] {
+    background-color: #e9d8fc;
+    color: #7e22ce;
+}
+.tableList .table .course .courseStudent[value="design"] {
+    background-color: #ffdff1;
+    color: #9d174d;
+}
+.tableList .table .course .courseStudent[value="basic"] {
+    background-color: #d9fff7;
+    color: #0b4844;
+}
+.tableList .table .state .stateStudent {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.tableList .table .state .stateStudent[value="online"] {
+    color: rgb(6, 172, 6);
+}
+.tableList .table.tableStudent.tableOffline {
+    background-color: rgba(187, 187, 187, 0.687);
+}
+.tableList .table.tableStudent.tableOnline {
+    background-color: white;
+}
+.tableList .table .option .optionChoose {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.tableList .table .option .optionChoose .optionButton {
+    display: flex;
+    gap: 4px;
+    width: fit-content;
+    padding: 2px 6px;
+    border: 1px solid rgba(0, 0, 0, 0.54);
+    border-radius: 6px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.tableList .table .option .optionChoose .optionButton:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #e67c04;
+    border: 1px solid #e67c04;
+}
+.tableList .table .option .optionChoose .optionButton .icon {
+    font-size: 10px;
+}
