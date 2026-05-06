@@ -46,9 +46,7 @@ nextButton.addEventListener("click", () => {
             <div class = "course">${courseContent}</div>
             <div class="blockRoadmap"></div>
             <div class="boxButton">
-                <a href="../../pages/roadmapTarget/index.html">
-                    <button class = "buttonToRoadmap"><i class="fa-solid fa-lock"></i> Khóa lộ trình học</button>
-                </a>
+                <button class = "buttonToRoadmap"><i class="fa-solid fa-lock"></i> Khóa lộ trình học</button>
                 <button class="tertiary target"><i class="fa-solid fa-arrow-left"></i>Quay lại</i></button>
             </div>
         `;
@@ -67,6 +65,7 @@ nextButton.addEventListener("click", () => {
     contentPage.textContent = "Lộ trình tổng quát";
     homepagePrev.style.display = "none";
 });
+
 wrapLearningRoadmap.addEventListener("click", (event) => {
     const backBtn = event.target.closest(".tertiary.target");
     if (backBtn && showWrap.classList.contains("showWrap")) {
@@ -74,5 +73,11 @@ wrapLearningRoadmap.addEventListener("click", (event) => {
         pageNow.textContent = "1";
         contentPage.textContent = "Chọn lộ trình";
         homepagePrev.style.display = "flex";
+    }
+
+    const targetBtn = event.target.closest(".buttonToRoadmap");
+    if (targetBtn) {
+        localStorage.setItem("selectedCourse", "true");
+        window.location.href = "../../pages/roadmapTarget/index.html";
     }
 });

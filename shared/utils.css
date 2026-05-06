@@ -50,6 +50,7 @@ header {
     height: 60px;
     background-color: #f1f3f5;
     border-bottom: 1px solid #e0e0e0;
+    z-index: 20;
 }
 header .containerHeader {
     display: flex;
@@ -61,7 +62,7 @@ header .containerHeader {
 main {
     padding: 60px 0 0 0;
     position: relative;
-    z-index: -1;
+    z-index: 2;
 }
 .text-end {
     text-align: end;
@@ -203,6 +204,22 @@ section {
     font-size: 24px;
     cursor: pointer;
 }
+.overlay {
+    background-color: #0000002b;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.overlay.overlayOpen {
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    z-index: 1000;
+}
 .mobileMenu {
     position: fixed;
     left: 0;
@@ -214,6 +231,7 @@ section {
     background-color: white;
     list-style: none;
     transition: transform 0.4s ease-in-out;
+    z-index: 9000;
 }
 .mobileMenu .nav-link {
     border-bottom: 0;
@@ -254,6 +272,7 @@ button {
     background-color: #ffa135;
     color: #fff;
     border: 0;
+    opacity: 1;
 }
 .primary:active {
     transform: translateY(4px);
@@ -276,7 +295,7 @@ button {
     background-color: transparent;
     cursor: pointer;
     border: 0;
-    color: #e67c04;
+    color: #243b53;
     width: fit-content;
 }
 .small-info {
@@ -287,11 +306,11 @@ button {
 #signIn {
     gap: 20px;
 }
-#signIn i {
+#signIn .fa-bell {
     color: #243b53;
     cursor: pointer;
 }
-#signIn i:hover {
+#signIn .fa-bell:hover {
     color: var(--accent);
 }
 #signIn .signInButton {
@@ -333,6 +352,74 @@ button {
 }
 #signIn .signInButton .icon.showSignIn i {
     color: var(--accent);
+}
+#signIn .logoutButton {
+    display: none;
+}
+#signIn.signIned .logoutButton {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all ease-in;
+    width: fit-content;
+    padding-left: 15px;
+    border-left: 2px solid rgb(218, 218, 218);
+}
+#signIn.signIned .logoutButton .wrapSignIn {
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    align-items: start;
+}
+#signIn.signIned .logoutButton .wrapSignIn .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgb(0, 119, 255);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+#signIn.signIned .logoutButton .wrapSignIn .blockInfor {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#signIn.signIned .logoutButton .wrapSignIn .blockInfor .name {
+    font-size: 0.9rem;
+    color: var(--color-title);
+}
+#signIn.signIned .logoutButton .wrapSignIn .blockInfor .dynamic {
+    font-size: 0.8rem;
+}
+#signIn.signIned .logoutButton .wrapSignIn .iconArrow {
+    transform: rotate(0deg);
+}
+#signIn.signIned .logoutButton.activeButton .wrapSignIn .iconArrow {
+    transform: rotate(180deg);
+}
+#signIn.signIned .logoutButton .logoutMenu {
+    position: absolute;
+    transform: translateY(0);
+    background-color: #f1f3f5;
+    list-style: none;
+    opacity: 0;
+    z-index: -1;
+}
+#signIn.signIned .logoutButton .logoutMenu .logOut {
+    cursor: pointer;
+    padding: 14px 40px;
+    font-size: 1rem;
+}
+#signIn.signIned .logoutButton .logoutMenu .logOut:hover {
+    background-color: #ededed;
+}
+#signIn.signIned .logoutButton.activeButton .logoutMenu {
+    opacity: 1;
+    transform: translateY(48px);
 }
 footer {
     width: 100%;

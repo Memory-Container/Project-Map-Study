@@ -42,12 +42,14 @@ footer.innerHTML = `
 header.innerHTML = `
         <div class="containerHeader flex-r j-between">
             <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
-            <ul class="mobileMenu">
-                <li class="closeMenu"><i class="fa-solid fa-xmark"></i></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../pages/homepage/" id="homepage">Trang chủ</a>
-                </li>
-            </ul>
+            <div class="overlay">
+                <ul class="mobileMenu">
+                    <li class="closeMenu"><i class="fa-solid fa-xmark"></i></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/homepage/" id="homepage">Trang chủ</a>
+                    </li>
+                </ul>
+            </div>
             <div class="logo">
             </div>
             <nav class="main-nav">
@@ -58,9 +60,26 @@ header.innerHTML = `
 
                 </ul>
             </nav>
-            <div class="flex-r g10 a-center" id="signIn">
-                <i class="fa-solid fa-bell"></i>
-                <button class="primary signIn">Đăng nhập</button>
+            <div class="flex-r g10 a-center " id="signIn">
+                <div class="bell">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+                <button class="primary" id="login">Đăng nhập</button>
+                <ul> 
+                    <li class="logoutButton">
+                        <div class="wrapSignIn">
+                            <div class = "avatar">NV</div>
+                            <div class="blockInfor">
+                                <div class="name">Nguyễn Minh Vũ</div>
+                                <div class="dynamic">Admin</div>
+                            </div>
+                            <i class="fa-solid fa-angle-down iconArrow"></i>
+                        </div>
+                        <ul class="logoutMenu">
+                            <li class="logOut">Đăng xuất</li>
+                        </ul>
+                    </li>
+                </ul>
                 <ul class="signInButton">
                     <li class="icon"><i class="fa-solid fa-circle-user"></i>
                         <ul class="signInMenu">
@@ -71,20 +90,74 @@ header.innerHTML = `
             </div>
         </div>
 `;
+const login = document.querySelector("#login");
+login.addEventListener("click", function () {
+    window.location.assign("../../pages/signIn/index.html");
+});
+
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobileMenu");
 const closeMenu = document.querySelector(".closeMenu");
+const overlay = document.querySelector(".overlay");
+
 hamburger.addEventListener("click", () => {
     mobileMenu.classList.add("showMenu");
+    overlay.classList.add("overlayOpen");
 });
+
 closeMenu.addEventListener("click", () => {
     mobileMenu.classList.remove("showMenu");
+    overlay.classList.remove("overlayOpen");
 });
+
 const signInMenu = document.querySelector(".signInMenu");
 const iconSignIn = document.querySelector(".signInButton .icon");
 iconSignIn.addEventListener("click", () => {
     iconSignIn.classList.toggle("showSignIn");
 });
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+window.addEventListener("DOMContentLoaded", () => {
+    if (currentUser) {
+        const loginButton = document.querySelector("#login");
+        loginButton.style.display = "none";
+
+        const signIn = document.getElementById("signIn");
+        signIn.classList.add("signIned");
+
+        const avatar = document.querySelector(".avatar");
+        avatar.textContent = currentUser.name
+            .split(" ")
+            .filter((word, index, array) => index === 0 || index === array.length - 1)
+            .map((word) => word.charAt(0).toUpperCase())
+            .join("");
+        console.log(avatar.textContent);
+        const name = document.querySelector(".name");
+        name.textContent = currentUser.name;
+
+        const dynamic = document.querySelector(".dynamic");
+        dynamic.textContent = currentUser.role;
+    }
+});
+
+const logoutButton = document.querySelector(".logoutButton");
+logoutButton.addEventListener("click", () => {
+    logoutButton.classList.toggle("activeButton");
+});
+
+const logOut = document.querySelector(".logOut");
+logOut.addEventListener("click", async () => {
+    const nameDisplay = document.querySelector(".name");
+    if (nameDisplay) nameDisplay.textContent = "Đang đăng xuất...";
+
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("admin");
+    localStorage.removeItem("user");
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    window.location.href = "../../pages/homepage/index.html";
+});
+
 let currentPage;
 function initializeNav() {
     let link = document.querySelectorAll(".nav-link");

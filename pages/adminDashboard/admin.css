@@ -1,0 +1,243 @@
+body {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+main {
+    width: calc(100% - 270px);
+    padding: 20px 40px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    overflow-y: auto;
+    position: absolute;
+    left: 270px;
+}
+.containerTitlte {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.containerTitlte .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-title);
+}
+.containerTitlte .followOfAdmin {
+    font-size: 1rem;
+    color: #2f3e4e;
+}
+section {
+    justify-content: space-between !important;
+    padding: 25px 0 !important;
+    gap: 25px;
+}
+.statsCard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: calc((100% - 25px * 3) / 4);
+    height: 150px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border-left: 5px solid #8fabbdcb;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 4px 5px 10px 2px rgba(182, 182, 182, 0.746);
+}
+.statsCard.betterData {
+    border-left: 5px solid #00ca00;
+}
+.statsCard.worseData {
+    border-left: 5px solid #e00000;
+}
+.statsCard .nameCard {
+    font-size: 1.1rem;
+}
+.statsCard .dataCard {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-title);
+}
+.statsCard .compareData {
+    font-size: 0.9rem;
+}
+.statsCard .compareData .data {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.statsCard .compareData .data.better {
+    color: #00ca00;
+}
+.statsCard .compareData .data.worse {
+    color: #e00000;
+}
+.dataTable {
+    display: flex;
+    flex-direction: column;
+    width: 635px;
+    border-radius: 10px;
+    border: 2px solid rgb(168, 168, 168);
+    background-color: white;
+    height: 414px;
+    overflow: hidden;
+}
+.wrapTitle {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 8px;
+}
+.wrapTitle .titleCard {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c16802;
+}
+.wrapTitle .detailTable {
+    font-size: 0.9rem;
+    padding-top: 4px;
+    cursor: pointer;
+}
+.wrapTitle .detailTable:hover {
+    color: #e07700;
+}
+.dataTable .wrapNameDataTable {
+    display: flex;
+    width: 100%;
+    padding: 14px 20px;
+    gap: 75px;
+    border-top: 1px solid rgb(168, 168, 168);
+}
+.dataTable .wrapNameDataTable .name {
+    font-weight: 600;
+    color: #3c4e61;
+}
+.dataTable .wrapListDataTable {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 14px 20px;
+    position: relative;
+    border-top: 1px solid rgb(168, 168, 168);
+}
+.dataTable .wrapListDataTable .blockName {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.dataTable .wrapListDataTable .blockName .avatar {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(27, 122, 255);
+    color: white;
+    font-size: 1.05rem;
+}
+.dataTable .wrapListDataTable .blockName .nameStudent {
+    font-weight: 600;
+    color: var(--color-title);
+}
+.dataTable .wrapListDataTable .blockProgress {
+    display: flex;
+    gap: 5px;
+    margin-left: 20px;
+    align-items: center;
+}
+.dataTable .wrapListDataTable .blockProgress .barProgress {
+    width: 40px;
+    height: 8px;
+    border-radius: 15px;
+    border: 1px solid rgb(135, 135, 135);
+    position: relative;
+}
+.dataTable .wrapListDataTable .blockProgress .barProgress::after {
+    content: "";
+    width: 72%;
+    height: 100%;
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 12px;
+}
+.dataTable .wrapListDataTable .blockProgress .numberProgress {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.dataTable .wrapListDataTable .blockStatus {
+    width: 80px;
+    padding: 4px 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: rgb(1, 179, 1);
+    margin-left: 60px;
+}
+.dataTable .wrapListDataTable .Operational {
+    font-size: 0.95rem;
+    width: 100px;
+    text-align: center;
+    margin-left: 60px;
+}
+.dataTable .wrapListDataTable .watchInfor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+.dataTable .wrapListDataTable .watchInfor.secondary {
+    padding: 4px 12px;
+}
+.dataTable .wrapListDataTable .watchInfor:hover {
+    color: #ff8901;
+}
+.notificationTable {
+    width: calc(100% - 635px - 25px);
+    height: 414px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid rgb(168, 168, 168);
+    background-color: white;
+    overflow-y: hidden;
+}
+.notificationTable .wrapListNotification {
+    display: flex;
+    gap: 12px;
+    padding: 14px 20px;
+    border-top: 1px solid rgb(168, 168, 168);
+}
+.notificationTable .wrapListNotification .blockIcon {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 235, 184);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c46901;
+}
+.notificationTable .wrapListNotification .blockReason {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.notificationTable .wrapListNotification .blockReason .titleReason {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-title);
+}
+.notificationTable .wrapListNotification .blockReason .detailReason {
+    font-size: 0.9rem;
+    color: #475667;
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="studentListOfAdmin.css" />
+        <link rel="stylesheet" href="../../shared/layoutDashboard.css" />
+    </head>
+    <body>
+        <header class="header"></header>
+        <div class="containerTool"></div>
+        <main>
+            <div class="containerTitlte">
+                <div class="title">Danh sách học viên</div>
+            </div>
+            <section>
+                <div class="cardParameter">
+                    <div class="card">
+                        <div class="backgroundIcon">
+                            <i class="fa-solid fa-user-group icon"></i>
+                        </div>
+                        <div class="cardContent">
+                            <div class="data" id="dataAllStudent">0</div>
+                            <div class="dataName">Tổng học viên</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="backgroundIcon">
+                            <div class="circle online"></div>
+                        </div>
+                        <div class="cardContent">
+                            <div class="data" id="dataAllStudent">0</div>
+                            <div class="dataName">Đang hoạt động</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="backgroundIcon">
+                            <div class="circle offline"></div>
+                        </div>
+                        <div class="cardContent">
+                            <div class="data" id="dataAllStudent">0</div>
+                            <div class="dataName">Không hoạt động</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="boxToolList">
+                    <div class="searchBar">
+                        <div class="backgroundIcon">
+                            <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+                        </div>
+                        <input type="search" name="" id="" placeholder="Tìm theo tên..." class="bar" />
+                    </div>
+                    <select name="" id="" class="">
+                        <option value="all">Tất cả khóa học</option>
+                        <option value="basic">Cơ bản</option>
+                        <option value="web">Web Dev</option>
+                        <option value="app">App Dev</option>
+                        <option value="design">Design</option>
+                    </select>
+                    <select name="" id="" class="">
+                        <option value="allStatus">Tất cả trạng thái</option>
+                        <option value="online">Đang học</option>
+                        <option value="online">Không hoạt động</option>
+                    </select>
+                    <select name="" id="unitSelect">
+                        <option value="allUnit">Tất cả đơn vị</option>
+                        <option value="Uside">Uside</option>
+                        <option value="BCN">BCN</option>
+                    </select>
+                    <button id="btnResetFilters" class="btnReset primary"><i class="fa-solid fa-rotate-right"></i> Làm mới</button>
+                </div>
+            </section>
+            <section>
+                <div class="tableList">
+                    <div class="table tableHeader">
+                        <div class="checkBox">
+                            <input type="checkbox" name="" id="" />
+                        </div>
+                        <div class="students">HỌC VIÊN</div>
+                        <div class="zalo">ZALO</div>
+                        <div class="course">KHÓA HỌC</div>
+                        <div class="state">ĐƠN VỊ</div>
+                        <div class="state">TRẠNG THÁI</div>
+                        <div class="option">TÙY CHỌN</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script type="module" src="./studentListOfAdmin.js" defer></script>
+        <script src="../../shared/layoutDashboard.js"></script>
+        <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
+    </body>
+</html>
