@@ -74,7 +74,15 @@ function sortStudentData(data) {
     return [...data].sort((a, b) => {
         if (a.isPinned !== b.isPinned) return a.isPinned ? -1 : 1;
         if (a.trangThai !== b.trangThai) return a.trangThai === "Đang học" ? -1 : 1;
-        return a.hocVien.localeCompare(b.hocVien, "vi");
+
+        const nameA = a.hocVien.trim().split(" ").pop();
+        const nameB = b.hocVien.trim().split(" ").pop();
+
+        if (nameA === nameB) {
+            return a.hocVien.localeCompare(b.hocVien, "vi");
+        }
+
+        return nameA.localeCompare(nameB, "vi");
     });
 }
 

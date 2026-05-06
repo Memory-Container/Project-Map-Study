@@ -7,10 +7,10 @@ header.innerHTML = `
                     <div class="dashboardContent">Chính</div>
                     <ul class="listMenu">
                         <li class="nameList showNameList">
-                            <div class="nameTarget target">
+                            <a href="../../pages/adminDashboard/index.html" class="nameTarget target targetChange" id="adminDashboard">
                                 <div><i class="fa-solid fa-sliders"></i> <span>Cơ bản</span></div>
                                 <i class="fa-solid fa-angle-down"></i>
-                            </div>
+                            </a>
                             <ul class="listSmall">
                                 <li>Web Dev</li>
                                 <li>App Dev</li>
