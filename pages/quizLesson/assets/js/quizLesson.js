@@ -317,7 +317,7 @@ buttonPrev.addEventListener("click", () => {
 
 overlayFinishQuiz.addEventListener("click", (e) => {
     if (e.target.id === "backHome") {
-        window.location.href = "/pages/lesson/index.html";
+        window.location.href = "../../pages/lesson/index.html";
     }
     if (e.target.id === "playAgain") {
         location.reload();
