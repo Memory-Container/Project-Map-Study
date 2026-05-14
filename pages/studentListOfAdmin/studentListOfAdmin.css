@@ -100,9 +100,8 @@ section {
 select.active {
     border: 2px solid #e67c04 !important;
 }
-.btnReset{
+.btnReset {
     width: fit-content;
-    pa
 }
 .boxToolList .searchBar .backgroundIcon {
     width: fit-content;

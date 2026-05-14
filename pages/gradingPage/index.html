@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../../shared/layoutDashboard.css" />
+        <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="gradingPage.css" />
+    </head>
+    <body>
+        <header class="header"></header>
+        <div class="containerTool"></div>
+        <main>
+            <div class="containerTitlte">
+                <div class="title">Chấm bài tập</div>
+            </div>
+            <section>
+                <div class="boxToolList">
+                    <div class="searchBar">
+                        <div class="backgroundIcon">
+                            <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+                        </div>
+                        <input type="search" name="" id="" placeholder="Tìm theo tên hoặc theo tên bài tập..." class="bar" />
+                    </div>
+                    <select name="" id="">
+                        <option value="All">Tất cả</option>
+                        <option value="C">Ngôn ngữ C</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JS">Javascript</option>
+                        <option value="Git">Git</option>
+                    </select>
+                    <button id="btnResetFilters" class="btnReset primary"><i class="fa-solid fa-rotate-right"></i> Làm mới</button>
+                </div>
+            </section>
+
+            <section class="containerCards" data-card="notFinish">
+                <div class="titleListCard">
+                    <div class="boxTitle">
+                        <div class="line"></div>
+                        <div class="title">Chờ chấm</div>
+                    </div>
+                    <div class="quantityExam">0</div>
+                </div>
+                <div class="boxListCard">
+                    <div class="card"></div>
+                </div>
+                <div class="pagination" style="display: flex; justify-content: center; align-items: center; gap: 10px; padding-top: 15px">
+                    <button class="btnPrev primary"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="pageNumbers" style="display: flex; gap: 5px"></div>
+                    <button class="btnNext primary"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </section>
+            <section class="containerCards containerCardsFinish" data-card="finish">
+                <div class="titleListCard">
+                    <div class="boxTitle">
+                        <div class="line"></div>
+                        <div class="title">Đã chấm</div>
+                    </div>
+                    <div class="quantityExam">0</div>
+                </div>
+                <div class="boxListCard">
+                    <div class="card"></div>
+                </div>
+                <div class="pagination">
+                    <button class="btnPrev primary"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="pageNumbers" style="display: flex; gap: 5px"></div>
+                    <button class="btnNext primary"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </main>
+
+        <script src="gradingPage.js"></script>
+        <script src="../../shared/layoutDashboard.js"></script>
+        <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
+    </body>
+</html>

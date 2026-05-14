@@ -1,0 +1,137 @@
+[
+    {
+        "Tên học viên": "Nguyễn Văn An",
+        "loại bài tập": "JS",
+        "tên bài tập": "Xử lý logic lịch sử xem phim",
+        "thời gian nộp": "13/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Trần Thị Bình",
+        "loại bài tập": "HTML",
+        "tên bài tập": "Cấu trúc form nhập MSSV",
+        "thời gian nộp": "13/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Lê Hoàng Cường",
+        "loại bài tập": "C",
+        "tên bài tập": "Giải thuật đệ quy cơ bản",
+        "thời gian nộp": "12/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Phạm Thu Dung",
+        "loại bài tập": "CSS",
+        "tên bài tập": "Layout Grid hiển thị sản phẩm",
+        "thời gian nộp": "11/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Hoàng Minh Duy",
+        "loại bài tập": "Git",
+        "tên bài tập": "Tạo nhánh và xử lý Merge Conflict",
+        "thời gian nộp": "13/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Vũ Thị Hoa",
+        "loại bài tập": "JS",
+        "tên bài tập": "Bắt sự kiện oninput cho double-range slider",
+        "thời gian nộp": "10/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Phan Khắc Hải",
+        "loại bài tập": "C",
+        "tên bài tập": "Tính toán và nhân ma trận",
+        "thời gian nộp": "12/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Bùi Ngọc Lan",
+        "loại bài tập": "HTML",
+        "tên bài tập": "Xây dựng khung trang chủ Meo Store",
+        "thời gian nộp": "09/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Đặng Quốc Khánh",
+        "loại bài tập": "CSS",
+        "tên bài tập": "Căn chỉnh Layout bằng Flexbox",
+        "thời gian nộp": "11/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Hồ Bích Ngọc",
+        "loại bài tập": "JS",
+        "tên bài tập": "Tạo hiệu ứng Slideshow ảnh động",
+        "thời gian nộp": "13/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Ngô Trí Phong",
+        "loại bài tập": "C",
+        "tên bài tập": "Các thao tác xử lý chuỗi ký tự",
+        "thời gian nộp": "08/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Dương Thanh Quỳnh",
+        "loại bài tập": "Git",
+        "tên bài tập": "Lệnh Push và Pull cơ bản",
+        "thời gian nộp": "07/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Lý Bảo Quốc",
+        "loại bài tập": "HTML",
+        "tên bài tập": "Sử dụng Semantic Tags trong HTML5",
+        "thời gian nộp": "12/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Đỗ Cẩm Tú",
+        "loại bài tập": "CSS",
+        "tên bài tập": "Thiết kế Card thông tin giống mèo Ragdoll",
+        "thời gian nộp": "06/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    },
+    {
+        "Tên học viên": "Trương Viết Vũ",
+        "loại bài tập": "JS",
+        "tên bài tập": "Thuật toán render component động",
+        "thời gian nộp": "13/05/2026",
+        "trạng thái": "chờ chấm",
+        "số điểm": 0,
+        "người chấm": "chưa có"
+    }
+]

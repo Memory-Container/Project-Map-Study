@@ -26,7 +26,7 @@ header.innerHTML = `
                     <div class="dashboardContent">Quản lý</div>
                     <ul class="listMenu">
                         <li>
-                            <div class="nameTarget nameTargetChange"><i class="fa-solid fa-book"></i> Bài tập</div>
+                            <a href="../../pages/gradingPage/index.html" class="nameTarget nameTargetChange" id="gradingPage"><i class="fa-solid fa-book"></i> Chấm bài tập</a>
                         </li>
                     </ul>
                 </div>

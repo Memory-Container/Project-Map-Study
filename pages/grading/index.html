@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="grading.css" />
+    </head>
+    <body>
+        <a href="../../pages/gradingPage/index.html" class="prev"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+        <main>
+            <div class="card">
+                <div class="containerCard">
+                    <div class="boxinfor">
+                        <div class="wrapTag">
+                            <div class="tagExercise">Git</div>
+                            <div class="tagStatusBadge">Chờ chấm</div>
+                        </div>
+                        <div class="nameExercise">Tên bài tập</div>
+                        <div class="nameSubmitter">
+                            <i class="fa-regular fa-user"></i>:
+                            <span id="name">Trần Thị Bình</span>
+                        </div>
+                        <div class="submittionTime" style="font-size: 15px">Thời gian nộp: <span id="timely">13/05/2026</span></div>
+                    </div>
+                    <div class="boxPoint">
+                        <div class="pointOfUser"><span id="blockPointed">0</span>%</div>
+                    </div>
+                </div>
+                <div class="containerCardTool">
+                    <div class="titleCard">Đề bài và Bài làm</div>
+                    <div class="boxBtnLink">
+                        <button class="secondary btnTopic">Xem đề bài <i class="fa-regular fa-file-lines"></i></button>
+                        <button class="primary btnTopic">Xem bài làm <i class="fa-solid fa-link"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="titleCard">Tiêu chí chấm bài - <span id="typeExercise">Git</span></div>
+                <div class="boxTaskList">
+                    <!-- Các tiêu chí chấm bài sẽ được Javascript render tự động vào đây -->
+                </div>
+            </div>
+            <div class="card cardGap">
+                <div class="titleCard">Nhận xét của người chấm <span>(Nếu có)</span></div>
+                <textarea placeholder="Ghi nhận xét" id="commentExaminer"></textarea>
+            </div>
+            <div class="card cardGap">
+                <div class="titleCard">Hoàn tất bài chấm</div>
+                <div class="wrapNameExaminer">
+                    <div class="titleExaminer">Tên người chấm</div>
+                    <input type="text" placeholder="Nhập tên người chấm..." id="examiner" />
+                </div>
+                <div class="wrapBtnFinish">
+                    <button class="primary btnFinish">Hoàn thành chấm bài</button>
+                </div>
+            </div>
+        </main>
+
+        <script src="grading.js"></script>
+        <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
+    </body>
+</html>

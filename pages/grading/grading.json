@@ -1,0 +1,121 @@
+{
+    "danhSachNguoiCham": ["Nguyễn Văn A", "Trần Thị B", "Lê Hoàng C", "Phạm Văn D"],
+    "danhSachTieuChiChamDiem": [
+        {
+            "loaiBaiTap": "Git",
+            "tieuChi": {
+                "khoiTaoVaRemote": "10%",
+                "lichSuCommit": "10%",
+                "thaoTacBranching": "10%",
+                "noiDungCommitMessage": {
+                    "yeu": "3%",
+                    "trungBinh": "7%",
+                    "kha": "10%",
+                    "gioi": "13%",
+                    "xuatSac": "15%"
+                },
+                "kichThuocVaTanSuatCommit": {
+                    "yeu": "3%",
+                    "trungBinh": "10%",
+                    "kha": "13%",
+                    "gioi": "16%",
+                    "xuatSac": "20%"
+                },
+                "phanNhanh": {
+                    "yeu": "5%",
+                    "trungBinh": "10%",
+                    "kha": "14%",
+                    "gioi": "17%",
+                    "xuatSac": "20%"
+                }
+            }
+        },
+        {
+            "loaiBaiTap": "HTML_CSS",
+            "tieuChi": {
+                "cauTrucFile": "10%",
+                "hienThiCoBan": "10%",
+                "taiNguyen": "10%",
+                "cauTrucHTML_Semantic": {
+                    "yeu": "3%",
+                    "trungBinh": "7%",
+                    "kha": "10%",
+                    "gioi": "13%",
+                    "xuatSac": "15%"
+                },
+                "cssLayoutVaNaming": {
+                    "yeu": "3%",
+                    "trungBinh": "10%",
+                    "kha": "13%",
+                    "gioi": "16%",
+                    "xuatSac": "20%"
+                },
+                "responsive": {
+                    "yeu": "5%",
+                    "trungBinh": "10%",
+                    "kha": "14%",
+                    "gioi": "17%",
+                    "xuatSac": "20%"
+                }
+            }
+        },
+        {
+            "loaiBaiTap": "JavaScript",
+            "tieuChi": {
+                "khongLoiCuPhap": "10%",
+                "tuongTacCoBan": "10%",
+                "nhungDungCach": "10%",
+                "cauTrucCodeVaBien": {
+                    "yeu": "3%",
+                    "trungBinh": "7%",
+                    "kha": "10%",
+                    "gioi": "13%",
+                    "xuatSac": "15%"
+                },
+                "thaoTacDOMVaSuKien": {
+                    "yeu": "3%",
+                    "trungBinh": "10%",
+                    "kha": "13%",
+                    "gioi": "16%",
+                    "xuatSac": "20%"
+                },
+                "logicVaCuPhapHienDai": {
+                    "yeu": "5%",
+                    "trungBinh": "10%",
+                    "kha": "14%",
+                    "gioi": "17%",
+                    "xuatSac": "20%"
+                }
+            }
+        },
+        {
+            "loaiBaiTap": "C",
+            "tieuChi": {
+                "bienDichThanhCong": "10%",
+                "thucThiCoBan": "10%",
+                "khongVongLapVoTan": "10%",
+                "doChinhXacVaThuatToan": {
+                    "yeu": "3%",
+                    "trungBinh": "7%",
+                    "kha": "10%",
+                    "gioi": "13%",
+                    "xuatSac": "15%"
+                },
+                "cauTrucHamVaCleanCode": {
+                    "yeu": "3%",
+                    "trungBinh": "10%",
+                    "kha": "13%",
+                    "gioi": "16%",
+                    "xuatSac": "20%"
+                },
+                "quanLyBoNhoVaConTro": {
+                    "yeu": "5%",
+                    "trungBinh": "10%",
+                    "kha": "14%",
+                    "gioi": "17%",
+                    "xuatSac": "20%"
+                }
+            }
+        }
+    ]
+}

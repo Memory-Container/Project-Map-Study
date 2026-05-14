@@ -247,6 +247,7 @@ blockInforCourses.forEach((blockInforCourse) => {
         openModal({
             title: `Thông tin chi tiết về ${courseTitle}`,
             message: courseData[courseId],
+            options: ["hidden"],
         });
     });
 });
@@ -277,7 +278,7 @@ buttonCTA.addEventListener("click", () => {
                     type: "primary",
                     message: "Đăng nhập",
                     callback: () => {
-                        window.location.href = "../../pages/signin/index.html";
+                        window.location.href = "../../pages/signIn/index.html";
                     },
                 },
             ],

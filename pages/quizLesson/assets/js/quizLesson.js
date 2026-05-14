@@ -157,6 +157,7 @@ function showQuestion() {
     });
     const selectedOption = userSelections[currentQuestion];
     const correctIndex = dataQuestion[currentQuestion].correctAnswer;
+    console.log(answered[currentQuestion]);
     if (answered[currentQuestion]) {
         if (selectedOption !== -1 && currentOptions[selectedOption]) {
             currentOptions[selectedOption].classList.add("optionTarget");
@@ -199,8 +200,10 @@ function showQuestion() {
 function checkAnswer() {
     const options = document.querySelectorAll(".boxAnswer .option");
     const correctOption = dataQuestion[currentQuestion].correctAnswer;
+    console.log(correctOption);
     let selectOption = -1;
     options.forEach((option, index) => {
+        console.log(option.textContent);
         if (option.classList.contains("optionTarget")) {
             selectOption = index;
         }
