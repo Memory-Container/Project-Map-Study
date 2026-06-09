@@ -33,6 +33,9 @@
     --font-l: 22px;
     --font-xl: 28px;
 }
+ul{
+    padding-left: 0; 
+}
 html,
 body {
     background-color: var(--bg-default);
@@ -178,7 +181,7 @@ section {
     transform: translateX(-50%);
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 35px;
 }
 
 .nav-item {
@@ -492,6 +495,9 @@ footer {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #727272;
+}
+ul{
+    margin-bottom:0;
 }
 @media only screen and (max-width: 700px) {
     .main-nav {

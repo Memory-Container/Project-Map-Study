@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const currentItem = JSON.parse(currentGradingItemData);
-    const basePoint = 15; // Điểm mặc định
-    let currentScore = basePoint;
+    const basePoint = 0; // Điểm mặc định
+    let currentScore = basePoint; // Khởi tạo điểm ban đầu
 
     // 2. Cập nhật thông tin lên UI
     document.querySelector(".tagExercise").textContent = currentItem["loại bài tập"];
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("name").textContent = currentItem["Tên học viên"];
     document.getElementById("timely").textContent = currentItem["thời gian nộp"];
-    document.getElementById("typeExercise").textContent = currentItem["loại bài tập"];
 
     const scoreDisplay = document.getElementById("blockPointed");
     scoreDisplay.textContent = currentScore;
@@ -58,12 +57,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (currentItem["nhận xét"]) {
                 document.getElementById("commentExaminer").value = currentItem["nhận xét"];
             }
-            if (currentItem["người chấm"]) {
-                document.getElementById("examiner").value = currentItem["người chấm"];
-            }
 
             // Cập nhật text nút để rõ nghĩa bề mặt hành động
             document.querySelector(".btnFinish").textContent = "Cập nhật bài chấm";
+        } else {
+            // Nếu chưa chấm, tính lại điểm để cập nhật điểm từ các tiêu chí được tự động tick
+            calculateScore();
         }
     } catch (error) {
         console.error("Lỗi tải tiêu chí chấm:", error);
@@ -72,11 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Hàm hỗ trợ dịch các key tiếng Anh/camelCase sang Tiếng Việt có dấu
     function formatText(key) {
         const dictionary = {
-            yeu: "Yếu",
-            trungBinh: "Trung bình",
-            kha: "Khá",
-            gioi: "Giỏi",
-            xuatSac: "Xuất sắc",
+            nopDungHan:"Nộp đúng hạn",
             khoiTaoVaRemote: "Khởi tạo và Remote",
             lichSuCommit: "Lịch sử Commit",
             thaoTacBranching: "Thao tác Branching",
@@ -123,10 +118,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Nếu value là chuỗi (VD: "10%"), nó sẽ là dạng checkbox
             if (typeof value === "string") {
                 const point = parseInt(value);
+                const isChecked = key === "nopDungHan" ? "checked" : "";
+                const isDisabled = key === "nopDungHan" ? "disabled" : "";
                 taskHTML = `
-                    <div class="task">
+                    <div class="task taskChangeFlex">
                         <div class="wrapNameCheckBox">
-                            <input type="checkbox" class="eval-input" data-point="${point}" id="check_${index}" />
+                            <input type="checkbox" class="eval-input" data-point="${point}" id="check_${index}" ${isChecked} ${isDisabled} />
                             <label for="check_${index}" class="nameCheckBox">${title}</label>
                         </div>
                         <div class="pointTask"><span>${point}</span>%</div>
@@ -136,13 +133,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else if (typeof value === "object") {
                 let optionsHTML = Object.entries(value)
                     .map(([optKey, optVal], optIdx) => {
-                        // const optLabel = formatText(optKey);
+                        const optLabel = formatText(optKey);
                         const optPoint = parseInt(optVal);
                         return `
                     <div class="norm">
                         <input type="radio" name="radio_group_${index}" class="eval-input chooseNorm" data-point="${optPoint}" id="radio_${index}_${optIdx}" />
                         <label for="radio_${index}_${optIdx}" class="pointTask" style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-                           <span>${optPoint}</span>%
+                           <span>${optLabel}</span>
                         </label>
                     </div>
                     `;
@@ -172,7 +169,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 5. Hàm tính điểm
     function calculateScore() {
-        let total = basePoint; // +15% trước
+        let total = basePoint; 
 
         // Cộng điểm từ checkbox
         const checkboxes = document.querySelectorAll(".eval-input[type='checkbox']:checked");
@@ -186,6 +183,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             total += parseInt(rd.getAttribute("data-point") || 0);
         });
 
+        // Đếm tổng số lượng tiêu chí chấm điểm (số class="task" được render)
+        const totalCriteria = document.querySelectorAll(".task").length;
+        if (totalCriteria > 0) {
+            total = Math.round(total / totalCriteria); // Chia trung bình và làm tròn số
+        }
+
         // Đảm bảo điểm không vượt quá 100%
         if (total > 100) total = 100;
 
@@ -195,13 +198,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 6. Hàm lưu dữ liệu vào localStorage
     function saveGradingData() {
-        const examinerName = document.getElementById("examiner").value.trim();
-
-        if (!examinerName) {
-            alert("Vui lòng nhập tên người chấm!");
-            document.getElementById("examiner").focus();
-            return;
-        }
+    
 
         // Lấy lại danh sách Data.json từ localStorage
         let allExamsData = [];
@@ -217,9 +214,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Cập nhật dữ liệu
             allExamsData[itemIndex]["trạng thái"] = "đã chấm";
             allExamsData[itemIndex]["số điểm"] = currentScore;
+            
+            // Lưu lại tên của người đã tiến hành chấm bài
+            const currentUserStr = localStorage.getItem("currentUser");
+            if (currentUserStr) {
+                try {
+                    allExamsData[itemIndex]["người chấm"] = JSON.parse(currentUserStr).name;
+                } catch (error) {}
+            }
 
             // Lưu các thông tin chi tiết
-            allExamsData[itemIndex]["người chấm"] = examinerName;
             allExamsData[itemIndex]["nhận xét"] = document.getElementById("commentExaminer").value.trim();
 
             // Trích xuất lại trạng thái chọn của các ô checkbox/radio để tái sử dụng
@@ -247,4 +251,43 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const btnFinish = document.querySelector(".btnFinish");
     btnFinish.addEventListener("click", saveGradingData);
+
+    // 7. Chức năng copy link bài làm
+    const btnCopy = document.querySelector(".btnCopy");
+    const linkSpan = document.getElementById("link");
+    
+    if (btnCopy && linkSpan) {
+        btnCopy.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(linkSpan.textContent.trim());
+                const originalHTML = btnCopy.innerHTML;
+                // Đổi icon và thêm chữ, đổi màu chữ thành màu xanh lá báo thành công
+                btnCopy.innerHTML = '<i class="fa-solid fa-check" style="color: #4CAF50; font-size: 14px; font-weight: 600;"></i> ';
+                setTimeout(() => {
+                    btnCopy.innerHTML = originalHTML; // Trả lại nội dung cũ sau 2 giây
+                }, 2000);
+            } catch (err) {
+                console.error("Lỗi khi copy: ", err);
+            }
+        });
+    }
+});
+
+const btnQues = document.querySelector(".btnQues");
+btnQues.addEventListener("click", () =>{
+    openModal({
+            title: `Hướng dẫn cách tính điểm bài tập`,
+            message: `
+                <ul class="listNote">
+                    <li>Điểm = Tổng số phần trăm / tổng số tiêu chí chấm trong bài đó</li>
+                    <li>Không đạt = 0%</li>
+                    <li>Rất yếu = 20%</li>
+                    <li>Tạm được = 40%</li>
+                    <li>Khá = 60%</li>
+                    <li>Tốt = 80%</li>
+                    <li>Hoàn Hảo = 100%</li>
+                </ul>     
+            `,
+            options: ["hidden"],
+        });
 });

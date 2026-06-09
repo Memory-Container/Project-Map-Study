@@ -4,116 +4,132 @@
         {
             "loaiBaiTap": "Git",
             "tieuChi": {
-                "khoiTaoVaRemote": "10%",
-                "lichSuCommit": "10%",
-                "thaoTacBranching": "10%",
+                "nopDungHan":"100%",
+                "khoiTaoVaRemote": "100%",
+                "lichSuCommit": "100%",
+                "thaoTacBranching": "100%",
                 "noiDungCommitMessage": {
-                    "yeu": "3%",
-                    "trungBinh": "7%",
-                    "kha": "10%",
-                    "gioi": "13%",
-                    "xuatSac": "15%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "kichThuocVaTanSuatCommit": {
-                    "yeu": "3%",
-                    "trungBinh": "10%",
-                    "kha": "13%",
-                    "gioi": "16%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "phanNhanh": {
-                    "yeu": "5%",
-                    "trungBinh": "10%",
-                    "kha": "14%",
-                    "gioi": "17%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 }
             }
         },
         {
             "loaiBaiTap": "HTML_CSS",
             "tieuChi": {
-                "cauTrucFile": "10%",
-                "hienThiCoBan": "10%",
-                "taiNguyen": "10%",
+                "nopDungHan":"100%",
+                "cauTrucFile": "100%",
+                "hienThiCoBan": "100%",
+                "taiNguyen": "100%",
                 "cauTrucHTML_Semantic": {
-                    "yeu": "3%",
-                    "trungBinh": "7%",
-                    "kha": "10%",
-                    "gioi": "13%",
-                    "xuatSac": "15%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "cssLayoutVaNaming": {
-                    "yeu": "3%",
-                    "trungBinh": "10%",
-                    "kha": "13%",
-                    "gioi": "16%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "responsive": {
-                    "yeu": "5%",
-                    "trungBinh": "10%",
-                    "kha": "14%",
-                    "gioi": "17%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 }
             }
         },
         {
             "loaiBaiTap": "JavaScript",
             "tieuChi": {
-                "khongLoiCuPhap": "10%",
-                "tuongTacCoBan": "10%",
-                "nhungDungCach": "10%",
+                "nopDungHan":"100%",
+                "khongLoiCuPhap": "100%",
+                "tuongTacCoBan": "100%",
+                "nhungDungCach": "100%",
                 "cauTrucCodeVaBien": {
-                    "yeu": "3%",
-                    "trungBinh": "7%",
-                    "kha": "10%",
-                    "gioi": "13%",
-                    "xuatSac": "15%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "thaoTacDOMVaSuKien": {
-                    "yeu": "3%",
-                    "trungBinh": "10%",
-                    "kha": "13%",
-                    "gioi": "16%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "logicVaCuPhapHienDai": {
-                    "yeu": "5%",
-                    "trungBinh": "10%",
-                    "kha": "14%",
-                    "gioi": "17%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 }
             }
         },
         {
             "loaiBaiTap": "C",
             "tieuChi": {
-                "bienDichThanhCong": "10%",
-                "thucThiCoBan": "10%",
-                "khongVongLapVoTan": "10%",
+                "nopDungHan":"100%",
+                "bienDichThanhCong": "100%",
+                "thucThiCoBan": "100%",
+                "khongVongLapVoTan": "100%",
                 "doChinhXacVaThuatToan": {
-                    "yeu": "3%",
-                    "trungBinh": "7%",
-                    "kha": "10%",
-                    "gioi": "13%",
-                    "xuatSac": "15%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "cauTrucHamVaCleanCode": {
-                    "yeu": "3%",
-                    "trungBinh": "10%",
-                    "kha": "13%",
-                    "gioi": "16%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 },
                 "quanLyBoNhoVaConTro": {
-                    "yeu": "5%",
-                    "trungBinh": "10%",
-                    "kha": "14%",
-                    "gioi": "17%",
-                    "xuatSac": "20%"
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
                 }
             }
         }

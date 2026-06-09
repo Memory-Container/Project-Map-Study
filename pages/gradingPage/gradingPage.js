@@ -1,7 +1,22 @@
 const searchBar = document.querySelector(".searchBar");
 const searchInput = document.querySelector(".searchBar .bar");
-const select = document.querySelectorAll("select");
+let select = document.querySelectorAll("select");
 const tableList = document.querySelector(".tableList");
+
+// Lấy thông tin user hiện tại từ localStorage
+const currentUserStr = localStorage.getItem("currentUser");
+let loggedInUser = {};
+if (currentUserStr) {
+    try {
+        loggedInUser = JSON.parse(currentUserStr);
+    } catch (e) {
+        console.error("Lỗi parse loggedInUser:", e);
+    }
+}
+const userRole = loggedInUser.role ? loggedInUser.role.toLowerCase() : "mentor";
+const userName = loggedInUser.name || "";
+
+let mentorSelect = null;
 
 function activeMore() {
     select.forEach((selectElement) => selectElement.classList.remove("active"));
@@ -53,11 +68,50 @@ async function fetchExamData() {
         const storedData = localStorage.getItem("examData");
         if (storedData) {
             examData = JSON.parse(storedData);
+            
+            // Tự động load lại từ file nếu dữ liệu cũ trong localStorage chưa có thuộc tính 'mentor'
+            if (examData.length > 0 && !examData[0].hasOwnProperty("mentor")) {
+                const response = await fetch("./Data.json");
+                examData = await response.json();
+                localStorage.setItem("examData", JSON.stringify(examData));
+            }
         } else {
             const response = await fetch("./Data.json");
             examData = await response.json();
             localStorage.setItem("examData", JSON.stringify(examData));
         }
+
+        // Thêm select lọc theo Mentor nếu là Admin
+        if (userRole === "admin" && !document.getElementById("mentorFilter")) {
+            const firstSelect = select[0];
+            if (firstSelect && firstSelect.parentNode) {
+                firstSelect.insertAdjacentHTML('afterend', `
+                    <select id="mentorFilter" style=" width: 150px; padding: 0 4px; border-radius: 8px; border: 2px solid transparent; cursor: pointer;">
+                        <option value="all">Tất cả Mentor</option>
+                    </select>
+                `);
+                mentorSelect = document.getElementById("mentorFilter");
+                mentorSelect.addEventListener("change", applyFilters);
+                
+                // Cập nhật lại danh sách select để tái sử dụng hiệu ứng click ra ngoài
+                select = document.querySelectorAll("select");
+                mentorSelect.addEventListener("click", () => {
+                    activeMore();
+                    mentorSelect.classList.add("active");
+                });
+            }
+        }
+
+        // Đổ dữ liệu các mentor vào select box nếu là admin
+        if (userRole === "admin" && mentorSelect) {
+            const uniqueMentors = [...new Set(examData.map(item => item["mentor"]).filter(Boolean))];
+            let optionsHTML = `<option value="all">Tất cả Mentor</option>`;
+            uniqueMentors.forEach(m => {
+                optionsHTML += `<option value="${m}">${m}</option>`;
+            });
+            mentorSelect.innerHTML = optionsHTML;
+        }
+
         applyFilters();
     } catch (error) {
         console.error("Lỗi tải dữ liệu Data.json:", error);
@@ -185,8 +239,14 @@ function renderCards() {
 function applyFilters() {
     const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : "";
     const selectedType = select.length > 0 ? select[0].value.toLowerCase() : "all";
+    const selectedMentor = mentorSelect ? mentorSelect.value : "all";
 
     const filteredData = examData.filter((item) => {
+        // Nếu là mentor thì chỉ thấy bài của chính mình
+        if (userRole === "mentor" && (item["mentor"] || "").trim().toLowerCase() !== userName.trim().toLowerCase()) {
+            return false;
+        }
+
         const matchName = item["Tên học viên"].toLowerCase().includes(searchTerm);
         const matchExercise = item["tên bài tập"].toLowerCase().includes(searchTerm);
         // Chỉ cần khớp 1 trong 2: Tên học viên HOẶC Tên bài tập
@@ -195,7 +255,10 @@ function applyFilters() {
         const itemType = item["loại bài tập"].toLowerCase();
         const matchType = selectedType === "all" || itemType === selectedType;
 
-        return matchSearch && matchType;
+        // Nếu là admin, lọc thêm theo thẻ select mentor
+        const matchMentor = (userRole === "admin" && selectedMentor !== "all") ? item["mentor"] === selectedMentor : true;
+
+        return matchSearch && matchType && matchMentor;
     });
 
     // Phân loại dữ liệu
@@ -218,6 +281,7 @@ if (btnReset) {
     btnReset.addEventListener("click", () => {
         if (searchInput) searchInput.value = "";
         if (select.length > 0) select[0].value = "All";
+        if (mentorSelect) mentorSelect.value = "all";
         applyFilters();
     });
 }

@@ -12,4 +12,22 @@ export const dataSignIn = [
         password: "123456789",
         role: "Admin",
     },
+    {
+        name:"Nguyễn Tuấn Kiệt",
+        mssv:"00000001",
+        password:"123456789",
+        role:"mentor"
+    },
+    {
+        name:"Lê Thanh Hương",
+        mssv:"00000002",
+        password:"123456789",
+        role:"mentor"
+    },
+    {
+        name:"Trần Hoàng Nam",
+        mssv:"00000003",
+        password:"123456789",
+        role:"mentor"
+    }
 ];

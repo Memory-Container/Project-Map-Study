@@ -77,7 +77,18 @@ wrapLearningRoadmap.addEventListener("click", (event) => {
 
     const targetBtn = event.target.closest(".buttonToRoadmap");
     if (targetBtn) {
-        localStorage.setItem("selectedCourse", "true");
+        // Lấy thông tin user hiện tại đang đăng nhập
+        let userId = "guest";
+        const currentUserStr = localStorage.getItem("currentUser");
+        if (currentUserStr) {
+            try {
+                const currentUser = JSON.parse(currentUserStr);
+                userId = currentUser.name || "guest";
+            } catch (e) {}
+        }
+
+        // Lưu trạng thái đã chọn lộ trình gắn liền với tên tài khoản của User đó
+        localStorage.setItem(`selectedCourse_${userId}`, "true");
         window.location.href = "../../pages/roadmapTarget/index.html";
     }
 });

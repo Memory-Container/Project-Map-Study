@@ -6,7 +6,7 @@
         "thời gian nộp": "13/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Nguyễn Tuấn Kiệt"
     },
     {
         "Tên học viên": "Trần Thị Bình",
@@ -15,7 +15,7 @@
         "thời gian nộp": "13/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Lê Thanh Hương"
     },
     {
         "Tên học viên": "Lê Hoàng Cường",
@@ -24,7 +24,7 @@
         "thời gian nộp": "12/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Trần Hoàng Nam"
     },
     {
         "Tên học viên": "Phạm Thu Dung",
@@ -33,7 +33,7 @@
         "thời gian nộp": "11/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Nguyễn Tuấn Kiệt"
     },
     {
         "Tên học viên": "Hoàng Minh Duy",
@@ -42,7 +42,7 @@
         "thời gian nộp": "13/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Lê Thanh Hương"
     },
     {
         "Tên học viên": "Vũ Thị Hoa",
@@ -51,7 +51,7 @@
         "thời gian nộp": "10/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Trần Hoàng Nam"
     },
     {
         "Tên học viên": "Phan Khắc Hải",
@@ -60,7 +60,7 @@
         "thời gian nộp": "12/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Nguyễn Tuấn Kiệt"
     },
     {
         "Tên học viên": "Bùi Ngọc Lan",
@@ -69,7 +69,7 @@
         "thời gian nộp": "09/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Lê Thanh Hương"
     },
     {
         "Tên học viên": "Đặng Quốc Khánh",
@@ -78,7 +78,7 @@
         "thời gian nộp": "11/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Trần Hoàng Nam"
     },
     {
         "Tên học viên": "Hồ Bích Ngọc",
@@ -87,7 +87,7 @@
         "thời gian nộp": "13/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Nguyễn Tuấn Kiệt"
     },
     {
         "Tên học viên": "Ngô Trí Phong",
@@ -96,7 +96,7 @@
         "thời gian nộp": "08/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Lê Thanh Hương"
     },
     {
         "Tên học viên": "Dương Thanh Quỳnh",
@@ -105,7 +105,7 @@
         "thời gian nộp": "07/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Trần Hoàng Nam"
     },
     {
         "Tên học viên": "Lý Bảo Quốc",
@@ -114,7 +114,7 @@
         "thời gian nộp": "12/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Nguyễn Tuấn Kiệt"
     },
     {
         "Tên học viên": "Đỗ Cẩm Tú",
@@ -123,7 +123,7 @@
         "thời gian nộp": "06/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Lê Thanh Hương"
     },
     {
         "Tên học viên": "Trương Viết Vũ",
@@ -132,6 +132,6 @@
         "thời gian nộp": "13/05/2026",
         "trạng thái": "chờ chấm",
         "số điểm": 0,
-        "người chấm": "chưa có"
+        "mentor": "Trần Hoàng Nam"
     }
 ]

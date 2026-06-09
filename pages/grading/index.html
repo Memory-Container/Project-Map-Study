@@ -6,6 +6,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="../../shared/utils.css" />
         <link rel="stylesheet" href="grading.css" />
+        <link rel="stylesheet" href="../../shared/modal.css" />
     </head>
     <body>
         <a href="../../pages/gradingPage/index.html" class="prev"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
@@ -25,40 +26,66 @@
                         <div class="submittionTime" style="font-size: 15px">Thời gian nộp: <span id="timely">13/05/2026</span></div>
                     </div>
                     <div class="boxPoint">
+                        <div class="titlePoint">Điểm</div>
                         <div class="pointOfUser"><span id="blockPointed">0</span>%</div>
                     </div>
                 </div>
                 <div class="containerCardTool">
-                    <div class="titleCard">Đề bài và Bài làm</div>
+                    <div class="titleCard"><i class="fa-regular fa-file"></i> Đề bài</div>
+                    <ul class="boxTopic">
+                        <li class="list">
+                            <span class="titleList">Nhập liệu (Input):</span>
+                            <ul class="listTopic">
+                                <li>Nhập số lượng sinh viên n (0 < n ≤ 50). Nếu người dùng nhập sai điều kiện, yêu cầu nhập lại cho đến khi đúng.</li>
+                                <li>Khai báo một mảng số thực để lưu điểm của n sinh viên.</li>
+                                <li>Tiến hành nhập điểm cho từng sinh viên (điểm phải nằm trong đoạn [0, 10]).</li>
+                            </ul>
+                        </li>
+                        <li class="list">
+                            <span class="titleList">Xử lý dữ liệu (Processing):</span>
+                            <ul class="listTopic">
+                                <li>Tính toán: Tính điểm trung bình của cả lớp.</li>
+                                <li>Tìm kiếm: Tìm điểm cao nhất và điểm thấp nhất trong lớp.</li>
+                                <li>Thống kê: Đếm xem có bao nhiêu sinh viên đạt điểm Giỏi (từ 8.0 trở lên).</li>
+                                <li>Sắp xếp: Sắp xếp danh sách điểm theo thứ tự giảm dần.</li>
+                            </ul>
+                        </li>
+                        <li class="list">
+                            <span class="titleList">Xuất kết quả (Output):</span>
+                            <ul class="listTopic">
+                                <li>In ra điểm trung bình (lấy 2 chữ số thập phân).</li>
+                                <li>In ra điểm Max, Min.</li>
+                                <li>In ra số lượng sinh viên đạt loại Giỏi.</li>
+                                <li>In ra danh sách điểm sau khi đã sắp xếp.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="containerCardTool">
+                    <div class="titleCard"><i class="fa-solid fa-link"></i> Link bài làm</div>
                     <div class="boxBtnLink">
-                        <button class="secondary btnTopic">Xem đề bài <i class="fa-regular fa-file-lines"></i></button>
-                        <button class="primary btnTopic">Xem bài làm <i class="fa-solid fa-link"></i></button>
+                        <div class="assignment">
+                            <div class="inputLink"><span id="link">https://thesystemsthinker.com/systems-thinking-what-why-when-where-and-how/</span></div>
+                            <button class="btnCopy"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerCardTool">
+                    <div class="titleCard">Nhận xét của người chấm <span>(Nếu có)</span></div>
+                    <textarea placeholder="Ghi nhận xét" id="commentExaminer"></textarea>
+                    <div class="wrapBtnFinish">
+                        <button class="primary btnFinish">Hoàn thành chấm bài</button>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="titleCard">Tiêu chí chấm bài - <span id="typeExercise">Git</span></div>
-                <div class="boxTaskList">
-                    <!-- Các tiêu chí chấm bài sẽ được Javascript render tự động vào đây -->
-                </div>
-            </div>
-            <div class="card cardGap">
-                <div class="titleCard">Nhận xét của người chấm <span>(Nếu có)</span></div>
-                <textarea placeholder="Ghi nhận xét" id="commentExaminer"></textarea>
-            </div>
-            <div class="card cardGap">
-                <div class="titleCard">Hoàn tất bài chấm</div>
-                <div class="wrapNameExaminer">
-                    <div class="titleExaminer">Tên người chấm</div>
-                    <input type="text" placeholder="Nhập tên người chấm..." id="examiner" />
-                </div>
-                <div class="wrapBtnFinish">
-                    <button class="primary btnFinish">Hoàn thành chấm bài</button>
-                </div>
+            <div class="card cardPadding">
+                <i class="fa-solid fa-question btnQues"></i>
+                <div class="titleCard">Tiêu chí chấm bài </div>
+                <div class="boxTaskList"></div>
             </div>
         </main>
-
         <script src="grading.js"></script>
+        <script src="../../shared/modal.js"></script>
         <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
     </body>
 </html>
