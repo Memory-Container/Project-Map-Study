@@ -1,0 +1,137 @@
+{
+    "danhSachNguoiCham": ["Nguyễn Văn A", "Trần Thị B", "Lê Hoàng C", "Phạm Văn D"],
+    "danhSachTieuChiChamDiem": [
+        {
+            "loaiBaiTap": "Git",
+            "tieuChi": {
+                "nopDungHan":"100%",
+                "khoiTaoVaRemote": "100%",
+                "lichSuCommit": "100%",
+                "thaoTacBranching": "100%",
+                "noiDungCommitMessage": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "kichThuocVaTanSuatCommit": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "phanNhanh": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                }
+            }
+        },
+        {
+            "loaiBaiTap": "HTML_CSS",
+            "tieuChi": {
+                "nopDungHan":"100%",
+                "cauTrucFile": "100%",
+                "hienThiCoBan": "100%",
+                "taiNguyen": "100%",
+                "cauTrucHTML_Semantic": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "cssLayoutVaNaming": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "responsive": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                }
+            }
+        },
+        {
+            "loaiBaiTap": "JavaScript",
+            "tieuChi": {
+                "nopDungHan":"100%",
+                "khongLoiCuPhap": "100%",
+                "tuongTacCoBan": "100%",
+                "nhungDungCach": "100%",
+                "cauTrucCodeVaBien": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "thaoTacDOMVaSuKien": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "logicVaCuPhapHienDai": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                }
+            }
+        },
+        {
+            "loaiBaiTap": "C",
+            "tieuChi": {
+                "nopDungHan":"100%",
+                "bienDichThanhCong": "100%",
+                "thucThiCoBan": "100%",
+                "khongVongLapVoTan": "100%",
+                "doChinhXacVaThuatToan": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "cauTrucHamVaCleanCode": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                },
+                "quanLyBoNhoVaConTro": {
+                    "Không đạt": "0%",
+                    "Rất yếu": "20%",
+                    "Tạm được": "40%",
+                    "Khá": "60%",
+                    "Tốt": "80%",
+                    "Hoàn Hảo": "100%"
+                }
+            }
+        }
+    ]
+}

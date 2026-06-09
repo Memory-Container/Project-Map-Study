@@ -22,8 +22,9 @@ signInForm.addEventListener("submit", function (event) {
         return;
     }
     localStorage.setItem("user", JSON.stringify(user));
-    if (user.role === "Admin") {
+    if (user.role === "Admin" || user.role === "mentor") {
         localStorage.setItem("admin", "true");
+        localStorage.setItem("mentor", "true");
         window.location.href = "../../pages/adminDashboard/index.html";
     } else if (user.role === "Student") {
         localStorage.setItem("user", "true");

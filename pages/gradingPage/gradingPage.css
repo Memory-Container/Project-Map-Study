@@ -1,0 +1,269 @@
+:root {
+    --color-examFinish: rgb(1, 200, 1);
+}
+main {
+    width: calc(100% - 270px);
+    padding: 20px 40px !important;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: absolute;
+    left: 270px;
+}
+.containerTitlte {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.containerTitlte .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-title);
+}
+.boxToolList {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+.boxToolList .searchBar {
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background-color: white;
+    gap: 12px;
+    border: 2px solid transparent;
+}
+.boxToolList .searchBar.active,
+select.active {
+    border: 2px solid #e67c04 !important;
+}
+.btnReset {
+    width: fit-content;
+}
+.boxToolList .searchBar .backgroundIcon {
+    width: fit-content;
+    height: 100%;
+    padding: 4px;
+}
+.boxToolList .searchBar .iconSearch {
+    font-size: 16px;
+}
+.boxToolList .searchBar .bar {
+    width: 100%;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    height: 100%;
+}
+.boxToolList select {
+    width: 150px;
+    padding: 0 4px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+section {
+    padding: 25px 0;
+    align-items: flex-start;
+}
+.containerCards {
+    flex-direction: column;
+    gap: 20px;
+}
+.titleListCard {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.containerCards .titleListCard .boxTitle {
+    width: 150px;
+    position: relative;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+}
+.containerCards .titleListCard .boxTitle .title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-title);
+    padding: 0 4px;
+    background-color: #e1e8ed;
+}
+.containerCards .titleListCard .boxTitle .line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #de7c0d;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -1;
+}
+.containerCards .titleListCard .quantityExam {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8e2d7;
+    border: 1px solid #e36111;
+    color: #913703;
+    font-weight: 600;
+}
+.containerCards .boxListCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+}
+.containerCards .boxListCard .card {
+    width: calc((100% - 20px * 2) / 3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: white;
+    border: 2px solid #8fabbdcb;
+}
+.containerCards .boxListCard .card .statusBadge {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-size: 12px;
+    border: 2px solid #e9830f;
+    background-color: #fff2e2;
+    font-weight: 600;
+    color: #a95e07;
+}
+.containerCards .boxListCard .card .tagExercise {
+    font-size: 14.5px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: #daedfaf8;
+    width: fit-content;
+    font-weight: 600;
+    color: #0d222ecb;
+}
+.containerCards .boxListCard .card .nameExercise {
+    height: 52px;
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 10px;
+    color: var(--color-title);
+}
+.containerCards .boxListCard .card .nameSubmitter {
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.containerCards .boxListCard .card .blockPoint {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 6px;
+    border-radius: 8px;
+    border: 2px solid #eaa882;
+    background-color: #fff9f6;
+}
+.containerCards .boxListCard .card .blockPoint .blockContent {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.boxListCard .card .blockPoint .blockContent .result {
+    font-size: 14px;
+    font-weight: 600;
+}
+.containerCards .boxListCard .card .blockPoint .blockContent .examiner {
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.containerCards .boxListCard .card .blockPoint .blockContent .examiner #examiner {
+    font-weight: 500;
+}
+.containerCards .boxListCard .card .blockPoint .pointOfUser {
+    font-size: 14px;
+    font-weight: 600;
+}
+.containerCards .boxListCard .card .blockPoint .pointOfUser #pointed {
+    font-size: 22px;
+}
+.containerCards .boxListCard .card .wrapTimeAndBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.containerCards .boxListCard .card .wrapTimeAndBtn .submittionTime {
+    font-size: 14px;
+    color: #222222cd;
+}
+.containerCards .boxListCard .card .wrapTimeAndBtn .btnSubmit {
+    padding: 7px 11px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.containerCards.containerCardsFinish .titleListCard .boxTitle .line {
+    background-color: var(--color-examFinish);
+}
+.containerCards.containerCardsFinish .titleListCard .quantityExam {
+    background-color: rgb(213, 255, 210);
+    border: 1px solid rgb(0, 204, 0);
+    color: var(--color-examFinish);
+}
+.containerCards.containerCardsFinish .boxListCard .card .statusBadge {
+    background-color: rgb(232, 255, 230);
+    border: 2px solid rgba(39, 175, 39, 0.899);
+    color: var(--color-examFinish);
+}
+.containerCards.containerCardsFinish .boxListCard .card .blockPoint.obtain {
+    display: flex;
+    background-color: rgb(235, 252, 233);
+    border: 2px solid rgba(39, 175, 39, 0.899);
+}
+.containerCards.containerCardsFinish .boxListCard .card .blockPoint.obtain .blockContent .result {
+    color: var(--color-examFinish);
+}
+.containerCards.containerCardsFinish .boxListCard .card .blockPoint.obtain .pointOfUser {
+    color: var(--color-examFinish);
+}
+.containerCards.containerCardsFinish .boxListCard .card .blockPoint.notObtain {
+    display: flex;
+    border: 2px solid #eaa882;
+    background-color: #fff9f6;
+}
+.containerCards.containerCardsFinish .boxListCard .card .blockPoint.notObtain .blockContent .result {
+    color: #c76701;
+}
+.containerCards.containerCardsFinish .boxListCard .card .blockPoint.notObtain .pointOfUser {
+    color: #c76701;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 15px;
+    width: 100%;
+}
+.pagination .primary {
+    padding: 7px;
+    border-radius: 4px;
+}

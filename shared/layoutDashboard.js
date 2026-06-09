@@ -26,7 +26,10 @@ header.innerHTML = `
                     <div class="dashboardContent">Quản lý</div>
                     <ul class="listMenu">
                         <li>
-                            <div class="nameTarget nameTargetChange"><i class="fa-solid fa-book"></i> Bài tập</div>
+                            <a href="../../pages/gradingPage/index.html" class="nameTarget nameTargetChange" id="gradingPage"><i class="fa-solid fa-book"></i> Chấm bài tập</a>
+                        </li>
+                        <li>
+                            <a href="../../pages/activeAdmin/index.html" class="nameTarget nameTargetChange" id="activeAdmin"><i class="fa-solid fa-book"></i> Hoạt động</a>
                         </li>
                     </ul>
                 </div>
@@ -50,7 +53,7 @@ containerTool.innerHTML = `
             </div>
             <div class="boxSignIn">
                 <div class="wrapSignIn">
-                    <i class="fa-solid fa-circle-user icon"></i>
+                    <div id="avatar"></div>
                     <div class="blockInfor">
                         <div class="name">Nguyễn Minh Vũ</div>
                         <div class="dynamic">Admin</div>
@@ -77,6 +80,24 @@ nameTarget.forEach((item) => {
     });
 });
 
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+window.addEventListener("DOMContentLoaded", () => {
+    if (currentUser) {
+        const avatar = document.querySelector("#avatar");
+        avatar.textContent = currentUser.name
+            .split(" ")
+            .filter((word, index, array) => index === 0 || index === array.length - 1)
+            .map((word) => word.charAt(0).toUpperCase())
+            .join("");
+        console.log(avatar.textContent);
+        const name = document.querySelector(".name");
+        name.textContent = currentUser.name;
+
+        const dynamic = document.querySelector(".dynamic");
+        dynamic.textContent = currentUser.role;
+    }
+});
+
 const pathSegments = window.location.pathname.split("/").filter(Boolean);
 const currentPages = pathSegments[1] || "defaultPage";
 const nameTargetChange = () => {
@@ -97,4 +118,6 @@ const nameTargetChange = () => {
         }
     }
 };
+
+
 nameTargetChange();

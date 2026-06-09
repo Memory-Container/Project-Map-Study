@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../../shared/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="activeUser.css" />
+    </head>
+    <body>
+        <header></header>
+
+        <main>
+            <div class="containerTitle px-3">
+                <div class="titlePage">Hoạt động</div>
+                <div class="subtitle">Khám phá và tham gia các hoạt động học tâp và rèn luyện kỹ năng cùng Ban Công Nghệ.</div>
+            </div>
+            <div class="d-flex justify-content-between pb-5 containerMain px-3">
+                <div class="blockMain">
+                    <div class="boxTool">
+                        <form id="filterForm" class="d-flex flex-row align-items-center rounded w-100 gap">
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="searchInput" placeholder="Nhập tên hoạt động..." />
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <select class="form-select" id="categorySelect">
+                                    <option value="all">Tất cả trạng thái</option>
+                                    <option value="Sắp diễn ra">Sắp diễn ra</option>
+                                    <option value="Đang diễn ra">Đang diễn ra</option>
+                                    <option value="Đã kết thúc">Đã kết thúc</option>
+                                </select>
+                            </div>
+                            <div class="w-auto">
+                                <button type="button" id="btnResetFilter" class="btn btn-secondary primary" title="Đặt lại"><i class="fa-solid fa-rotate-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="boxCard">
+                        <div class="d-flex containerCards" data-card="actives">
+                            <div class="titleListCard">
+                                <div class="boxTitle">
+                                    <div class="line"></div>
+                                    <div class="title">Các hoạt động</div>
+                                </div>
+                                <div class="quantityActive">0</div>
+                            </div>
+                            <div class="boxListCard">
+                                <div class="card"></div>
+                            </div>
+                            <div class="pagination" style="display: flex; justify-content: center; align-items: center; gap: 10px; padding-top: 15px">
+                                <button class="btnPrev primary btn btn-secondary"><i class="fa-solid fa-chevron-left"></i></button>
+                                <div class="pageNumbers" style="display: flex; gap: 5px"></div>
+                                <button class="btnNext primary btn btn-secondary"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="d-flex containerCards containerCardsActived" data-card="actived">
+                            <div class="titleListCard">
+                                <div class="boxTitle">
+                                    <div class="line"></div>
+                                    <div class="title">Đã tham gia</div>
+                                </div>
+                                <div class="quantityActive">0</div>
+                            </div>
+                            <div class="boxListCard">
+                            </div>
+                            <div class="pagination" style="display: flex; justify-content: center; align-items: center; gap: 10px; padding-top: 15px">
+                                <button class="btnPrev primary btn btn-secondary"><i class="fa-solid fa-chevron-left"></i></button>
+                                <div class="pageNumbers" style="display: flex; gap: 5px"></div>
+                                <button class="btnNext primary btn btn-secondary"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blockSecond bg-light shadow-sm rounded p-4 d-flex flex-column">
+                    <div class="boxSecond d-flex flex-column">
+                        <div class="titleSecond">Tổng quan</div>
+                        <div class="d-flex flex-wrap boxOverView">
+                            <div class="card p-2 px-3">
+                                <i class="fa-regular fa-calendar icon"></i>
+                                <div class="d-flex flex-column">
+                                    <div class="number">0</div>
+                                    <div class="content">Hoạt động đang diễn ra</div>
+                                </div>
+                            </div>
+                            <div class="card p-2 px-3">
+                                <i class="fa-regular fa-clock icon"></i>
+                                <div class="d-flex flex-column">
+                                    <div class="number">0</div>
+                                    <div class="content">Hoạt động sắp diễn ra</div>
+                                </div>
+                            </div>
+                            <div class="card p-2 px-3">
+                                <i class="fa-regular fa-circle-check icon"></i>
+                                <div class="d-flex flex-column">
+                                    <div class="number">0</div>
+                                    <div class="content">Hoạt động đã tham gia</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxSecond d-flex flex-column">
+                        <div class="titleSecond">Những hoạt động sắp diễn ra</div>
+                        <div class="d-flex flex-column card p-3"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer></footer>
+    </body>
+    <script src="https://kit.fontawesome.com/c4edd7a73c.js" crossorigin="anonymous"></script>
+    <script src="../../shared/js/bootstrap.min.js"></script>
+    <script src="../../shared/layout.js"></script>
+    <script src="activeUser.js"></script>
+</html>

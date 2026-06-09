@@ -247,40 +247,55 @@ blockInforCourses.forEach((blockInforCourse) => {
         openModal({
             title: `Thông tin chi tiết về ${courseTitle}`,
             message: courseData[courseId],
+            options: ["hidden"],
         });
     });
 });
 const buttonCTA = document.querySelector("#buttonCTA");
-const isUser = localStorage.getItem("user");
 
 const textCTA = document.querySelector(".textCTA");
 
-const selectedCourse = localStorage.getItem("selectedCourse");
 window.addEventListener("load", () => {
-    if (selectedCourse === "true") {
-        textCTA.textContent = "Tiếp tục học";
-        buttonCTA.addEventListener("click", () => {
-            window.location.href = "../../pages/roadmapTarget/index.html";
-        });
-    }
-});
+    const isUser = localStorage.getItem("user");
 
-buttonCTA.addEventListener("click", () => {
-    if (isUser === "true") {
-        window.location.href = "../../pages/roadmap/index.html";
+    // Lấy thông tin tài khoản hiện tại đang đăng nhập
+    let userId = "guest";
+    const currentUserStr = localStorage.getItem("currentUser");
+    if (currentUserStr) {
+        try {
+            const currentUser = JSON.parse(currentUserStr);
+            userId = currentUser.name || "guest";
+        } catch(e) {}
+    }
+
+    // Kiểm tra xem User cụ thể này đã chọn lộ trình chưa
+    const selectedCourse = localStorage.getItem(`selectedCourse_${userId}`);
+
+    if (isUser === "true" && selectedCourse === "true") {
+        textCTA.textContent = "Tiếp tục học";
+        buttonCTA.onclick = () => {
+            window.location.href = "../../pages/roadmapTarget/index.html";
+        };
     } else {
-        openModal({
-            title: "Vui lòng đăng nhập để tiếp tục",
-            message: "Bạn cần đăng nhập để truy cập lộ trình học. Vui lòng nhấn nút Đăng nhập để tiếp tục.",
-            options: [
-                {
-                    type: "primary",
-                    message: "Đăng nhập",
-                    callback: () => {
-                        window.location.href = "../../pages/signin/index.html";
-                    },
-                },
-            ],
-        });
+        textCTA.textContent = "Đăng ký ngay";
+        buttonCTA.onclick = () => {
+            if (isUser === "true") {
+                window.location.href = "../../pages/roadmap/index.html";
+            } else {
+                openModal({
+                    title: "Vui lòng đăng nhập để tiếp tục",
+                    message: "Bạn cần đăng nhập để truy cập lộ trình học. Vui lòng nhấn nút Đăng nhập để tiếp tục.",
+                    options: [
+                        {
+                            type: "primary",
+                            message: "Đăng nhập",
+                            callback: () => {
+                                window.location.href = "../../pages/signIn/index.html";
+                            },
+                        },
+                    ],
+                });
+            }
+        };
     }
 });

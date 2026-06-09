@@ -1,0 +1,142 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+.containerTitle{
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    --bs-gutter-x: 0;
+    width: 100%;
+}
+.titlePage{
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--color-title);
+}
+.subtitle{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.containerMain{
+    gap: 20px;
+    width:100%;
+    --bs-gutter-x: 0;
+}
+.blockMain{
+    flex: 2;
+}
+.gap{
+    gap: 20px;
+}
+.btn-secondary{
+    --bs-btn-hover-bg:#ffa135;
+    --bs-btn-active-bg:#ffa135;
+}
+.containerCards {
+    flex-direction: column;
+    gap: 20px;
+}
+.titleListCard {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.containerCards .titleListCard .boxTitle {
+    width: 150px;
+    position: relative;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+}
+.containerCards .titleListCard .boxTitle .title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-title);
+    padding: 0 4px;
+    background-color: #e1e8ed;
+}
+.containerCards .titleListCard .boxTitle .line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #de7c0d;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -1;
+}
+.containerCards .titleListCard .quantityActive {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8e2d7;
+    border: 1px solid #e36111;
+    color: #913703;
+    font-weight: 600;
+}
+.containerCards .boxListCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+}
+.containerCards .boxListCard .card {
+    width: calc((100% - 20px * 2) / 3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: white;
+    border: 2px solid #8fabbdcb;
+}
+.blockSecond{
+    flex:0.8;
+    gap: 30px;
+    height: fit-content;
+}
+.boxSecond{
+    gap: 16px;
+}
+.titleSecond{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-title);
+}
+.boxOverView{
+    gap: 20px;
+}
+.boxOverView .card{
+    width: calc((100% - 20px) / 2);
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    gap: 12px;
+    color: #243b53;
+}
+.boxOverView .card .icon{
+    font-size: 1.7rem;
+    color:#ffa135;
+}
+.gp{
+    gap: 4px;
+}
+.boxOverView .card .number{
+    font-size: 2rem;
+    font-weight: 600;
+    height: fit-content;
+    color: var(--color-title);
+}
+.boxOverView .card .content{
+    font-size: 13px;
+    font-weight: 500;
+}

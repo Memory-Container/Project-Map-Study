@@ -1,0 +1,304 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.prev {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: #243b53;
+    font-size: 17px;
+    width: fit-content;
+    transition: width 0.2s ease;
+    cursor: pointer;
+    z-index: 10;
+}
+.prev:hover {
+    color: #db7705;
+    width: 90px;
+    justify-content: space-between;
+}
+main {
+    display: flex;
+    gap: 20px;
+    width: 95%;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    border: 2px solid #a1bccccb;
+    background-color: white;
+    border-radius: 12px;
+    position: relative;
+
+}
+.card.cardPadding{
+    padding: 20px;
+    height: fit-content;
+}
+.card .containerCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px 20px 30px 20px;
+    position: relative;
+}
+.card .containerCard .boxinfor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.card .containerCard .boxinfor .wrapTag {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.card .containerCard .boxinfor .wrapTag .tagExercise {
+    padding: 6px 14px;
+    background-color: #daedfaf8;
+    color: #091922cb;
+    border-radius: 16px;
+    font-size: 16px;
+    width: fit-content;
+    font-weight: 600;
+}
+.card .containerCard .boxinfor .wrapTag .tagStatusBadge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    width: fit-content;
+    font-weight: 600;
+    border: 2px solid #e9830f;
+    background-color: #fff2e2;
+    color: #a95e07;
+}
+
+.card .containerCard .boxinfor .nameExercise {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-title);
+}
+.card .containerCard .boxinfor .nameSubmitter #name {
+    font-size: 17px;
+    font-weight: 600;
+}
+.card .containerCard .boxPoint {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background-color: #fc7201;
+    color: #ffffff;
+}
+.card .containerCard .boxPoint .titlePoint{
+    font-size: 1.02rem;
+    font-weight: 600;
+}
+.card .containerCard .boxPoint .pointOfUser {
+    font-size: 1.3rem;
+}
+.card .containerCard .boxPoint .pointOfUser #blockPointed {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.card .containerCardTool {
+    padding: 30px 20px 20px 20px    ;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 2px solid #c0c0c0c9;
+}
+.titleCard {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.card .containerCardTool .boxBtnLink {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+.card .containerCardTool .boxBtnLink .secondary {
+    font-size: 15px;
+}
+.card .containerCardTool .boxBtnLink .assignment{
+    display: flex;
+    gap: 12px;
+}
+.card .containerCardTool .boxBtnLink .assignment .inputLink{
+    width: 550px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid #a9bec5;
+    background-color: rgb(247, 253, 255);
+    padding: 0 12px;
+    color: #006ee4;
+
+}
+.card .containerCardTool .boxBtnLink .assignment .inputLink #link{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.card .containerCardTool .boxBtnLink .assignment .btnCopy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    padding: 6px;
+    border: 2px solid #a9bec5;
+    background-color: rgb(247, 253, 255);
+    color: #646464;
+
+}
+.card .boxTaskList {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.card .boxTaskList .task {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #a9bec5;
+    background-color: rgb(247, 253, 255);
+    flex-direction: column;
+    gap: 15px;
+    font-w
+}
+.card .boxTaskList .task.taskChangeFlex{
+    flex-direction: row;
+}
+.card .boxTaskList .task .wrapNameCheckBox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.card .boxTaskList .task .wrapNameCheckBox #checkBox {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.card .boxTaskList .task .nameCheckBox {
+    font-size: 16px;
+    font-weight: 600;
+}
+.card .boxTaskList .task .pointTask #point {
+    font-size: 14px;
+}
+.card .boxTaskList .task.tasked {
+    border: 2px solid #f68f19;
+    background-color: #fff4e7;
+    color: #d27000;
+}
+.card .boxTaskList .task .wrapNorm {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+.card .boxTaskList .task .wrapNorm .norm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.card .boxTaskList .task .wrapNorm .norm .chooseNorm {
+    cursor: pointer;
+}
+.card .boxTaskList .task .wrapNorm .norm .pointTask {
+    font-size: 14px;
+}
+
+.titleCard span {
+    font-size: 14px;
+    font-weight: 500;
+}
+.card #commentExaminer {
+    padding: 12px;
+    width: 100%;
+    height: 100px;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid #a9bec5;
+    background-color: rgb(250, 254, 255);
+    font-size: 15px;
+}
+.card .wrapNameExaminer {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+.card .wrapNameExaminer .titleExaminer {
+    font-size: 15px;
+    color: var(--color-title);
+}
+.card .wrapNameExaminer #examiner {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #a9bec5;
+    background-color: rgb(250, 254, 255);
+    font-size: 16px;
+    outline: none;
+}
+.card .wrapBtnFinish {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btnQues{
+    font-size: 1.05rem;
+    font-weight: 600;
+    color:red;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.listNote{
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.listTopic{
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.titleList{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.boxTopic{
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}

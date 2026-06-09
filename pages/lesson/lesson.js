@@ -2,6 +2,7 @@ import { dataLesson } from "./Data/dataLesson.js";
 import { lessonNames } from "./Data/listLessonName.js";
 const dataButton = {
     theory: () => {
+        let attempts = parseInt(localStorage.getItem(`quizAttempts_${currentLesson}`)) || 0;
         const itemContent = document.querySelector(".itemContent");
         itemContent.innerHTML = `
                 <div class="point" id="pointTheory">0<span>%</span></div>
@@ -9,7 +10,7 @@ const dataButton = {
                 <div class="contentParent">
                     <div class="contentChild">
                         <div class="nameContent">Số lần làm</div>
-                        <div class="quantity">0</div>
+                        <div class="quantity">${attempts}</div>
                         <button class="primary notTarget">Bài tiếp theo <i class="fa-solid fa-arrow-right icon"></i></button>
                     </div>
                 </div>
@@ -47,23 +48,34 @@ const dataButton = {
         }
     },
 };
-let maxResult = localStorage.getItem("percent") || 0;
+
+let listname = 0;
+let currentLesson = parseInt(localStorage.getItem("currentLesson")) || 0;
+let highestUnlockedLesson = parseInt(localStorage.getItem("highestUnlockedLesson")) || currentLesson;
+let maxResult = 0;
+
 function maxTheory() {
     const pointTheory = document.getElementById("pointTheory");
     if (!pointTheory) return;
 
-    const currentPercent = localStorage.getItem("percent") || 0;
-    const savedMax = localStorage.getItem("maxResult") || 0;
+    const currentPercent = parseFloat(localStorage.getItem("percent")) || 0;
+    const savedMax = parseFloat(localStorage.getItem(`maxResult_${currentLesson}`)) || 0;
 
     if (currentPercent > savedMax) {
         maxResult = currentPercent;
-        localStorage.setItem("maxResult", String(maxResult));
+        localStorage.setItem(`maxResult_${currentLesson}`, String(maxResult));
     } else {
         maxResult = savedMax;
     }
 
     pointTheory.innerHTML = `${maxResult} <span>%</span>`;
     pointTheory.style.setProperty("--progress-resultQuiz", `${maxResult}%`);
+
+    const quantityElement = document.querySelector(".contentChild .quantity");
+    if (quantityElement) {
+        let attempts = parseInt(localStorage.getItem(`quizAttempts_${currentLesson}`)) || 0;
+        quantityElement.textContent = attempts;
+    }
 
     const notificationTheory = document.getElementById("notificationTheory");
 
@@ -97,7 +109,7 @@ instructHomework.addEventListener("click", () => {
         message: `
             <ul class="modalInstruct">
                 <li class="titleContent">Đây là phần luyện tập bắt buộc bạn phải làm sau khi bạn đã học xong bài này để giúp bạn ghi nhớ những kiến thức mình vừa học được. Ngoài ra để học bài tiếp theo bạn phải hoàn thành hết tất cả các bài tập có trong phần "Luyện tập" này.</li>
-                <li class="content"><span>Trắc nghiệm lý thuyết:</span> Khi bạn nhấn vào đây, nó sẽ dẫn bạn đến một trang page theo phong cách 1 câu hỏi và 4 đáp án. Bạn sẽ có 10s để suy nghĩ và đưa ra câu trả lời cho câu hỏi. Để trả lời bạn phải nhấn vào 1 trong 4 đáp án và nhấn xác nhấn, lúc này đáp án đúng sẽ hiển thị lên trên màng hình của bạn kèm theo lời giải thích cho đáp án đó. Để đến với câu hỏi tiếp theo bạn chỉ cần nhấn nút "Tiếp theo" ngay bên dưới phần góc bên phải bên dưỡi. Tối thiểu số câu hỏi là 10 câu, nó sẽ tùy thuộc vào nội dung bài học của bạn là dài hay ngắn để có số lượng câu hỏi phù hợp. Để tính được số phần trăm tương ứng với một câu hỏi, bạn sẽ lấy 100% chia cho tổng số lượng câu hỏi. Và để tính được số phần trăm cho bài tập "Trắc nghiệm lý thuyết", bản chỉ lấy số phần trăm cho một câu hỏi nhân với số lượng câu hỏi bạn làm đúng. Số phần trăm hoàn thành của bạn sẽ được hiển thị ở góc bên phải.</li>
+                <li class="content"><span>Trắc nghiệm lý thuyết:</span> Khi bạn nhấn vào đây, nó sẽ dẫn bạn đến một trang page theo phong cách 1 câu hỏi và 4 đáp án. Bạn sẽ có 10s để suy nghĩ và đưa ra câu trả lời cho câu hỏi. Để trả lời bạn phải nhấn vào 1 trong 4 đáp án và nhấn xác nhấn, lúc này đáp án đúng sẽ hiển thị lên trên màng hình của bạn kèm theo lời giải thích cho đáp án đó. Để đến với câu hỏi tiếp theo bạn chỉ cần nhấn nút "Tiếp theo" ngay bên dưới phần góc bên phải bên dưỡi. Tối thiểu số câu hỏi là 10 câu, nó sẽ tùy thuộc vào nội dung bài học của bạn là dài hay ngắn để có số lượng câu hỏi phù hợp. Để tính được số phần trăm tương ứng với một câu hỏi, bạn sẽ lấy 100% chia cho tổng số lượng câu hỏi.</li>
             </ul>
         `,
     });
@@ -105,14 +117,14 @@ instructHomework.addEventListener("click", () => {
 const instructSumPoint = document.querySelector("#instructSumPoint");
 instructSumPoint.addEventListener("click", () => {
     openModal({
-        title: `Hướng dẫn tính điểm`,
+        title: `Mục đích của từng phần điểm`,
         message: `
             <ul class="modalInstruct">
-                <li class="titleContent">Bạn muốn mở khóa bài học tiếp theo thì bắt buộc phần "Kết quả" bạn phải trên 80%</li>
-                <li class="content"><span>"Kết quả":</span> Đây là phần được xem là tổng số phần trăm mà bạn đạt được khi bạn đã làm ở phần "Phần trắc nghiệm lý thuyết".</li>
-                <li class="content"><span>"Lý thuyết":</span> Đây là phần thể hiện số phần trăm mà bạn đã hoàn thành ở phần "Trắc nghiệm lý thuyết". Ngoài ra ở bên dưới có phần đếm số lần bạn làm lại bài tập trắc nghiệm này.</li>
+                <li class="content"><span>"Lý thuyết": Khi bạn đạt 80% thì bạn sẽ được mở khóa bài học tiếp theo.</li>
+                <li class="content"><span>"Thực hành":</span> Điểm thực hành sẽ dùng để tích lũy điểm để mở chương mới trong lộ trình. Chỉ cần số điểm tích lũy đạt trên 80% thì bạn sẽ mở được chương mới.</li>
             </ul>
         `,
+        options: ["hidden"],
     });
 });
 
@@ -130,6 +142,7 @@ practiceExer.addEventListener("click", () => {
                     </div>
                 </div>
             `,
+        options: ["hidden"],
     });
     const linkLesson = document.getElementById("linkLesson");
     linkLesson.textContent = "";
@@ -161,9 +174,6 @@ practiceExer.addEventListener("click", () => {
 });
 
 const listLessons = document.querySelector(".lessons");
-let listname = 0;
-let lessonResults = {};
-let currentLesson = 0;
 
 const renderLesson = () => {
     for (listname; listname <= lessonNames.length - 1; listname++) {
@@ -188,21 +198,24 @@ const renderLesson = () => {
 
 const nextLesson = () => {
     const buttonEventListion = document.querySelector(".contentChild .primary");
+    if (!buttonEventListion) return;
     buttonEventListion.addEventListener("click", () => {
-        lessonResults[currentLesson] = maxResult;
+        if (buttonEventListion.classList.contains("notTarget")) return;
 
         const lessons = document.querySelectorAll(".lessons li");
         if (currentLesson < lessons.length - 1) {
             lessons[currentLesson].classList.remove("target");
             currentLesson++;
 
+            if (currentLesson > highestUnlockedLesson) {
+                highestUnlockedLesson = currentLesson;
+                localStorage.setItem("highestUnlockedLesson", String(highestUnlockedLesson));
+            }
             localStorage.setItem("currentLesson", String(currentLesson));
-            const currentLecture = localStorage.getItem("currentLesson") || 0;
-            lessons[currentLecture].classList.add("lecture", "target");
+            
+            lessons[currentLesson].classList.add("lecture", "target");
 
-            maxResult = lessonResults[currentLesson] || 0;
-            localStorage.setItem("percent", String(maxResult));
-            localStorage.setItem("maxResult", String(maxResult));
+            localStorage.setItem("percent", "0");
 
             const deractionChoosing = document.querySelector(".itemButton .deraction.choosing");
             if (deractionChoosing && deractionChoosing.dataset.item === "theory") {
@@ -230,9 +243,8 @@ const currentTarget = () => {
             currentLesson = newIndex;
             clickedLesson.classList.add("target");
 
-            maxResult = lessonResults[currentLesson] || 0;
-            localStorage.setItem("percent", String(maxResult));
-            localStorage.setItem("maxResult", String(maxResult));
+            localStorage.setItem("currentLesson", String(currentLesson));
+            localStorage.setItem("percent", "0");
 
             const deractionChoosing = document.querySelector(".itemButton .deraction.choosing");
             if (deractionChoosing && deractionChoosing.dataset.item === "theory") {
@@ -256,6 +268,8 @@ const showLesson = () => {
     });
 };
 window.addEventListener("load", () => {
+    currentLesson = highestUnlockedLesson;
+    localStorage.setItem("currentLesson", String(currentLesson));
     const deractions = document.querySelectorAll(".itemButton .deraction");
     deractions.forEach((deraction) => {
         const choosing = deraction.classList.contains("choosing");
@@ -268,9 +282,16 @@ window.addEventListener("load", () => {
         }
     });
     renderLesson();
+    
     const lessons = document.querySelectorAll(".lessons li");
+    for (let i = 0; i <= highestUnlockedLesson; i++) {
+        if (lessons[i]) {
+            lessons[i].classList.add("lecture");
+        }
+    }
+    
     if (lessons[currentLesson]) {
-        lessons[currentLesson].classList.add("lecture", "target");
+        lessons[currentLesson].classList.add("target");
     }
     currentTarget();
     showLesson();

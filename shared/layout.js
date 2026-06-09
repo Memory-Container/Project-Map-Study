@@ -16,7 +16,7 @@ footer.innerHTML = `
                             <div class="titleInfor">Khám phá</div>
                             <div class="contentInfors">
                                 <a href="../../pages/homepage/index.html" class="content contentHover">Trang chủ</a>
-                                <a href="../../pages/homepage/index.html#sectionInforCourse" class="content contentHover"></a>
+                                <a href="../../pages/homepage/index.html" class="content contentHover">Hoạt động</a>
                                 <a href="../../pages/homepage/index.html#sectionPrograme" class="content contentHover"></a>
                                 <a href="../../pages/homepage/index.html#sectionFAQ" class="content contentHover"></a>
                             </div>
@@ -40,13 +40,16 @@ footer.innerHTML = `
             </div>
 `;
 header.innerHTML = `
-        <div class="containerHeader flex-r j-between">
+        <div class="containerHeader">
             <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
             <div class="overlay">
                 <ul class="mobileMenu">
                     <li class="closeMenu"><i class="fa-solid fa-xmark"></i></li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../pages/homepage/" id="homepage">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/activeUser/" id="activeUser">Hoạt động</a>
                     </li>
                 </ul>
             </div>
@@ -56,6 +59,9 @@ header.innerHTML = `
                 <ul class="nav-menu">
                     <li class="nav-item">
                         <a class="nav-link" href="../../pages/homepage/" id="homepage">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/activeUser/" id="activeUser">Hoạt động</a>
                     </li>
 
                 </ul>
@@ -152,6 +158,7 @@ logOut.addEventListener("click", async () => {
     localStorage.removeItem("currentUser");
     localStorage.removeItem("admin");
     localStorage.removeItem("user");
+    localStorage.removeItem("selectedCourse");
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
