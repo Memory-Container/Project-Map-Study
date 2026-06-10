@@ -291,6 +291,7 @@ button {
 }
 .primary {
     background-color: var(--accent-code);
+    border-radius: 8px;
     color: #fff;
     border: 0;
     opacity: 1;
