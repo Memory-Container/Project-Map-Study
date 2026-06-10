@@ -7,26 +7,112 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
         <link rel="stylesheet" href="../../shared/modal.css" />
         <link rel="stylesheet" href="../../shared/utils.css" />
+        <link rel="stylesheet" href="../../shared/css/bootstrap.min.css" />
         <link rel="stylesheet" href="homepage.css" />
     </head>
     <body>
         <header></header>
         <main class="flex-c">
             <section class="heroSection">
+                <div class="grid-bg"></div>
                 <div class="container">
                     <div class="heroContainer">
-                        <div class="heroTitle">Đừng học mọi thứ.<span>Hãy học thứ bạn cần.</span></div>
-                        <div class="heroContent">
-                            <div class="subHeading">Hệ thống học tập cưỡng bức giúp thành viên BCN không bị phân tâm. Chọn một lộ trình chuyên sâu, khóa mục tiêu và trở thành chuyên gia.</div>
-                            <button class="primary" id="buttonCTA">
-                                <span class="textCTA">Khóa mục tiêu học</span>
-                                <img src="/assets/svg/arrow.svg" class="arrow flip" />
-                            </button>
+                        <div class="heroLeft">
+                            <div class="heroTitle">
+                                Chào mừng trở lại,
+                                <div>Thợ săn <span id="nameUser">Shadow Hunter</span></div>
+                            </div>
+                            <div class="heroContent">
+                                <div class="subHeading">Con đường của bạn đang tiến triển. Tiếp tục hành trình, hoàn thành nhiệm vụ và nâng cấp kỹ năng để mở khóa những khu vực mới trong thành phố.</div>
+                                <div class="d-flex gBtn">
+                                    <button class="primary" id="buttonCTA">
+                                        <span class="textCTA">Khóa mục tiêu học</span>
+                                        <img src="/assets/svg/arrow.svg" class="arrow flip" />
+                                    </button>
+                                    <button class="secondary">Xem nhiệm vụ hôm nay</button>
+                                </div>
+                            </div>
+                            <div class="card bg-body p-2 px-3 d-flex align-items-center heroCourse flex-row">
+                                <div class="boxIcon d-flex justify-content-center align-items-center p-2"><i class="fa-solid fa-desktop"></i></div>
+                                <div class="d-flex flex-column gContent">
+                                    <div class="title">Con đường đã chọn</div>
+                                    <div class="nameCourse">Web</div>
+                                    <div class="d-flex flex-column gPercent align-items-end">
+                                        <div class="line"></div>
+                                        <div class="percent">67%</div>
+                                    </div>
+                                </div>
+                                <div class="status ">Đang học</div>
+                            </div>
+                        </div>
+                        <div class="card cardUser shadow-lg rounded-4">
+                            <div class="boxInfor d-flex justify-content-between p-3 px-4 border-bottom">   
+                                <div class="blockInfor d-flex align-items-center">
+                                    <div class="avatar">SH</div>
+                                    <div class="infor">
+                                        <div class="name">Shadow Hunter</div>
+                                        <div class="role">Thợ săn - <span id="statusUser">Hoạt động</span></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column fontLevel align-items-center">
+                                    Cấp độ
+                                    <span id="levelUser">12</span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gExper p-3 px-4 border-bottom">
+                                <div class="d-flex justify-content-between">
+                                    <div class="content">Kinh nghiệm</div>
+                                    <div class="content"><span class="expUser">1,200</span> / 3,000 XP</div>
+                                </div>
+                                <div class="lineLevel"></div>
+                            </div>
+                            <div class="d-flex w-100 px-4 border-bottom">
+                                <div class="d-flex py-3 flex-column align-items-center justify-content-center boxData">
+                                    <div class="expUser contentData">1,200</div>
+                                    <div class="title">XP</div>
+                                </div>
+                                <div class="d-flex py-3 flex-column align-items-center justify-content-center boxData border-start border-end">
+                                    <div class="contentData" id="badge">24</div>
+                                    <div class="title">Huy hiệu</div>
+                                </div>
+                                <div class="d-flex py-3 flex-column align-items-center justify-content-center boxData">
+                                    <div class="contentData">
+                                        <span id="area">4</span> / 12
+                                    </div>
+                                    <div class="title">Khu vực</div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gMisson p-3 px-4 border-bottom">
+                                <div class="title">Nhiệm vụ hôm nay</div>
+                                <div class="listMisson d-flex flex-column">
+                                    <div class="misson d-flex justify-content-between align-items-center border-bottom p-2 px-0">
+                                        <div class="d-flex align-items-center gContent">
+                                            <input type="checkbox" name="" id="dailyLoginTask" disabled>
+                                            <div class="contentMisson">Điểm danh Guild</div>
+                                        </div>
+                                        <div class="pointXP"><span class="point">+15</span> XP</div>
+                                    </div>
+                                    <div class="misson d-flex justify-content-between align-items-center border-bottom p-2 px-0">
+                                        <div class="d-flex align-items-center gContent">
+                                            <input type="checkbox" name="" id="discordTask" disabled>
+                                            <div class="contentMisson">Tham gia lớp Discord</div>
+                                        </div>
+                                        <div class="pointXP"><span class="point">+20</span> XP</div>
+                                    </div>
+                                    <div class="misson d-flex justify-content-between align-items-center p-2 px-0">
+                                        <div class="d-flex align-items-center gContent">
+                                            <input type="checkbox" name="" id="weeklyChallengeTask" disabled>
+                                            <div class="contentMisson">Hoàn thành Challenge tuần</div>
+                                        </div>
+                                        <div class="pointXP"><span class="point">+50</span> XP</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="sectionTool">
+            <!-- <section class="sectionTool">
                 <div class="container">
                     <div class="wrapTool">
                         <div class="blockTool">
@@ -58,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section class="sectionInforCourse" id="#sectionInforCourse">
                 <div class="container containerInforCourse">
                     <div class="titleSection">Thông tin 3 chuyên ngành đào tạo</div>
@@ -90,6 +176,7 @@
         </main>
         <footer></footer>
     </body>
+    <script src="../../shared/js/bootstrap.min.js"></script>
     <script src="../../shared/modal.js"></script>
     <script src="../../shared/layout.js"></script>
     <script src="homepage.js"></script>
