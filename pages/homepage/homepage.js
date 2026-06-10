@@ -298,4 +298,18 @@ window.addEventListener("load", () => {
             }
         };
     }
+
+    // Xử lý nhiệm vụ Điểm danh Guild hàng ngày
+    const dailyLoginTask = document.getElementById("dailyLoginTask");
+    if (dailyLoginTask && isUser === "true") {
+        const today = new Date().toLocaleDateString();
+        const lastLoginDate = localStorage.getItem(`lastLoginDate_${userId}`);
+
+        if (lastLoginDate !== today) {
+            // Lưu lại ngày đăng nhập để biết là đã đăng nhập lần đầu trong ngày
+            localStorage.setItem(`lastLoginDate_${userId}`, today);
+        }
+        // Tự động tick ô nhiệm vụ Điểm danh Guild
+        dailyLoginTask.checked = true;
+    }
 });

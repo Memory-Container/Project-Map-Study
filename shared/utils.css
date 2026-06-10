@@ -169,7 +169,7 @@ section {
 }
 .container {
     max-width: 1240px;
-    width: 95%;
+    width: 95% !important;
     position: relative;
     padding-right:0 !important; 
     padding-left: 0 !important; 
