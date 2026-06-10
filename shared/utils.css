@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +9,13 @@
     display: none !important;
 }
 :root {
-    --font-family: "Quicksand", sans-serif;
-    --accent-code: #ff8901;
+    --font-family: "Inter", sans-serif;
+    --accent-code: #e8571a;
     --accent: var(--accent-code);
     --accent-glow: rgba(var(--accent-code), 0.5);
-    --bg-default: #e1e8ed;
-    --bg-surface: #102a43;
-    --bg-black: rgb(0, 12, 39);
+    --bg-default: #f7f7f7;
+    --bg-surface: rgb(24, 24, 24);
+    --bg-black: rgb(16, 16, 16);
     --default-gray: rgb(59, 59, 59);
     --tertiary-gray: rgb(59, 59, 59);
     --color-title: var(--bg-surface);
@@ -33,9 +34,7 @@
     --font-l: 22px;
     --font-xl: 28px;
 }
-ul{
-    padding-left: 0; 
-}
+
 html,
 body {
     background-color: var(--bg-default);
@@ -44,6 +43,13 @@ body {
     position: relative;
     font-size: 16px;
 }
+dl, ol, ul {
+    padding-left: 0; 
+    margin-bottom: 0 !important;
+}
+ ol, ul{
+    padding-left: 0 !important;
+ }
 header {
     width: 100%;
     position: fixed;
@@ -165,6 +171,10 @@ section {
     max-width: 1240px;
     width: 95%;
     position: relative;
+    padding-right:0 !important; 
+    padding-left: 0 !important; 
+    margin-right: 0 !important; 
+    margin-left: 0 !important;
 }
 .main-nav {
     display: flex;
@@ -182,10 +192,14 @@ section {
     display: flex;
     list-style: none;
     gap: 35px;
+    margin-bottom: 0;
+    padding-left: 0;
+    height: 100%;
 }
 
 .nav-item {
     position: relative;
+    height: 100%;
 }
 #roadmap {
     display: none;
@@ -197,11 +211,15 @@ section {
     color: #243b53;
     font-size: 16px;
     padding: 18.5px 0;
+    align-items: center;
+    display: flex !important;
+    height: 100%;
 }
 .nav-link:hover,
 .nav-link.active {
     border-bottom: 3px solid #ff9c2a;
     color: #ff9c2a;
+    
 }
 .hamburger {
     font-size: 24px;
@@ -272,7 +290,7 @@ button {
     rotate: 180deg;
 }
 .primary {
-    background-color: #ffa135;
+    background-color: var(--accent-code);
     color: #fff;
     border: 0;
     opacity: 1;

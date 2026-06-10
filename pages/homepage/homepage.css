@@ -1,93 +1,234 @@
 .heroSection {
+    position: relative;
     width: 100%;
     height: auto;
-    padding: 32px 0;
+    padding: 85px 0;
 }
 .heroContainer {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 25px;
+    position: relative;
+}
+.gBtn{
     gap: 20px;
-    text-align: center;
 }
 .heroContainer .primary {
-    font-size: clamp(18px, 2vw, 20px);
+    font-size: 14px;
     font-weight: 600;
-    padding: 12px 16px;
+    padding: 6px 14px;
+    border-radius: 8px;
 }
+.heroContainer .secondary{
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.grid-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+    background-color: #fafafa;
 
+    background-image:
+        linear-gradient(to right, #dcdcdc 0.2px, transparent 1px),
+        linear-gradient(to bottom, #dcdcdc 0.2px, transparent 1px);
+
+    background-size: 60px 60px;
+
+    opacity: 0.4;
+}
+.grid-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(0.6px);
+}
 .heroContent {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
 }
 .heroContainer .heroTitle {
-    color: #102a43;
-    font-size: clamp(2rem, 4vw, 5rem);
-    font-weight: 700;
+    color: var(--color-title);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 600;
     filter: brightness(1.1);
     display: flex;
     flex-direction: column;
+    align-items: start;
 }
-.heroContainer .heroTitle span {
+.heroContainer .heroTitle #nameUser {
     color: var(--accent-code);
 }
 .heroContent .subHeading {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    width: 70%;
-    font-weight: 500;
-    color: #243b53f0;
+    font-size: 1rem;
+    width: 60%;
+    font-weight: 400;
+    color: #4f4f4f;
 }
-.sectionTool {
-    padding: 42px 0;
-    background-color: rgb(237, 240, 245);
-}
-.sectionTool .wrapTool {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-.sectionTool .wrapTool .blockTool {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: calc((100% - 30px * 2) / 3);
-    height: auto;
-}
-.sectionTool .wrapTool .blockTool .backgroundLock {
-    padding: 16px;
+.heroCourse{
     border-radius: 12px;
-    background-color: white;
-    color: rgb(10, 10, 233);
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: fit-content;
+    gap: 25px;
 }
-.sectionTool .wrapTool .blockTool .contentTool {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.boxIcon{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 9px;
+    border: 1px solid var(--accent-code);
+    background-color: #ffefe8;
+    color: var(--accent-code);
 }
-.sectionTool .wrapTool .blockTool .contentTool .titleTool {
-    font-size: 20px;
+.gContent{
+    gap: 6px;
+}
+.gContent .title{
+    font-size: 12px;
+    color: #4f4f4f;
+}
+.gContent .nameCourse{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.gPercent{
+    gap: 3px;
+}
+.gPercent .line{
+    width: 300px;
+    height: 5px;
+    background-color: #e0e0e0d0;
+    border-radius: 5px;
+    position: relative;
+}
+.gPercent .line::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 67%;
+    height: 100%;
+    background-color: #ff621e;
+    border-radius: 5px;
+}
+.gPercent .percent{
+    font-size: 12px;
+}
+.status{
+    font-size: 14px;
+    border: 2px solid #d98662;
+    background-color: #ffeae2;
+    color: #de4300;
     font-weight: 600;
-    color: var(--color-title);
+    border-radius: 12px;
+    padding: 4px 12px;
+
 }
-.sectionTool .wrapTool .blockTool .contentTool .content {
+.cardUser{
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 425px;
+
+}
+.cardUser .blockInfor{
+    gap:10px;
+}
+.cardUser .avatar{
+    padding: 8px 10px;
+    border-radius: 50%;
+    background-color: #e84f0d;
+    width: fit-content;
+    height: fit-content;
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+
+}
+.infor .name{
+    font-size: 17px;
+    font-weight: 600;
+}
+.infor .role{
+    font-size: 13px;
+    font-weight: 500;
+    color: #e87747;
+
+}
+.fontLevel{
+    font-size: 12px;
+    color: #5a5656;
+    font-weight: 500;
+}
+#levelUser{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent-code);
+}
+.gExper{
+    gap: 8px;
+}
+.gExper .content{
+    font-size: 13px;
+    font-weight: 500;
+    color: #4f4f4f;
+}
+.lineLevel{
+    width: 100%;
+    height: 5px;
+    background-color: #e0e0e0d0;
+    border-radius: 5px;
+    position: relative;
+}
+.lineLevel::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 67%;
+    height: 100%;
+    background-color: #ff621e;
+    border-radius: 5px;
+}
+.boxData{
+    width: calc(100% / 3);
+}
+.contentData{
+    font-size: 19px;
+    font-weight: 600;
+    color: #222222;
+}
+.boxData .title{
+    font-size: 12px;
+    font-weight: 500;
+    color: #4f4f4f;
+
+}
+.gMisson{
+    gap: 15px;
+}
+.gMisson .title{
     font-size: 16px;
     font-weight: 500;
 }
-.sectionTool .wrapTool .blockTool .contentTool .boxCard {
-    width: 100%;
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    padding-bottom: 20px;
+.listMisson{
+    gap: 8px;
+}
+.contentMisson{
+    font-size: 14px;
+    font-weight: 500;
+    color: #4f4f4f;
+}
+.pointXP{
+    font-size: 13px;
+    font-weight: 400;
+    color: #e84f0d;
 }
 .containerInforCourse {
     display: flex;
